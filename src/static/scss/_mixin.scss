@@ -1,0 +1,1564 @@
+// 360px 미만 디바이스 (320px 고려)
+@mixin isMobile {
+  @media (max-width: #{$breakpoint}) {
+    @content;
+  }
+}
+
+//ir 접근성
+@mixin ir {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -999rem;
+}
+.ir {
+  @include ir;
+}
+
+// 스킵 메뉴
+@mixin skipMenu {
+  position: fixed;
+  top: -6rem;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  z-index: 99;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    display: block;
+    background-color: $co-blue !important;
+    color: #fff;
+    text-align: center;
+  }
+  a:focus {
+    top: 6rem;
+  }
+}
+.skipMenu {
+  @include skipMenu;
+}
+
+// focus
+@mixin focus($color: $co-focus) {
+  outline: 1px dashed $co-focus;
+  outline-offset: 0.2rem;
+}
+
+// 한줄 말줄임
+@mixin ell($width: 100%) {
+  overflow: hidden;
+  display: inline-block;
+  max-width: $width;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ell {
+  @include ell;
+}
+
+@mixin ellMulti($line: 2, $height: 5rem) {
+  display: -webkit-box;
+  word-break: keep-all;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: $height;
+}
+.ellMulti {
+  @include ellMulti;
+}
+
+//transition
+@mixin trans($type: all, $time: 0.2s, $delay: 0.05s) {
+  transition: $type $time ease $delay;
+}
+.trans {
+  @include trans;
+}
+
+//center 정렬 (position)
+@mixin vMid {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.vMid {
+  @include vMid;
+}
+
+//Element 숨김
+@mixin hidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  color: transparent;
+}
+.hidden {
+  @include hidden;
+}
+
+// flex
+@mixin flexArea($gap: 0, $justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-direction: $direction;
+}
+.flexArea {
+  @include flexArea;
+  &.full {
+    width: 100%;
+  }
+}
+
+////////////////////////////////////////////////////
+
+@mixin formGroup($gap: 1rem, $direction: row) {
+  display: flex;
+  gap: $gap;
+  flex-direction: $direction;
+}
+.formGroup {
+  @include formGroup;
+}
+
+// Input
+@mixin formText {
+  position: relative;
+  label {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $co-black;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+  .inpZone {
+    position: relative;
+    &.typeFlex {
+      @include flexArea(1rem);
+      * {
+        flex: 1;
+        position: relative;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+      .innerBtn {
+        max-width: 10.5rem;
+        flex: auto;
+        background-color: $co-gray;
+        height: 3.6rem;
+        border-radius: 0.5rem;
+        font-size: 1.3rem;
+        color: #fff;
+      }
+    }
+    &.attach {
+      input[type="text"] {
+        max-width: 50rem;
+      }
+      label {
+        @include flexArea;
+        display: inline-flex;
+        justify-content: center;
+        margin: auto;
+        padding: 0 1.6rem;
+        width: 10.5rem;
+        border-radius: 0.5rem;
+        font-size: 1.3rem;
+        background-color: #666;
+        color: $co-white;
+        height: 3.6rem;
+        cursor: pointer;
+      }
+      input[type="file"] {
+        position: absolute;
+        width: 0;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 0;
+        &:focus {
+          outline: none;
+        }
+      }
+      .btnAttachDel {
+        width: 3.6rem;
+        height: 3.6rem;
+        border: 1px solid transparent;
+        border-radius: 0.3rem;
+      }
+    }
+    input {
+      height: 3.6rem;
+      background-color: $co-white;
+      border: 1px solid $co-brd;
+      padding: 0 2rem 0 1rem;
+      width: 100%;
+      font-size: inherit;
+      border-radius: 0.3rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      &::placeholder {
+        color: $co-gray;
+      }
+      &:focus {
+        + .btn-clear {
+          opacity: 1;
+        }
+      }
+      &:disabled {
+        color: #ccc;
+        background-color: #f1f1f1;
+      }
+      // &:read-only{background-color:#fafafa;border:none;}
+      &[type="number"] {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+      &[type="password"] {
+        font-family: "NotoSansKr";
+      }
+    }
+    textarea {
+      padding: 1.5rem 2rem 1.5rem 1rem;
+      background-color: $co-white;
+      border: 1px solid $co-brd;
+      width: 100%;
+      font-size: inherit;
+      border-radius: 0.3rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+    .btn-clear {
+      position: absolute;
+      @include vMid;
+      right: 0.5rem;
+      opacity: 0;
+      padding: 1rem;
+      &:focus {
+        opacity: 1;
+      }
+    }
+    .btn-passView {
+      position: absolute;
+      @include vMid;
+      right: 0.5rem;
+      padding: 1rem;
+      &.isHidden {
+        opacity: 0.5;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        right: -1rem;
+        padding: 0;
+      }
+    }
+    .btn-passViewDis {
+      position: absolute;
+      @include vMid;
+      right: 0.5rem;
+      padding: 1rem;
+      &.isHidden {
+        opacity: 0.5;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        right: -1rem;
+        padding: 0;
+      }
+    }
+  }
+  .validation {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+  }
+  &[data-status="error"] {
+    .validation {
+      display: block;
+      color: $co-red;
+    }
+  }
+  &[data-status="success"] {
+    .validation {
+      display: block;
+      color: $co-blue;
+    }
+  }
+  &.tel {
+    @include flexArea(0.5rem);
+    > .inpZone {
+      width: 10rem;
+    }
+  }
+  &.bank {
+    @include flexArea(1rem);
+    > .formSelect {
+      width: 22rem;
+    }
+    > .inpZone {
+      input {
+        width: 22rem;
+      }
+      .innerBtn {
+        width: 15rem;
+      }
+    }
+  }
+  &.company {
+    @include flexArea(1rem);
+    > .inpZone {
+      @include flexArea(0.5rem);
+      > input {
+        width: 11rem;
+        &:nth-child(2) {
+          width: 8rem;
+        }
+      }
+    }
+    > p {
+      font-size: 1.3rem;
+    }
+  }
+  &.person {
+    @include flexArea(1rem);
+    > .inpZone {
+      @include flexArea(0.5rem);
+      > input {
+        width: 11rem;
+      }
+    }
+    > p {
+      font-size: 1.3rem;
+    }
+  }
+  + .formText {
+    margin-top: 1rem;
+  }
+  @include isMobile {
+    label {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .inpZone {
+      position: relative;
+      &.typeFlex {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        > input {
+          min-height: 3.6rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+        .innerBtn {
+          max-width: 100%;
+          width: 100%;
+          height: 3.6rem;
+          border-radius: 0.8rem;
+          font-size: 1.3rem;
+        }
+      }
+      &.attach {
+        input[type="text"] {
+          max-width: calc(100% - 11rem);
+        }
+        label {
+          width: 8rem;
+          border-radius: 0.3rem;
+          font-size: 1.2rem;
+        }
+        .btnAttachDel {
+          width: 2rem;
+          height: 3.6rem;
+          border: 1px solid transparent;
+          border-radius: 0.3rem;
+        }
+      }
+      input {
+        height: 3.6rem;
+        padding: 0 1rem;
+        &::placeholder {
+          font-size: 1.4rem;
+        }
+      }
+      textarea {
+        padding: 1rem 1rem;
+        &::placeholder {
+          font-size: 1.4rem;
+        }
+      }
+      .btn-clear {
+        right: 0.25rem;
+        padding: 0.5rem;
+        > i {
+          margin-right: -1.5rem !important;
+          margin-bottom: -1rem !important;
+        }
+      }
+      .btn-passView {
+        right: 0.25rem;
+        padding: 0.5em;
+        > i {
+          margin-right: -1.5rem !important;
+          margin-bottom: -0.9rem !important;
+        }
+      }
+      .btn-passViewDis {
+        right: 0.25rem;
+        padding: 0.5rem;
+        > i {
+          margin-right: -1.5rem !important;
+          margin-bottom: -0.9rem !important;
+        }
+      }
+    }
+    .validation {
+      margin-top: 0.25rem;
+      font-size: 1.3rem;
+    }
+    + .formText {
+      margin-top: 0.5rem;
+    }
+    &.bank {
+      gap: 0.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      > .formSelect {
+        width: 100%;
+      }
+      > .inpZone {
+        width: 100%;
+        input {
+          width: 100%;
+        }
+        .innerBtn {
+          width: 100%;
+          height: 3.6rem;
+        }
+      }
+    }
+    &.company {
+      gap: 0.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      > .inpZone {
+        @include flexArea(0.5rem);
+        > input {
+          width: calc(50% - 4.25rem);
+          &:nth-child(2) {
+            width: 8rem;
+          }
+        }
+      }
+      > p {
+        font-size: 1.3rem;
+      }
+    }
+    &.person {
+      gap: 0.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      > .inpZone {
+        @include flexArea(0.5rem);
+        > input {
+          width: calc(50% - 4.25rem);
+        }
+      }
+      > p {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+.formText {
+  @include formText;
+}
+
+// Checkbox
+@mixin formCheckbox {
+  display: block;
+  position: relative;
+  &:hover {
+    label::before {
+      border-color: $co-primary !important;
+    }
+  }
+  input {
+    @include hidden;
+  }
+  label {
+    @include flexArea($justify: flex-start);
+    color: $co-black;
+    padding-left: 3.5rem;
+    cursor: pointer;
+    @include trans;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -0.1rem;
+      left: 0;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      border: 2px solid $co-brd;
+      background: #fff url(../img/icon/chk.png) center center no-repeat;
+      @include trans;
+      background-position: center center;
+      background-size: 1.6rem 1.6rem;
+    }
+  }
+  input {
+    &:checked + label:before {
+      border-color: $co-primary;
+      background: $co-white url(../img/icon/chk_checked.png) center center no-repeat;
+      background-size: 1.6rem 1.6rem;
+    }
+    &:disabled + label:before {
+      background: #f3f6fb;
+      border-color: #f3f6fb;
+    }
+    &:checked:disabled + label:before {
+      background: #f3f6fb url(../img/icon/chk_checked_dis.png) center center no-repeat;
+      background-size: 1.6rem 1.6rem;
+    }
+    &:disabled + label {
+      opacity: 1;
+    }
+    &:focus + label:before {
+      @include focus;
+    }
+  }
+  &.switch {
+    label {
+      padding: 0;
+      em {
+        &:before {
+          content: "아니오";
+          position: absolute;
+          top: 0.6rem;
+          color: #666;
+          right: 1.2rem;
+          @include trans;
+          font-size: 1.6rem;
+        }
+      }
+      &:before {
+        content: "";
+        left: auto;
+        right: 0;
+        background-image: none;
+        background-color: #f1f1f1;
+        border-color: #f1f1f1;
+        width: 9rem;
+        height: 3rem;
+        border-radius: 5rem;
+        @include trans;
+      }
+      &:after {
+        content: "";
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid transparent;
+        position: absolute;
+        top: 0.4rem;
+        right: 6.2rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        @include trans;
+      }
+      &:hover {
+        &:before {
+          border-color: $co-primary;
+        }
+      }
+    }
+    input:checked + label {
+      em {
+        &:before {
+          content: "예";
+          right: 4.5rem;
+          color: #fff;
+        }
+      }
+      &:before {
+        background-color: $co-primary;
+        background-image: none;
+      }
+      &:after {
+        right: 0.4rem;
+        border-color: $co-primary;
+      }
+    }
+    &.type2 {
+      label {
+        em {
+          display: none;
+        }
+        &:before {
+          width: 6rem;
+        }
+        &:after {
+          right: 3.3rem;
+        }
+      }
+      input:checked + label {
+        &:after {
+          right: 0.4rem;
+        }
+      }
+    }
+  }
+  @include isMobile {
+    label {
+      font-size: 1.2rem;
+      padding-left: 3rem;
+      &:before {
+        top: -0.5rem;
+      }
+    }
+  }
+}
+.formCheckbox {
+  @include formCheckbox;
+}
+
+// Radio
+@mixin formRadio {
+  display: block;
+  position: relative;
+  &:hover {
+    label::before {
+      border-color: $co-primary !important;
+    }
+  }
+  input {
+    @include hidden;
+  }
+  label {
+    @include flexArea($justify: flex-start);
+    color: $co-black;
+    padding-left: 3.5rem;
+    cursor: pointer;
+    @include trans;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -0.1rem;
+      left: 0;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      border: 2px solid $co-brd;
+      background: #fff;
+      @include trans;
+      background-position: center center;
+      background-size: 1.6rem 1.6rem;
+    }
+  }
+  input {
+    &:checked + label:before {
+      background: $co-white url(../img/icon/radio_checked.png) center center no-repeat;
+      background-size: 100%;
+    }
+    &:disabled + label:before {
+      background-color: #f3f6fb;
+      border-color: #f3f6fb;
+    }
+    &:checked:disabled + label:before {
+      background: #f3f6fb url(../img/icon/radio_checked_dis.png) center center no-repeat;
+      background-size: 100%;
+    }
+    &:disabled + label {
+      opacity: 1;
+    }
+    &:focus + label:before {
+      @include focus;
+    }
+  }
+  &.switch {
+    label {
+      padding: 0;
+      em {
+        &:before {
+          content: "아니오";
+          position: absolute;
+          top: 0.6rem;
+          color: #666;
+          right: 1.2rem;
+          @include trans;
+          font-size: 1.6rem;
+        }
+      }
+      &:before {
+        content: "";
+        left: auto;
+        right: 0;
+        background-image: none;
+        background-color: #f1f1f1;
+        border-color: #f1f1f1;
+        width: 9rem;
+        height: 3rem;
+        border-radius: 5rem;
+        @include trans;
+      }
+      &:after {
+        content: "";
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid transparent;
+        position: absolute;
+        top: 0.4rem;
+        right: 6.2rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        @include trans;
+      }
+      &:hover {
+        &:before {
+          border-color: $co-primary;
+        }
+      }
+    }
+    input:checked + label {
+      em {
+        &:before {
+          content: "예";
+          right: 4.5rem;
+          color: #fff;
+        }
+      }
+      &:before {
+        background-color: $co-primary;
+        background-image: none;
+      }
+      &:after {
+        right: 0.4rem;
+        border-color: $co-primary;
+      }
+    }
+    &.type2 {
+      label {
+        em {
+          display: none;
+        }
+        &:before {
+          width: 6rem;
+        }
+        &:after {
+          right: 3.3rem;
+        }
+      }
+      input:checked + label {
+        &:after {
+          right: 0.4rem;
+        }
+      }
+    }
+  }
+  &.button {
+    display: inline-block;
+    label {
+      padding: 1.2rem 2.4rem;
+      border-radius: 10rem;
+      color: $co-black;
+      height: 4.6rem;
+      > span {
+        z-index: 1;
+      }
+      &::before {
+        background: $co-white;
+        border: 1px solid $co-brd;
+        width: 100%;
+        height: 100%;
+        border-radius: 10rem;
+      }
+    }
+    input {
+      &:checked + label {
+        color: $co-white;
+      }
+      &:checked + label:before {
+        background: $co-primary;
+        border: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 10rem;
+      }
+    }
+  }
+  @include isMobile {
+    label {
+      font-size: 1.2rem;
+      padding-left: 3rem;
+      &:before {
+        top: -0.5rem;
+      }
+    }
+  }
+}
+.formRadio {
+  @include formRadio;
+}
+
+// Select
+@mixin formSelect {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+  &.type2 {
+    .option {
+      bottom: calc(4rem - 1px);
+    }
+  }
+  .select,
+  select {
+    @include flexArea($justify: flex-start);
+    font-size: inherit;
+    padding: 0 3rem 0 1.6rem;
+    border: 1px solid $co-brd;
+    height: 4rem;
+    background: $co-white url(../img/icon/form_selectIcon.png) no-repeat center right 1rem;
+    background-size: 1rem 0.8rem;
+    &.isActive,
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+  }
+  .option {
+    display: none;
+    position: absolute;
+    margin-top: -1px;
+    background-color: $co-white;
+    border: 1px solid $co-brd;
+    z-index: 1;
+    li {
+      white-space: nowrap;
+      a {
+        display: block;
+        padding: 1rem 1rem 1rem 1.6rem;
+        &:hover,
+        &:focus {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+.formSelect {
+  @include formSelect;
+}
+
+// Tab
+@mixin unitTab {
+  margin-top: 0rem;
+  > ul {
+    position: relative;
+    color: $co-gray;
+    @include flexArea;
+    align-items: flex-start;
+    justify-content: center;
+    > li {
+      display: block;
+      flex: 1;
+      .menu {
+        @include flexArea;
+        height: 5rem;
+        padding: 0 1rem;
+        border: 1px solid $co-brd;
+        font-size: 1.8rem;
+        width: 100%;
+        @include trans;
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 0.1rem;
+          height: 0.1rem;
+          border-radius: 50%;
+          background-color: $co-white;
+          left: 50%;
+          top: -1.6rem;
+          transform: translateX(-50%);
+          @include trans;
+        }
+        &.isActive {
+          color: $co-white;
+          border-color: $co-secondary;
+          background-color: $co-secondary;
+          position: relative;
+          // &:before{width:.8rem;height:.8rem;background-color:$$co-secondary;}
+          + .contents {
+            display: block;
+          }
+        }
+      }
+      + li {
+        .menu {
+          border-left: none;
+        }
+      }
+    }
+  }
+  .contents {
+    display: none;
+    width: 100%;
+    left: 0;
+    margin-top: 2.4rem;
+    .contName {
+      @include ir;
+    }
+    &.isActive {
+      display: block;
+    }
+  }
+  // > ul:after{content:'';position:absolute;width:100%;height:5rem;background-color:#f5f5f5;top:4.2rem;left:0;z-index:-1;top:0;border-radius:.8rem;}
+  @include isMobile {
+    margin-top: 2rem;
+    > ul {
+      overflow-x: auto;
+      margin: 0 -2rem;
+      padding: 0 2rem;
+      justify-content: flex-start;
+      > li {
+        .menu {
+          @include flexArea;
+          height: 4rem;
+          padding: 0 1.5rem;
+          font-size: 1.4rem;
+          white-space: nowrap;
+        }
+      }
+    }
+    .contents {
+      margin-top: 1rem;
+    }
+  }
+}
+[class^="unitTab"] {
+  @include unitTab;
+}
+
+// list
+@mixin unitList {
+  > li {
+    position: relative;
+    padding-left: 1rem;
+    line-height: 1.4;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      width: 0.5rem;
+      height: 1px;
+      background-color: $co-gray;
+    }
+    + li {
+      margin-top: 0.5rem;
+    }
+  }
+  &.num {
+    counter-reset: list-number;
+    > li {
+      counter-increment: list-number;
+      padding-left: 2.5rem;
+      &:before {
+        content: counter(list-number);
+        font-size: 1.1rem;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid #444;
+        @include flexArea();
+        justify-content: center;
+      }
+    }
+  }
+  &.dot {
+    > li {
+      padding-left: 1rem;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0.2rem;
+        height: 0.2rem;
+        background-color: $co-black;
+        left: 0;
+        top: 1rem;
+      }
+    }
+  }
+  &.ref {
+    > li {
+      padding-left: 2rem;
+      &:before {
+        content: "※";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+      }
+    }
+  }
+  &.star {
+    > li {
+      padding-left: 1.2rem;
+      &:before {
+        content: "*";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+      }
+    }
+  }
+  &.blk {
+    > li {
+      &:before {
+        background-color: $co-black;
+      }
+    }
+  }
+  &.blank {
+    > li {
+      padding-left: 0 !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  &.btn {
+    @include flexArea($gap: 1rem);
+    flex-wrap: wrap;
+    > li {
+      width: calc(25% - 0.75rem);
+      button {
+        width: 100% !important;
+      }
+      + li {
+        margin-top: 0 !important;
+      }
+    }
+    &.type2 {
+      margin-top: 1rem !important;
+      > li {
+        width: calc(20% - 1rem);
+      }
+    }
+    @include isMobile {
+      > li {
+        width: calc(50% - 0.5rem) !important;
+      }
+    }
+  }
+  &.process {
+    @include flexArea($gap: 1.5rem 2.5rem);
+    flex-wrap: wrap;
+    align-items: stretch;
+    > li {
+      + li {
+        margin-top: 0 !important;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      @include flexArea;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: calc(25% - 2rem);
+      height: 8rem;
+      text-align: center !important;
+      color: $co-blue;
+      padding-left: 0 !important;
+      border: 0.3rem solid $co-blue;
+      border-radius: 1rem;
+      &:before {
+        display: none;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        top: 50%;
+        right: -3rem;
+        transform: translateY(-50%);
+        background: url(../img/common/icon_arrow.png) no-repeat center;
+        background-size: 60%;
+      }
+      .number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        border-radius: 0 0 1rem 0;
+        background-color: $co-blue;
+        padding: 0.3rem 1rem;
+      }
+    }
+    @include isMobile {
+      gap: 3rem;
+      > li {
+        width: 100%;
+        height: 6rem;
+        &:after {
+          top: auto;
+          bottom: -3rem;
+          left: calc(50% - 1.5rem);
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+.unitList {
+  @include unitList;
+}
+
+// modal
+@mixin unitModal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $co-dim;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  display: none;
+  > .wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 67rem;
+    border-radius: 0.5rem;
+    max-height: calc(100% - 6rem);
+    overflow-y: auto;
+    background-color: $co-white;
+    word-break: keep-all;
+    .closeModal {
+      position: absolute;
+      right: 2.5rem;
+      top: 2.5rem;
+      > i {
+        > img {
+          width: 8rem !important;
+        }
+      }
+    }
+    > .tit {
+      font-size: 1.9rem;
+      font-weight: 700;
+      border-bottom: 1px solid $co-brd;
+      padding: 2rem;
+      > small {
+        display: block;
+        font-weight: 400;
+        color: #999;
+      }
+    }
+    > .contArea {
+      padding: 2rem;
+      > .msg {
+        font-size: 1.4rem;
+        color: $co-darkGray;
+        text-align: center;
+        padding: 0 2rem;
+        line-height: 1.5;
+      }
+      .unitTable.typeRow {
+        table {
+          tbody {
+            tr {
+              th {
+                padding: 1.5rem;
+              }
+              td {
+                padding: 1rem 1.5rem;
+              }
+            }
+          }
+        }
+      }
+      aside.termsChk {
+        .txtBox {
+          padding: 2rem;
+          > .tit {
+            font-size: 1.8rem;
+          }
+        }
+        > .chkCont {
+          margin-top: 1rem;
+        }
+      }
+    }
+    .unitBtn {
+      margin: 0;
+      .flexArea {
+        gap: 0;
+        overflow: hidden;
+        button {
+          font-size: 1.6rem;
+          padding: 2rem 1.2rem;
+          border-radius: 0;
+          font-size: 1.6rem;
+          &.dis {
+            flex: 0.5;
+            &.full {
+              flex: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.modalOpen {
+    display: block;
+  }
+  &.type2 {
+    > .wrapper {
+      > .tit {
+        text-align: left;
+      }
+      > .msg {
+        text-align: left;
+        padding: 0;
+        font-size: 1.3rem;
+        + .msg {
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+  &[data-type="alert"] {
+    > .wrapper {
+      width: 40rem;
+      .closeModal {
+        position: absolute;
+        right: 1.6rem;
+        top: 1.2rem;
+        > i {
+          > img {
+            width: 3.2rem !important;
+          }
+        }
+      }
+      > .tit {
+        font-size: 1.8rem;
+        padding: 1.2rem 1.6rem;
+      }
+    }
+  }
+  &[data-type="tooltip"] {
+    > .wrapper {
+      width: 40rem;
+      .closeModal {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        > i {
+          > img {
+            width: 3.2rem !important;
+          }
+        }
+      }
+      > .tit {
+        font-size: 1.6rem;
+        padding: 1.2rem 5rem 1.2rem 1.6rem;
+        background-color: #fafafa;
+      }
+      .contArea {
+        padding: 2rem;
+        font-size: 1.6rem;
+        color: #666;
+        .unitList {
+          > li {
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  &[data-type="sml"] {
+    > .wrapper {
+      max-width: 40rem;
+    }
+  }
+  &[data-type="wide"] {
+    > .wrapper {
+      max-width: 90rem;
+    }
+  }
+  .botomText {
+    padding: 0 2rem 2rem;
+  }
+  @include isMobile {
+    > .wrapper {
+      max-width: calc(100% - 4rem);
+      max-height: calc(100% - 4rem);
+      .closeModal {
+        right: 2rem;
+        top: 2.4rem;
+        > i {
+          > img {
+            width: 8rem !important;
+          }
+        }
+      }
+      > .tit {
+        font-size: 2rem;
+        padding: 1.6rem 2rem;
+      }
+      > .contArea {
+        padding: 1.6rem 2rem;
+        > .msg {
+          font-size: 1.3rem;
+        }
+      }
+      .unitBtn {
+        .flexArea {
+          button {
+            font-size: 1.5rem;
+            height: 6rem;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+    &.modalOpen {
+      display: block;
+    }
+    &.type2 {
+      > .wrapper {
+        > .tit {
+          text-align: left;
+        }
+        > .msg {
+          text-align: left;
+          padding: 0;
+          font-size: 1.3rem;
+          + .msg {
+            margin-top: 3rem;
+          }
+        }
+      }
+    }
+    &[data-type="alert"] {
+      > .wrapper {
+        width: calc(100% - 4rem);
+        .closeModal {
+          position: absolute;
+          right: 1rem;
+          top: 1.2rem;
+        }
+        > .tit {
+          font-size: 1.8rem;
+          padding: 1.2rem 1.6rem;
+        }
+      }
+    }
+    &[data-type="tooltip"] {
+      > .wrapper {
+        width: calc(100% - 4rem);
+        .closeModal {
+          position: absolute;
+          right: 1rem;
+          top: 1.2rem;
+        }
+        > .tit {
+          font-size: 1.4rem;
+          padding: 1.2rem 4rem 1.2rem 1.6rem;
+        }
+        .contArea {
+          padding: 2rem;
+          font-size: 1.4rem;
+          color: #666;
+          .unitList {
+            > li {
+              margin-top: 0.5rem;
+            }
+            &.num {
+              > li {
+                padding-left: 2.2rem;
+                &:before {
+                  width: 1.6rem;
+                  height: 1.6rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &[data-type="sml"] {
+      > .wrapper {
+        max-width: calc(100% - 4rem);
+      }
+    }
+    &[data-type="wide"] {
+      > .wrapper {
+        max-width: calc(100% - 4rem);
+      }
+    }
+    .botomText {
+      padding: 0 2rem 1rem;
+    }
+  }
+}
+.unitModal {
+  @include unitModal;
+}
+
+// toast
+@mixin unitToast {
+  @include flexArea;
+  width: calc(100% - 6rem);
+  padding: 1rem;
+  height: 5rem;
+  position: fixed;
+  left: 3rem;
+  bottom: -4rem;
+  opacity: 0;
+  background-color: $co-dim;
+  border-radius: 10rem;
+  justify-content: center;
+  @include trans;
+  z-index: 1;
+  &.isActive {
+    bottom: 3rem;
+    opacity: 1;
+  }
+  > .tit {
+    font-size: 1.5rem;
+    color: $co-white;
+    font-weight: 350;
+  }
+}
+.unitToast {
+  @include unitToast;
+}
+
+// swiper
+@mixin unitSwiper {
+  position: relative;
+  .swiperCont {
+    overflow: hidden;
+  }
+  .swiper-button-prev {
+    width: auto;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    z-index: 2;
+    &:after {
+      display: none;
+    }
+    &.swiper-button-disabled {
+      display: none;
+    }
+  }
+  .swiper-button-next {
+    width: auto;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    margin: auto;
+    z-index: 2;
+    &:after {
+      display: none;
+    }
+    &.swiper-button-disabled {
+      display: none;
+    }
+  }
+  .controller {
+    @include flexArea(2rem);
+    justify-content: center;
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    .swiper-pagination {
+      @include flexArea(0.7rem);
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      > * {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 10rem;
+        @include trans;
+        &.swiper-pagination-bullet-active {
+          width: 2rem;
+          background-color: $co-primary;
+        }
+      }
+      &.swiper-pagination-lock {
+        display: none;
+      }
+    }
+    .btnCont {
+      @include flexArea;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      > button {
+        display: none;
+        &.isActive {
+          display: block;
+        }
+      }
+    }
+  }
+  @include isMobile {
+    .controller {
+      gap: 1rem;
+      bottom: 1rem;
+      .swiper-pagination {
+        @include flexArea(0.5rem);
+        > * {
+          width: 0.7rem;
+          height: 0.7rem;
+          &.swiper-pagination-bullet-active {
+            width: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+.unitSwiper {
+  @include unitSwiper;
+}

@@ -1,0 +1,837 @@
+// main
+[data-page="main"] {
+  main {
+    > .container {
+      margin: 0 -1rem;
+      padding: 0;
+      max-width: none;
+      @include isMobile {
+        margin: 0 -2rem;
+      }
+    }
+
+    .secTit {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: $co-black;
+      margin-bottom: 3.2rem;
+      @include isMobile {
+        font-size: 2.6rem;
+        margin-bottom: 1.2rem;
+      }
+      em {
+        color: $co-primary;
+      }
+      &.type2 {
+        text-align: center;
+        @include isMobile {
+          text-align: left;
+        }
+        em {
+          color: $co-blue;
+        }
+      }
+    }
+
+    // 메인 비주얼
+    section.mainVisual {
+      .unitSwiper {
+        .swiperMainVisual {
+          .swiper-wrapper {
+            .swiper-slide {
+              @include flexArea;
+              height: 60rem;
+              color: $co-white;
+              padding: 0 1rem;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center center;
+              // &::before,
+              // &::after {
+              //   content: "";
+              //   position: absolute;
+              //   top: 0;
+              //   left: 0;
+              //   width: 40%;
+              //   height: 100%;
+              //   opacity: 0.6;
+              //   background: linear-gradient(90deg, $co-primary, transparent);
+              //   @include isMobile {
+              //     width: 40%;
+              //   }
+              // }
+              // &::after {
+              //   right: 0;
+              //   left: auto;
+              //   transform: rotate(180deg);
+              // }
+              @include isMobile {
+                padding: 0;
+                height: 25rem;
+              }
+              .textArea {
+                width: 100%;
+                max-width: $maxWidth;
+                margin: auto;
+                z-index: 1;
+                @include isMobile {
+                  max-width: none;
+                }
+                .subTit {
+                  font-size: 2.4rem;
+                  font-weight: 700;
+                  margin-bottom: 2rem;
+                  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+                  @include isMobile {
+                    font-size: 2.2rem;
+                    margin-bottom: 0;
+                    text-align: center;
+                  }
+                }
+                .tit {
+                  font-size: 4.8rem;
+                  font-weight: 700;
+                  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+                  @include isMobile {
+                    font-size: 3rem;
+                    text-align: center;
+                  }
+                }
+                small {
+                  display: block;
+                  font-size: 1.7rem;
+                  margin-top: 2rem;
+                  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+                  @include isMobile {
+                    font-size: 1.3rem;
+                    margin-top: 1rem;
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .controller {
+          max-width: $maxWidth;
+          padding: 0 1rem;
+          left: 50%;
+          bottom: 10rem;
+          transform: translateX(-50%);
+          z-index: 1;
+          @include isMobile {
+            max-width: none;
+            bottom: 2rem;
+          }
+          .swiper-pagination {
+            justify-content: flex-start;
+            @include isMobile {
+              justify-content: center;
+            }
+            gap: 0.8rem;
+            .swiper-pagination-bullet {
+              background: $co-white;
+              opacity: 1;
+              &.swiper-pagination-bullet-active {
+                background: $co-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 메인 알림마당
+    section.mainNotice {
+      // max-width: $maxWidth;
+      margin: auto;
+      padding: 6rem 1rem 8rem;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 80rem;
+        height: 21.2rem;
+        bottom: 0;
+        left: 0;
+        background: url(../img/main/mainNotice_bg.png) no-repeat center center;
+        background-size: cover;
+        opacity: 0.5;
+        z-index: 3;
+        @include isMobile {
+          display: none;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        height: 21.2rem;
+        width: 50%;
+        background: $co-white;
+        bottom: 0;
+        left: 50%;
+        z-index: 2;
+        @include isMobile {
+          display: none;
+        }
+      }
+      @include isMobile {
+        padding: 2rem 2rem 1rem;
+      }
+      .wrapper {
+        position: relative;
+        max-width: 140rem;
+        margin: auto;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -8rem;
+          left: 32rem;
+          width: calc(100% - 32rem);
+          height: 25rem;
+          background: $co-white;
+          z-index: 3;
+          @include isMobile {
+            display: none;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 2.5rem;
+          right: 6rem;
+          width: 25rem;
+          height: 11rem;
+          background: $co-primary;
+          border-radius: 1.6rem;
+          z-index: 3;
+          @include isMobile {
+            display: none;
+          }
+        }
+        .topArea {
+          position: absolute;
+          top: 0;
+          right: 0;
+          @include isMobile {
+            position: relative;
+          }
+          .formGroup {
+            .formRadio {
+              @include isMobile {
+                flex: 1;
+                font-size: 1.6rem;
+              }
+              label {
+                @include isMobile {
+                  height: 3rem;
+                  padding: 0;
+                  justify-content: center;
+                }
+                &::before {
+                  border-color: #ddd;
+                  top: 0;
+                }
+              }
+            }
+            .btnMore {
+              width: 4.6rem;
+              height: 4.6rem;
+              font-size: 2.1rem;
+              color: $co-white;
+              background: $co-primary;
+              border-radius: 50%;
+
+              @include isMobile {
+                position: absolute;
+                width: 3rem;
+                height: 3rem;
+                top: -4.5rem;
+                right: 0;
+              }
+            }
+          }
+        }
+        .unitSwiper {
+          padding: 0 7.2rem;
+          z-index: 4;
+          @include isMobile {
+            padding: 0;
+            margin: 0 -2rem;
+          }
+          .swiperMainNotice {
+            @include isMobile {
+              padding: 1rem;
+            }
+            .swiper-wrapper {
+              .swiper-slide {
+                padding: 1rem;
+                @include isMobile {
+                  padding: 1rem;
+                  width: 24rem;
+                }
+                > a {
+                  @include flexArea($justify: space-between, $direction: column, $align: flex-start);
+                  height: 23.8rem;
+                  padding: 3.2rem;
+                  background: $co-white;
+                  border-radius: 1.6rem;
+                  box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.2);
+                  @include isMobile {
+                    height: 15.8rem;
+                    padding: 2rem;
+                  }
+                  &:hover,
+                  &:focus {
+                    @include focus;
+                  }
+                  .top {
+                    @include flexArea($gap: 1.6rem, $direction: column, $align: flex-start);
+                    .cate {
+                      font-size: 1.7rem;
+                      font-weight: 700;
+                      color: $co-primary;
+                      &.type2 {
+                        color: $co-blue;
+                      }
+                    }
+                    .tit {
+                      font-size: 1.9rem;
+                      font-weight: 700;
+                      color: $co-black;
+                      @include ellMulti($line: 2);
+                      @include isMobile {
+                        font-size: 1.5rem;
+                      }
+                    }
+                  }
+                  .bottom {
+                    .date {
+                      font-size: 1.7rem;
+                      color: $co-darkGray;
+                      @include isMobile {
+                        font-size: 1.2rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .swiper-button-prev,
+          .swiper-button-next {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+            @include isMobile {
+              opacity: 0.5;
+              // top: 14rem;
+            }
+          }
+          .controller {
+            position: relative;
+            bottom: auto;
+            margin-top: 3.2rem;
+            @include isMobile {
+              display: none;
+            }
+          }
+        }
+        .imgArea {
+          position: absolute;
+          bottom: -8rem;
+          width: 23.2rem;
+          height: 23.9rem;
+          left: 21.7rem;
+          z-index: 4;
+          @include isMobile {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // 메인 금융보안원 주요업무
+    section.mainWork {
+      position: relative;
+      background: linear-gradient(180deg, #f8f6f4, transparent);
+      @include isMobile {
+        background: #f9f9f9;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 21.2rem;
+        background: #f8f6f4;
+        top: -21.2rem;
+        z-index: 1;
+        @include isMobile {
+          display: none;
+        }
+      }
+      .wrapper {
+        max-width: 140rem;
+        margin: auto;
+        padding: 8rem 1rem 12rem;
+        @include isMobile {
+          max-width: 100%;
+          padding: 1rem 2rem;
+        }
+        .tabArea {
+          @include isMobile {
+            margin: 0 -2rem;
+          }
+          .unitTab {
+            @include flexArea($gap: 20.3rem);
+            width: 100%;
+            @include isMobile {
+              gap: 0;
+              padding: 0;
+              flex-direction: column;
+            }
+            > ul {
+              @include flexArea($direction: column);
+              width: 46.8rem;
+              padding: 4.8rem 0 4.8rem 4rem;
+              @include isMobile {
+                flex-direction: row;
+                width: 100%;
+                margin: 0 -2rem;
+                padding: 1rem 2rem;
+                background-color: $co-blue;
+              }
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 42rem;
+                height: 100%;
+                border-radius: 1.6rem;
+                background: $co-blue;
+                @include isMobile {
+                  display: none;
+                }
+              }
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 42rem;
+                height: 100%;
+                border-radius: 1.6rem;
+                background: url(../img/main/mainWork_bg.png) no-repeat center center;
+                background-size: cover;
+                z-index: 1;
+                opacity: 0.2;
+                @include isMobile {
+                  display: none;
+                }
+              }
+              li {
+                z-index: 1;
+                width: 100%;
+                @include isMobile {
+                  flex: 1;
+                  width: auto;
+                }
+                .menu {
+                  position: relative;
+                  font-size: 1.9rem;
+                  font-weight: 700;
+                  color: $co-white;
+                  border: none;
+                  width: 100%;
+                  gap: 1.6rem;
+                  justify-content: flex-start;
+                  height: 7rem;
+                  padding: 0 4.8rem;
+                  border-radius: 0;
+                  background-color: transparent;
+                  @include trans;
+                  @include isMobile {
+                    height: 3rem;
+                    padding: 0;
+                    justify-content: center;
+                  }
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    width: 1.2rem;
+                    height: 2rem;
+                    left: auto;
+                    right: 4rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: url(../img/main/icon_arrow.png) no-repeat center center;
+                    background-size: cover;
+                    opacity: 0;
+                    @include trans;
+                    @include isMobile {
+                      display: none;
+                    }
+                  }
+                  &.isActive {
+                    color: $co-blue;
+                    background-color: $co-white;
+                    border-radius: 10rem;
+                    box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.1);
+                    &::before {
+                      opacity: 1;
+                    }
+                    @include isMobile {
+                    }
+                  }
+                  strong {
+                  }
+                  span {
+                    @include isMobile {
+                      display: none;
+                    }
+                  }
+                  i {
+                  }
+                }
+              }
+            }
+            .contents {
+              position: relative;
+              flex: 1;
+              margin-top: 0;
+              padding: 2rem 0;
+              height: 37.6rem;
+              // background-color: red;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -20rem;
+                width: 14.9rem;
+                height: 27.1rem;
+                transform: translateY(-50%);
+                background: url(../img/main/mainWork_01.png) no-repeat center center;
+                background-size: contain;
+                @include isMobile {
+                  display: none;
+                }
+              }
+              .contName {
+                @include isMobile {
+                  @include flexArea($gap: 1rem);
+                  position: relative;
+                  width: auto;
+                  height: auto;
+                  line-height: 1.4;
+                  text-indent: 0;
+                  text-align: center;
+                  color: $co-blue;
+                  font-weight: 700;
+                  font-size: 2.2rem;
+                  margin-bottom: 2rem;
+                }
+              }
+              .iconList {
+                @include flexArea($gap: 4rem 3.2rem, $justify: flex-start);
+                flex-wrap: wrap;
+                @include isMobile {
+                  gap: 1rem;
+                  flex-direction: column;
+                  padding: 0 2rem;
+                }
+                li {
+                  width: calc(50% - 1.6rem);
+                  @include isMobile {
+                    width: 100%;
+                  }
+                  a {
+                    @include flexArea($justify: flex-start, $gap: 2rem);
+                    font-size: 1.9rem;
+                    font-weight: 500;
+                    padding: 2.5rem 4.5rem;
+                    height: 13rem;
+                    word-break: keep-all;
+                    background-color: $co-white;
+                    border-radius: 10rem;
+                    border: 4px solid transparent;
+                    box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.1);
+                    @include trans;
+                    @include isMobile {
+                      height: 8rem;
+                      padding: 1rem;
+                    }
+                    &:hover {
+                      border: 4px solid $co-blue;
+                      i {
+                        background-color: $co-blue;
+                        img {
+                          filter: brightness(100);
+                        }
+                      }
+                    }
+                    i {
+                      @include flexArea;
+                      width: 8rem;
+                      min-width: 8rem;
+                      height: 8rem;
+                      border-radius: 100%;
+                      background-color: #f8f8f8;
+                      @include trans;
+                      @include isMobile {
+                        width: 6rem;
+                        min-width: 6rem;
+                        height: 6rem;
+                      }
+                      img {
+                        width: 4rem;
+                      }
+                    }
+                    span {
+                      flex: 1;
+                      text-align: center;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 메인 알림마당
+    section.mainData {
+      // max-width: $maxWidth;
+      margin: auto;
+      padding: 6rem 1rem 8rem;
+      position: relative;
+      @include isMobile {
+        padding: 2rem 2rem 1rem;
+      }
+      .wrapper {
+        position: relative;
+        max-width: 140rem;
+        margin: auto;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 25rem;
+          height: 11rem;
+          background-color: $co-primary;
+          border-radius: 1.6rem;
+          left: -3.3rem;
+          bottom: -3.3rem;
+          @include isMobile {
+            display: none;
+          }
+        }
+        .contArea {
+          @include flexArea($gap: 6.4rem);
+          @include isMobile {
+            flex-direction: column;
+            gap: 2rem;
+          }
+          .left {
+            // flex: 1;
+            width: calc(100% - 47.2rem - 6.4rem);
+            position: relative;
+            @include isMobile {
+              width: 100%;
+            }
+            .topArea {
+              position: absolute;
+              top: 0;
+              right: 0;
+              @include isMobile {
+                position: relative;
+              }
+              .formGroup {
+                .formRadio {
+                  @include isMobile {
+                    flex: 1;
+                    font-size: 1.6rem;
+                  }
+                  label {
+                    @include isMobile {
+                      height: 3rem;
+                      padding: 0;
+                      justify-content: center;
+                    }
+                    &::before {
+                      border-color: #ddd;
+                      top: 0;
+                    }
+                  }
+                }
+                .btnMore {
+                  width: 4.6rem;
+                  height: 4.6rem;
+                  font-size: 2.1rem;
+                  color: $co-white;
+                  background: $co-primary;
+                  border-radius: 50%;
+
+                  @include isMobile {
+                    position: absolute;
+                    width: 3rem;
+                    height: 3rem;
+                    top: -4.5rem;
+                    right: 0;
+                  }
+                }
+              }
+            }
+            .unitSwiper {
+              padding: 4rem 3.2rem;
+              border-radius: 1.6rem;
+              background-color: $co-white;
+              width: 100%;
+              box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.1);
+              @include isMobile {
+                margin-top: 1.6rem;
+                padding: 0;
+                box-shadow: none;
+              }
+              [class^="swiper-button-"] {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 100%;
+                top: calc(50% - 2rem);
+                box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+                opacity: 0.8;
+              }
+              .swiper-button-prev {
+                left: 3rem;
+                @include isMobile {
+                  left: -2rem;
+                }
+              }
+              .swiper-button-next {
+                right: 3rem;
+                @include isMobile {
+                  right: -2rem;
+                }
+              }
+              .swiper-slide {
+                a {
+                  .imgArea {
+                    width: 100%;
+                    max-width: 14rem;
+                    height: 18.7rem;
+                    margin: auto;
+                    border: 1px solid #c8c7b9;
+                    border-radius: 0.4rem;
+                    background-color: $co-lightGray;
+                    overflow: hidden;
+                    @include isMobile {
+                      max-width: none;
+                      height: 15rem;
+                    }
+                    img {
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                    }
+                  }
+                  > p {
+                    @include ellMulti($line: 2);
+                    margin-top: 1.6rem;
+                    text-align: center;
+                    font-size: 1.5rem;
+                    color: $co-darkGray;
+                  }
+                }
+              }
+            }
+          }
+          .right {
+            width: 47.2rem;
+            min-width: 47.2rem;
+            @include isMobile {
+              width: 100%;
+              min-width: auto;
+            }
+            .bannerList {
+              @include flexArea($direction: column, $justify: space-between);
+              height: 40rem;
+              @include isMobile {
+                height: auto;
+              }
+              > li {
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                &::before {
+                  content: "";
+                  position: absolute;
+                  right: -4rem;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 14rem;
+                  height: 14rem;
+                  background: url(../img/main/data_bannerBg_01.png) no-repeat center center;
+                  background-size: contain;
+                  z-index: 1;
+                  @include isMobile {
+                    top: 3rem;
+                    transform: none;
+                  }
+                }
+                + li {
+                  &::before {
+                    background: url(../img/main/data_bannerBg_02.png) no-repeat center center;
+                    background-size: contain;
+                  }
+                  @include isMobile {
+                    margin-top: 1rem;
+                  }
+                  a {
+                    background-color: #795e31cc;
+                  }
+                }
+                a {
+                  @include flexArea($direction: column, $gap: 1.2rem, $align: flex-start);
+                  position: relative;
+                  width: 100%;
+                  height: 18rem;
+                  padding: 4rem 3.2rem;
+                  color: $co-white;
+                  border-radius: 1.6rem;
+                  background-color: #9d6058;
+                  @include isMobile {
+                    padding: 2.6rem 3.2rem;
+                    height: 14rem;
+                  }
+                  > .tit {
+                    font-size: 2.4rem;
+                    font-weight: 700;
+                  }
+                  > p {
+                    font-size: 1.7rem;
+                    @include isMobile {
+                      font-size: 1.3rem;
+                    }
+                  }
+                  > img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 18rem;
+                    height: 18rem;
+                    z-index: 1;
+                    @include isMobile {
+                      width: 14rem;
+                      height: 14rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

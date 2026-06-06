@@ -1,0 +1,27 @@
+body.guide-wrap {background:#333;color:#333;height:100%;}
+body.guide-wrap main{padding:5rem 2rem;height:100%;}
+body.guide-wrap hr{border:none;height:0;border-top:1px dashed rgba(255,255,255,.1);margin:5rem -1rem;}
+body.guide-wrap header{position:fixed;font-family:'Verdana';background:#333;color:#e8e8e8;top:0;width:100%;text-align:center;font-size:1.2rem;padding:1rem 0;font-weight:700;box-shadow:0 .5rem 2rem rgba(0,0,0,.5);z-index:10;}
+body.guide-wrap footer{position:fixed;font-family:'Verdana';background:#333;color:#e8e8e8;bottom:0;width:100%;text-align:center;font-size:1.1rem;padding:1rem 0;box-shadow:0 -.5rem 2rem rgba(0,0,0,.5);z-index:10;}
+body.guide-wrap footer i{color:chartreuse}
+body.guide-wrap footer em{font-weight:bold;color:#fff;}
+body.guide-wrap h2{color:#f5c782;}
+body.guide-wrap .listArea{display:flex;flex-wrap:wrap;justify-content:space-evenly;width:100%;}
+body.guide-wrap .listArea dt{position:relative;width:100%;}
+body.guide-wrap .listArea dt pre{display:none;margin-top:1rem;}
+body.guide-wrap .listArea dt pre code{font-family:'Consolas';color:#fff;font-size:1.2rem;border-radius: 5rem 0 0 5rem;padding:3rem 0;line-height:1.6;}
+body.guide-wrap .listArea dt .btn-view-source{position:absolute;top:-2.7rem;border:none;background:#f5c782;color:#111;padding:.5rem 1rem;right:2rem;border-radius:1rem;}
+body.guide-wrap .listArea dt .btn-view-source:focus{background:#f5c782 !important;}
+body.guide-wrap .listArea dt .btn-view-source.is-active + pre{display:block;}
+body.guide-wrap .listArea dt .btn-view-source span:before{content:'SHOW'}
+body.guide-wrap .listArea dt .btn-view-source.is-active span:before{content:'HIDDEN'}
+body.guide-wrap .listArea dd{background-color:rgba(255,255,255,1);flex:1;}
+body.guide-wrap .listArea dd + dd{margin-left:1.5rem;}
+body.guide-wrap .listArea dd:not(.guide-description){position:relative;width:377px;max-width:100%;margin-top:2rem;padding:1.5rem;border-radius:1rem;}
+body.guide-wrap .listArea dd .g-desc{font-weight:bold;font-size:2rem;padding-bottom:1.5rem;margin-bottom:1.5rem;border-bottom:1px dashed #999;}
+body header:after{display:none;}
+body header.isSticky{height:auto;}
+@media screen and (max-width:1200px){
+    body.guide-wrap .listArea dd{flex:auto;}
+    body.guide-wrap .listArea dd + dd{margin-left:0;}
+}

@@ -1,0 +1,40 @@
+// breakpoint
+$maxWidth: 1400px;
+$breakpoint: 1280px;
+
+// Color
+$co-primary: #9d7f58;
+$co-secondary: #71542f;
+$co-tertiary: #35302b;
+
+$co-black: #000;
+$co-white: #fff;
+$co-gray: #666;
+$co-darkGray: #333;
+$co-lightGray: #eee;
+
+$co-yellow: #fab312;
+$co-lightYellow: #ffe477;
+$co-darkYellow: #dba936;
+
+$co-red: #e02a40;
+$co-redLight: #eb7874;
+
+$co-blue: #75589d;
+$co-lightBlue: #3975b9;
+$co-darkBlue: #043991;
+
+$co-green: #25613d;
+$co-lightGreen: #7fb152;
+
+//Input Text
+$input-co-placeholder: #8e8e8e;
+$input-co-readonly: $co-gray;
+
+//Border
+$co-bg: #f8f9fc;
+$co-brd: #aaa;
+$co-focus: $co-primary;
+
+//Dim
+$co-dim: rgba(0, 0, 0, 0.6);

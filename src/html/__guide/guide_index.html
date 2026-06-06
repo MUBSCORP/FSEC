@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>GUIDE INDEX</title>
+
+		<link href="@@webRoot/static/common/favicons/favicon.ico" rel="shortcut icon">
+
+		<script src="@@webRoot/static/common/lib/jquery-3.4.1.min.js"></script>
+
+		<script src="@@webRoot/static/common/lib/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="@@webRoot/static/common/lib/jquery-ui.min.css">
+
+		<script src="@@webRoot/static/js/ui.js"></script>
+		<link rel="stylesheet" href="@@webRoot/static/css/ui.css">
+
+		<link rel="stylesheet" href="@@webRoot/html/__guide/resources/guide.css">
+
+		<script src="@@webRoot/html/__guide/resources/highlight.min.js"></script>
+		<link rel="stylesheet" href="@@webRoot/html/__guide/resources/codeTheme.css">
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body class="guide-wrap">
+		<header>GUIDE INDEX</header>
+		<main>
+			<!-- input txt -->
+			<section class="box">
+				<h2 class="h3">Text</h2>
+				<dl class="listArea">
+					<dt>
+						<pre><code></code></pre>
+					</dt>
+					<dd data-description=".formText">
+
+						<!---------- default ---------->
+						<div class="formText"> <!-- error/success -->
+							<label for="inpTxt">텍스트<em class="co-red">*</em></label>
+							<div class="inpZone">
+								<input type="text" id="inpTxt" placeholder="텍스트">
+								<button class="btn-clear"><i class="icon-inp_clear">지우기</i></button>
+							</div>
+							<em class="validation">validation msg</em>
+						</div>
+						<div class="formText" data-status="success"> <!-- error/success -->
+							<label for="inpPass">비밀번호<em class="co-red">*</em></label>
+							<div class="inpZone">
+								<input type="password" id="inpPass" placeholder="8~16자 영문 대/소문자,숫자,특수문자">
+								<button class="btn-passView"><i class="icon-inp_view">비밀번호보기</i></button>
+								<button class="btn-passViewDis isHidden"><i class="icon-inp_view_dis">비밀번호가리기</i></button>
+							</div>
+							<em class="validation">validation msg</em>
+						</div>
+						<div class="formText" data-status="error"> <!-- error/success -->
+							<label for="inpDis">디저블<em class="co-red">*</em></label>
+							<div class="inpZone">
+								<input type="text" id="inpDis" placeholder="사용불가" value="사용불가" disabled>
+								<button class="btn-clear"><i class="icon-inp_clear">지우기</i></button>
+							</div>
+							<em class="validation">validation msg</em>
+						</div>
+						<div class="formText" data-status="success"> <!-- error/success -->
+							<label>전화번호<em class="co-red">*</em></label>
+							<div class="inpZone typeFlex">
+								<div class="formSelect">
+									<div class="selZone">
+										<select title="앞자리 선택">
+											<option value="">010</option>
+										</select>
+									</div>
+								</div>
+								<div class="formList">
+									<input type="number" pattern="\d*" title="가운데 자리 입력" placeholder="" maxlength="4" class="inpNum">
+									<button class="btn-clear"><i class="icon-inp_clear">지우기</i></button>
+								</div>
+								<div class="formList">
+									<input type="number" pattern="\d*" title="마지막 자리 입력" placeholder="" maxlength="4" class="inpNum">
+									<button class="btn-clear"><i class="icon-inp_clear">지우기</i></button>
+								</div>
+							</div>
+							<em class="validation">validation msg</em>
+						</div>
+
+						<hr class="line">
+
+						<div class="formText" data-status="success"> <!-- error/success -->
+							<label for="inpMsg">남기실 말씀<em class="co-red">*</em></label>
+							<div class="inpZone">
+								<textarea id="inpMsg" placeholder="내용을 입력해 주세요."></textarea>
+							</div>
+							<em class="validation">validation msg</em>
+						</div>
+					</dd>
+				</dl>
+			</section>
+			<hr>
+
+			<!-- input checkbox -->
+			<section class="box">
+				<h2 class="h3">Checkbox</h2>
+				<dl class="listArea">
+					<dt>
+						<pre><code></code></pre>
+					</dt>
+					<dd data-description=".formCheckbox">
+						<!---------- default ---------->
+						<span class="formCheckbox"><input type="checkbox" id="checkbox1"><label for="checkbox1">Default</label></span>
+
+						<span class="formCheckbox"><input type="checkbox" id="checkbox2" disabled><label for="checkbox2">Default(Disabled)</label></span>
+
+						<span class="formCheckbox"><input type="checkbox" id="checkbox3" checked><label for="checkbox3">Checked</label></span>
+
+						<span class="formCheckbox"><input type="checkbox" id="checkbox4" checked disabled><label for="checkbox4">Selected(Disabled)</label></span>
+
+						<hr class="line">
+
+						<span class="formCheckbox switch type2"><input type="checkbox" id="switch1-1"><label for="switch1-1">스위치<em></em></label></span>
+
+						<hr class="line">
+
+						<span class="formCheckbox switch"><input type="checkbox" id="switch2-2"><label for="switch2-2">스위치<em></em></label></span>
+					</dd>
+				</dl>
+			</section>
+			<hr>
+
+			<!-- input radio -->
+			<section class="box">
+				<h2 class="h3">Radio</h2>
+				<dl class="listArea">
+					<dt>
+						<pre><code></code></pre>
+					</dt>
+					<dd data-description=".formRadio">
+						<!---------- default ---------->
+						<span class="formRadio"><input type="radio" name="radio1" id="radio1-1"><label for="radio1-1">Default</label></span>
+
+						<span class="formRadio"><input type="radio" name="radio1" id="radio1-2" disabled><label for="radio1-2">Default(Disabled)</label></span>
+
+						<span class="formRadio"><input type="radio" name="radio1" id="radio1-3" checked><label for="radio1-3">Checked</label></span>
+
+						<span class="formRadio"><input type="checkbox" name="radio1" id="radio1-4" checked disabled><label for="radio1-4">Selected(Disabled)</label></span>
+
+						<hr class="line">
+
+						<span class="formRadio switch type2"><input type="radio" name="switch3" id="switch3-1"><label for="switch3-1">스위치-1<em></em></label></span>
+						<span class="formRadio switch type2"><input type="radio" name="switch3" id="switch3-2"><label for="switch3-2">스위치-2<em></em></label></span>
+
+						<hr class="line">
+
+						<span class="formRadio switch"><input type="radio" name="switch4" id="switch4-1"><label for="switch4-1">스위치-1<em></em></label></span>
+						<span class="formRadio switch"><input type="radio" name="switch4" id="switch4-2"><label for="switch4-2">스위치-2<em></em></label></span>
+					</dd>
+				</dl>
+			</section>
+			<hr>
+
+			<!-- input select -->
+			<section class="box">
+				<h2 class="h3">Select</h2>
+				<dl class="listArea">
+					<dt>
+						<pre><code></code></pre>
+					</dt>
+					<dd data-description=".formSelect">
+						<!---------- inline ---------->
+						<div class="formSelect" data-status="success"> <!-- error/success -->
+							<label for="select01">선택 타이틀</label>
+							<div class="selZone">
+								<select id="select01" title="타이틀">
+									<option value="" disabled selected>선택하세요.</option>
+									<option value="">option 1</option>
+									<option value="">option 2</option>
+									<option value="">option 3</option>
+									<option value="">option 4</option>
+								</select>
+							</div>
+							<em class="validation">success</em>
+						</div>
+					</dd>
+					<dd data-description=".formSelect .type2">
+						<!---------- block ---------->
+						<div class="formSelect type2" data-status="success"> <!-- error/success -->
+							<label for="select02">선택 타이틀</label>
+							<div class="selZone">
+								<select id="select02" title="타이틀">
+									<option value="" disabled selected>선택하세요.</option>
+									<option value="">option 1</option>
+									<option value="">option 2</option>
+									<option value="">option 3</option>
+									<option value="">option 4</option>
+								</select>
+							</div>
+							<em class="validation">success</em>
+						</div>
+					</dd>
+					<dd data-description=".formSelect.typeList">
+						<!---------- list inline ---------->
+						<div class="formSelect type-list" data-status="error"> <!-- error/success -->
+							<p class="label">선택 타이틀</p>
+							<button class="selectBtn"><span class="placeholder">아이디를 선택하세요</span></button>
+							<ul class="select">
+								<li class="option"><a href="#none">option 1</a></li>
+								<li class="option"><a href="#none">option 2</a></li>
+								<li class="option"><a href="#none">option 3</a></li>
+								<li class="option"><a href="#none">option 4</a></li>
+								<li class="option"><a href="#none">option 5</a></li>
+								<li class="option"><a href="#none">option 6</a></li>
+								<li class="option"><a href="#none">option 7</a></li>
+								<li class="option"><a href="#none">option 8</a></li>
+								<li class="option"><a href="#none">option 9</a></li>
+								<li class="option"><a href="#none">option 10</a></li>
+							</ul>
+							<em class="validation">error</em>
+						</div>
+					</dd>
+				</dl>
+			</section>
+			<hr>
+
+
+
+			<!-- button -->
+			<section class="box">
+				<h2 class="h3">Button</h2>
+				<dl class="listArea">
+					<dt>
+						<pre><code></code></pre>
+					</dt>
+					<dd data-description=".unitBtn">
+
+						<!---------- default ---------->
+						<div class="unitBtn">
+							<button type="button"><span>default</span></button>
+							<button type="button" class="fix"><span>.fix</span></button>
+							<button type="button" class="dis"><span>.dis</span></button>
+							<button type="button" disabled><span>:disabled</span></button>
+
+							<hr>
+
+							<button type="button" class="line"><span>.line</span></button>
+							<button type="button" class="line fix"><span>.fix</span></button>
+							<button type="button" class="line dis"><span>.dis</span></button>
+							<button type="button" class="line" disabled><span>:disabled</span></button>
+
+							<hr>
+
+							<div class="flexArea">
+								<button type="button" disabled><span>취소</span></button>
+								<button type="button"><span>확인</span></button>
+							</div>
+						</div>
+
+						<hr>
+
+						<button type="button" class="btnTxt"><span>.btnTxt</span></button>
+						<button type="button" class="btnTxt blk"><span>.blk</span></button>
+						<button type="button" class="btnTxt fix"><span>.fix</span></button>
+						<button type="button" class="btnTxt dis"><span>.dis</span></button>
+						<button type="button" class="btnTxt" disabled><span>disabled</span></button>
+					</dd>
+
+
+				</dl>
+			</section>
+
+			<hr>
+
+			<!-- tab -->
+			<section class="box">
+				<h2 class="h3">Tab</h2>
+				<dl class="listArea">
+					<dt>
+						<pre><code></code></pre>
+					</dt>
+					<dd data-description=".unitTab">
+						<!---------- button ---------->
+						<div class="unitTab" data-init="1">
+							<ul>
+								<li><button data-tab="tab01" class="menu" title="">tab01</button></li>
+								<li><button data-tab="tab02" class="menu" title="">tab02</button></li>
+								<li><button data-tab="tab03" class="menu" title="">tab03</button></li>
+							</ul>
+							<div class="contents tab01">
+								<h3 class="contName"></h3>
+								111
+							</div>
+							<div class="contents tab02">
+								<h3 class="contName"></h3>
+								<div class="unitTab" data-init="2">
+									<ul>
+										<li><button data-tab="sub-tab01" class="menu" title="">sub-tab01</button></li>
+										<li><button data-tab="sub-tab02" class="menu" title="">sub-tab02</button></li>
+										<li><button data-tab="sub-tab03" class="menu" title="">sub-tab03</button></li>
+									</ul>
+									<div class="contents sub-tab01">
+										<h3 class="contName"></h3>
+										sub-111
+									</div>
+									<div class="contents sub-tab02">
+										<h3 class="contName"></h3>
+										sub-222
+									</div>
+									<div class="contents sub-tab03">
+										<h3 class="contName"></h3>
+										sub-333
+									</div>
+								</div>
+							</div>
+							<div class="contents tab03">
+								<h3 class="contName"></h3>
+								333
+							</div>
+						</div>
+					</dd>
+					<dd data-description=".unitTab">
+						<!---------- link ---------->
+						<div class="unitTab">
+							<ul>
+								<li>
+									<a href="#none" class="menu isActive">tab01</a>
+								</li>
+								<li>
+									<a href="#none" class="menu">tab02</a>
+								</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+			</section>
+			<hr>
+
+			<!-- table -->
+			<section class="box">
+				<h2 class="h3">Table</h2>
+				<dl class="listArea">
+					<dt>
+						<pre><code></code></pre>
+					</dt>
+					<dd data-description=".unitTable">
+						<!---------- table ---------->
+						<div class="unitTable">
+							<table>
+								<caption>테이블 타이틀</caption>
+								<colgroup>
+									<col style="width:33%">
+									<col style="width:33%">
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">title</th>
+										<th scope="col">title</th>
+										<th scope="col">title</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>content</td>
+										<td>content</td>
+										<td>content</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</dd>
+					<dd data-description=".unitTable.typeRow">
+						<!---------- table ---------->
+						<div class="unitTable typeRow">
+							<table>
+								<caption>테이블 타이틀</caption>
+								<colgroup>
+									<col style="width:33%">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">title</th>
+										<td>content</td>
+									</tr>
+									<tr>
+										<th scope="row">title</th>
+										<td>content</td>
+									</tr>
+									<tr>
+										<th scope="row">title</th>
+										<td>content</td>
+									</tr>
+									<tr>
+										<th scope="row">title</th>
+										<td>content</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</dd>
+				</dl>
+			</section>
+			<hr>
+
+		</main>
+		<footer>COPYRIGHT <i>@</i><em>COMPANY</em> ALL RIGHTS RESERVED.</footer>
+
+		<script src="resources/guide.js"></script>
+	</body>
+</html>
