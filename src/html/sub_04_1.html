@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		@@include('@@webRoot/html/_inc/head.html',{"title": "조사&middot;연구 > 자료마당"})
+
+		<!-- 추가 스크립트 -->
+		<script>
+			$(document).ready(function () {
+
+			})
+		</script>
+	</head>
+
+	<body data-page="sub">
+		@@include('@@webRoot/html/_inc/skipMenu.html')
+
+		<!-- 헤더 -->
+		@@include('@@webRoot/html/_inc/header.html')
+		<!-- 헤더 -->
+
+		<!-- 본문 -->
+		<main id="content">
+			<div class="container">
+				<!--
+					* [data-banner]
+					* intro: 금융보안원 안내
+					* business: 주요업무
+					* notice: 알림마당
+					* data: 자료마당
+					* customer: 고객센터
+				-->
+				<div class="topBgArea"></div>
+				<section class="subTopArea" data-banner="data">
+					<div class="wrapper">
+						<div class="left">
+							<h2 class="tit">자료마당</h2>
+							<div class="depth">
+								<a href="javascript:void(0)" class="home" title="홈으로 이동"><i><img src="@@webRoot/static/img/icon/depth_home.png" alt=""></i></a>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="4"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>금융보안원 안내</span></a></li>
+										<li><a href="javascript:void(0)"><span>주요업무</span></a></li>
+										<li><a href="javascript:void(0)"><span>알림마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>자료마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>고객센터</span></a></li>
+									</ul>
+								</div>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="1"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>공지사항</span></a></li>
+										<li><a href="javascript:void(0)"><span>입찰공고</span></a></li>
+										<li><a href="javascript:void(0)"><span>보도자료</span></a></li>
+										<li><a href="javascript:void(0)"><span>보안원 소식</span></a></li>
+										<li><a href="javascript:void(0)"><span>기고 및 인터뷰</span></a></li>
+										<li><a href="javascript:void(0)"><span>사회공헌활동</span></a></li>
+										<li><a href="javascript:void(0)"><span>채용정보</span></a></li>
+										<li><a href="javascript:void(0)"><span>행사안내</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							@@include('@@webRoot/html/_inc/breadcrumb.html',{"depth": "자료마당", "current": "조사&middot;연구"})
+						</div>
+					</div>
+				</section>
+
+				<section class="subContent">
+					<h3 class="subPageTit">조사연구</h3>
+
+					<div class="unitTab subTab" data-init="0">
+						<ul>
+							<li><button data-tab="tab01" class="menu" title=""><span>정보보호 동향</span></button></li>
+							<li><button data-tab="tab02" class="menu" title=""><span>정기 간행물</span></button></li>
+							<li><button data-tab="tab03" class="menu" title=""><span>논문공모전 수상 논문집</span></button></li>
+						</ul>
+						<div class="contents tab01">
+							<h4 class="contName"></h4>
+
+							<div class="topTxtBox">
+								<p class="tit">금융보안원 홈페이지에 게시되는 연구보고서를 메일링 서비스로 제공하고 있습니다.</p>
+								<p class="desc">메일링 서비스 신청을 원하시는 분은 정보보호동향 메일주소로 수신 받을 이메일 주소, 이름, 소속을 보내주시면 신청이 완료됩니다.<br>보내주신 정보는 메일링 서비스를 위해서만 활용되며, 메일링 서비스를 해지하고 싶은 경우에는 해지 신청 메일을 보내주시면 언제든지 해지하실 수 있습니다. 많은 이용 바랍니다.</p>
+							</div>
+
+							<aside class="schCont type2">
+								<div class="left">
+									<ul>
+										<li class="total"><img src="@@webRoot/static/img/icon/schCont_arrow.png" alt=""><span>전체 <strong>72</strong>건</span></li>
+										<li class="page"><strong>1</strong>/8 페이지</li>
+									</ul>
+								</div>
+								<div class="right">
+									<div class="schForm">
+										<div class="formSelect">
+											<button type="button" class="select" data-value=""><span>선택하세요.</span></button>
+											<ul class="option">
+												<li><a href="javascript:void(0)"><span>-</span></a></li>
+											</ul>
+										</div>
+										<div class="formSelect">
+											<button type="button" class="select" data-value=""><span>선택하세요.</span></button>
+											<ul class="option">
+												<li><a href="javascript:void(0)"><span>-</span></a></li>
+											</ul>
+										</div>
+										<div class="formArea">
+											<div class="formSelect">
+												<button type="button" class="select" data-value="1"><span>선택하세요.</span></button>
+												<ul class="option">
+													<li><a href="javascript:void(0)"><span>제목</span></a></li>
+													<li><a href="javascript:void(0)"><span>내용</span></a></li>
+													<li><a href="javascript:void(0)"><span>제목+내용</span></a></li>
+												</ul>
+											</div>
+											<div class="formText">
+												<label for="inpSch" class="ir">검색어 입력</label>
+												<div class="inpZone">
+													<input type="text" id="inpSch" placeholder="검색어를 입력하세요.">
+												</div>
+											</div>
+										</div>
+										<button type="button"><span>검색</span><i><img src="@@webRoot/static/img/icon/sch.png" alt=""></i></button>
+									</div>
+								</div>
+							</aside>
+
+							<div class="boxList subBgArea type2">
+								<div class="wrapper">
+									<ul data-type="4">
+										<li>
+											<a href="javascript:void(0)">
+												<div class="imgArea">
+													<img src="../static/img/dummy/@002.png" alt="">
+												</div>
+												<p class="tit">2026년 디지털 금융보안 인사이트 리포트(e-ISSN 3092-1554)</p>
+												<div class="info">
+													<span class="part">총무부</span>
+													<span class="date"><span>2025-12-31</span></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">
+												<div class="imgArea">
+													<img src="../static/img/dummy/@003.png" alt="">
+												</div>
+												<p class="tit">2026년 디지털 금융보안 인사이트 리포트(e-ISSN 3092-1554)2026년 디지털 금융보안 인사이트 리포트(e-ISSN 3092-1554)</p>
+												<div class="info">
+													<span class="part">총무부</span>
+													<span class="date"><span>2025-12-31</span></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">
+												<div class="imgArea">
+													<img src="../static/img/dummy/@002.png" alt="">
+												</div>
+												<p class="tit">2026년 디지털 금융보안 인사이트 리포트(e-ISSN 3092-1554)</p>
+												<div class="info">
+													<span class="part">총무부</span>
+													<span class="date"><span>2025-12-31</span></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">
+												<div class="imgArea">
+													<img src="../static/img/dummy/@003.png" alt="">
+												</div>
+												<p class="tit">2026년 디지털 금융보안 인사이트 리포트(e-ISSN 3092-1554)2026년 디지털 금융보안 인사이트 리포트(e-ISSN 3092-1554)</p>
+												<div class="info">
+													<span class="part">총무부</span>
+													<span class="date"><span>2025-12-31</span></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">
+												<div class="imgArea">
+													<img src="../static/img/dummy/@002.png" alt="">
+												</div>
+												<p class="tit">2026년 디지털 금융보안 인사이트 리포트(e-ISSN 3092-1554)</p>
+												<div class="info">
+													<span class="part">총무부</span>
+													<span class="date"><span>2025-12-31</span></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">
+												<div class="imgArea">
+													<img src="../static/img/dummy/@003.png" alt="">
+												</div>
+												<p class="tit">2026년 디지털 금융보안 인사이트 리포트(e-ISSN 3092-1554)2026년 디지털 금융보안 인사이트 리포트(e-ISSN 3092-1554)</p>
+												<div class="info">
+													<span class="part">총무부</span>
+													<span class="date"><span>2025-12-31</span></span>
+												</div>
+											</a>
+										</li>
+									</ul>
+									<aside class="pagin">
+										<h4 class="ir">페이지네이션</h4>
+										<button type="button" class="prev"><span><img src="../static/img/icon/pagin_prev.png" alt=""></span></button>
+										<button type="button" class="isActive"><span>1</span></button>
+										<button type="button"><span>2</span></button>
+										<button type="button"><span>3</span></button>
+										<button type="button"><span>4</span></button>
+										<button type="button"><span>5</span></button>
+										<button type="button"><span>6</span></button>
+										<button type="button"><span>7</span></button>
+										<button type="button"><span>8</span></button>
+										<button type="button"><span>9</span></button>
+										<button type="button"><span>10</span></button>
+										<button type="button" class="next dis"><span><img src="../static/img/icon/pagin_next.png" alt=""></span></button>
+									</aside>
+								</div>
+							</div>
+						</div>
+						<div class="contents tab02">
+							<h4 class="contName"></h4>
+						</div>
+						<div class="contents tab03">
+							<h4 class="contName"></h4>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- 푸터 -->
+		@@include('@@webRoot/html/_inc/footer.html')
+		<!-- 푸터 -->
+	</body>
+</html>

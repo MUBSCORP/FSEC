@@ -44,7 +44,7 @@
               color: $co-white;
               padding: 0 1rem;
               background-repeat: no-repeat;
-              background-size: cover;
+              background-size: contain;
               background-position: center center;
               // &::before,
               // &::after {
@@ -68,6 +68,7 @@
               @include isMobile {
                 padding: 0;
                 height: 25rem;
+                background-size: cover;
               }
               .textArea {
                 width: 100%;
@@ -476,7 +477,7 @@
                   }
                   &.isActive {
                     color: $co-blue;
-                    background-color: $co-white;
+                    background: $co-white;
                     border-radius: 10rem;
                     box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.1);
                     &::before {

@@ -809,15 +809,30 @@ footer {
 
 // body
 main {
+  position: relative;
   padding: 8rem 1rem 10rem;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    height: 10rem;
+    background: linear-gradient(0deg, #e1d9ce, #f8f6f4, transparent, transparent, transparent);
+    transform: translateX(-50%);
+    z-index: 1;
+  }
   @include isMobile {
     padding: 5rem 2rem 3rem;
+    &:after {
+      height: 3rem;
+    }
   }
   > .container {
     max-width: $maxWidth;
     min-height: 50rem;
     margin: auto;
-    padding: 0 2rem;
+    // padding: 0 2rem;
     @include isMobile {
       max-width: 100%;
     }

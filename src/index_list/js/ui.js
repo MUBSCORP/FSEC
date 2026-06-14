@@ -14,7 +14,7 @@ $(document).ready(function () {
     var $thisBtnPc = $this.parent().next().children(".btnPc");
     var $thisBtnMo = $this.parent().next().children(".btnMo");
     var $pcUrl = "../html/" + url;
-    var $moUrl = 'javascript:PopWin("' + $pcUrl + '","400","740","no");';
+    var $moUrl = 'javascript:PopWin("' + $pcUrl + '","420","740","no");';
 
     $thisBtnPc.on("click", function () {
       $(this).attr("href", $pcUrl);

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		@@include('@@webRoot/html/_inc/head.html',{"title": "CEO 소개 > 금융보안원 안내"})
+
+		<!-- 추가 스크립트 -->
+		<script>
+			$(document).ready(function () {
+
+			})
+		</script>
+	</head>
+
+	<body data-page="sub">
+		@@include('@@webRoot/html/_inc/skipMenu.html')
+
+		<!-- 헤더 -->
+		@@include('@@webRoot/html/_inc/header.html')
+		<!-- 헤더 -->
+
+		<!-- 본문 -->
+		<main id="content">
+			<div class="container">
+				<!--
+					* [data-banner]
+					* intro: 금융보안원 안내
+					* business: 주요업무
+					* notice: 알림마당
+					* data: 자료마당
+					* customer: 고객센터
+				-->
+				<div class="topBgArea"></div>
+				<section class="subTopArea" data-banner="intro">
+					<div class="wrapper">
+						<div class="left">
+							<h2 class="tit">금융보안원 안내</h2>
+							<div class="depth">
+								<a href="javascript:void(0)" class="home" title="홈으로 이동"><i><img src="@@webRoot/static/img/icon/depth_home.png" alt=""></i></a>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="1"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>금융보안원 안내</span></a></li>
+										<li><a href="javascript:void(0)"><span>주요업무</span></a></li>
+										<li><a href="javascript:void(0)"><span>알림마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>자료마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>고객센터</span></a></li>
+									</ul>
+								</div>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="1"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>CEO 소개</span></a></li>
+										<li><a href="javascript:void(0)"><span>조직도</span></a></li>
+										<li><a href="javascript:void(0)"><span>금융보안원 안내</span></a></li>
+										<li><a href="javascript:void(0)"><span>홍보자료실</span></a></li>
+										<li><a href="javascript:void(0)"><span>찾아오시는 길</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							@@include('@@webRoot/html/_inc/breadcrumb.html',{"depth": "금융보안원 안내", "current": "CEO 소개"})
+						</div>
+					</div>
+				</section>
+
+				<section class="subContent">
+					<h3 class="subPageTit">CEO 소개</h3>
+
+					<div class="tabArea">
+						<div class="tabBg"></div>
+						<div class="unitTab subTab" data-init="0">
+							<ul>
+								<li><button data-tab="tab01" class="menu" title=""><span>인사말</span></button></li>
+								<li><button data-tab="tab02" class="menu" title=""><span>프로필</span></button></li>
+							</ul>
+							<div class="contents tab01">
+								<h4 class="contName"></h4>
+								<div class="ceoCont">
+									<p class="desc">2015년에 출범한 국내 유일의 금융보안 전문기관</p>
+									<p class="tit">"금융보안원 홈페이지" 방문을 환영합니다.</p>
+									<div class="cont">
+										<div class="left">
+											<div class="top">
+												<p>금융보안원 홈페이지 방문을 환영합니다.<br>금융보안원은 2015년에 출범한 국내 유일의 금융보안 전문기관으로서</p>
+												<p>종합적인 금융보안 업무의 수행을 통하여 안전하고 신뢰할 수 있는 금융환경을 조성함으로써 <br>금융 이용자의 편의 증진과 금융산업의 발전에 기여하기 위해 최선의 노력을 다하고 있습니다.</p>
+											</div>
+											<div class="center">
+												<p>지금 금융산업은 인공지능, 블록체인, 클라우드, 빅데이터 등 디지털 신기술이 견인하는 디지털 전환 (Digital Transformation)이 가속화되고, <br>재택 ∙ 원격 근무 등 비대면 업무 방식은 확산되며, 금융소비자의 비대면 금융거래 이용은 크게 활성화되고 있습니다.<br>한편으론 다크웹 ∙ 랜섬웨어 ∙ 디도스 공격 등 각종 사이버 위협은 고도화 ∙ 지능화되어 가고, 보안 위협의 접점은 확대되며, <br>인공지능, 클라우드 등 신기술 활용에 따라 금융소비자 보호에 새로운 취약점이 나타나는 등 <br>금융산업은 다양하고 새로운 금융보안의 도전과제에 직면하고 있습니다.</p>
+												<p>금융보안원은 금융회사, 금융당국, 금융소비자 등 금융보안의 이해관계자와의 적극적인 소통과 금융보안 전문역량을 십분 활용하여 <br>지속 가능한 디지털 금융 혁신과 데이터 경제 활성화에 선도적인 역할을 충실하게 수행해 나갈 것입니다.</p>
+												<p>이 홈페이지가 다양하고 유익한 금융보안 관련 정보를 제공하고, 금융보안원과 금융회사, 금융소비자 등 간에 <br>금융보안원 업무에 대한 이해를 높이고 활발한 소통의 장으로 활용되기를 기대합니다.</p>
+											</div>
+											<div class="bottom">
+												<p>감사합니다.</p>
+											</div>
+										</div>
+										<div class="right">
+											<img src="../static/img/sub/intro_02.png" alt="">
+											<p>금융보안원 원장 <strong>박상원</strong></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="contents tab02">
+								<h4 class="contName"></h4>
+								222
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- 푸터 -->
+		@@include('@@webRoot/html/_inc/footer.html')
+		<!-- 푸터 -->
+	</body>
+</html>

@@ -129,34 +129,72 @@ $(document).ready(function () {
 
   // select
   if ($(".formSelect").length) {
-    $(".formSelect .select").each(function (idx, item) {
-      var $this = $(item);
-      var $option = $this.next();
-      var $lastItem = $option.children("li:last-child");
-      var $btnWidth = $this.outerWidth();
-      var $optionWidth = $option.outerWidth();
+    $(".formSelect").each(function () {
+      var $wrap = $(this);
+      var $btn = $wrap.find(".select");
+      var $option = $wrap.find(".option");
+      var $items = $option.find("li");
+      var $currentValue = Number($btn.data("value")) - 1;
 
-      if ($btnWidth > $optionWidth) {
-        $option.css("width", $btnWidth + "px");
-      } else {
-        $this.css("width", $optionWidth + "px");
+      var btnWidth = $btn.outerWidth();
+      var optionWidth = $option.outerWidth();
+
+      $items.removeClass("isActive");
+
+      if ($btn.data("value") !== "") {
+        if ($items.eq($currentValue).length) {
+          $items.eq($currentValue).addClass("isActive");
+          $btn.html("<span>" + $items.eq($currentValue).text() + "</span>");
+        }
       }
 
-      $this.on("click", function (e) {
+      setTimeout(function () {
+        var btnWidth = $btn.outerWidth();
+        var optionWidth = $option.outerWidth();
+        if (btnWidth > optionWidth) {
+          $option.css("width", btnWidth + "px");
+        } else {
+          $btn.css("width", optionWidth + "px");
+        }
+      }, 1);
+
+      $btn.on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
 
-        $(".formSelect .select").not($this).removeClass("isActive");
+        setTimeout(function () {
+          var btnWidth = $btn.outerWidth();
+          var optionWidth = $option.outerWidth();
+          if (btnWidth > optionWidth) {
+            $option.css("width", btnWidth + "px");
+          } else {
+            $btn.css("width", optionWidth + "px");
+          }
+        }, 1);
+
+        $(".formSelect .select").not($btn).removeClass("isActive");
+        $(".formSelect").not($btn.parent()).css("zIndex", ""); // pub_01
         $(".formSelect .option").not($option).slideUp(100);
 
-        $this.toggleClass("isActive");
+        $btn.toggleClass("isActive");
+        $btn.parent().css("zIndex", "3"); // pub_01
         $option.slideToggle(100);
       });
 
       $option.find("a").on("click", function (e) {
-        e.stopPropagation();
+        var $li = $(this).parent();
+        var index = $li.index();
+        var text = $(this).text();
 
-        $this.removeClass("isActive");
+        $items.removeClass("isActive");
+        $li.addClass("isActive");
+
+        $btn.html("<span>" + text + "</span>");
+
+        $btn.attr("data-value", index);
+        $btn.data("value", index);
+
+        $btn.removeClass("isActive");
         $option.slideUp(100);
       });
 
@@ -164,8 +202,8 @@ $(document).ready(function () {
         e.stopPropagation();
       });
 
-      $lastItem.on("focusout", function () {
-        $this.focus();
+      $items.last().on("focusout", function () {
+        $btn.focus();
       });
     });
 
@@ -257,6 +295,14 @@ $(document).ready(function () {
 
       // a11y heading
       $targetContent.find(".contName").html(menuText);
+    });
+  }
+
+  // faq셀렉트
+  if ($(".faqSelect")) {
+    $(".faqSelect > ul > li > button").on("click", function () {
+      $(".faqSelect > ul > li > button").not($(this)).removeClass("isActive");
+      $(this).addClass("isActive");
     });
   }
 
