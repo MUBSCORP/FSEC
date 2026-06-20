@@ -105,7 +105,7 @@ $(document).ready(function () {
       $dep01.on(handleMethod, function () {
         var $this = $(this).children("a");
         $("#menu .dep01 > li > a").not($this).removeClass("current");
-        $this.addClass("current");
+        $this.toggleClass("current"); // pub_02
         $("#menu .dep01 > li > a + .dep02").not($this.next()).slideUp(delayTime);
         $this.next().slideToggle(delayTime);
       });

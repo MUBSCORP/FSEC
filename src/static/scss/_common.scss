@@ -410,7 +410,7 @@ header {
                         justify-content: flex-start;
                       }
                       &:hover {
-                        border-radius: 10rem;
+                        border-radius: 1.4rem;
                         background-color: $co-secondary;
                         @include isMobile {
                           background-color: transparent;
@@ -651,7 +651,7 @@ footer {
       }
       .left {
         @include flexArea;
-        width: 21.8rem;
+        width: 27.6rem;
         height: 6.8rem;
         background-color: $co-primary;
         color: #fff;
@@ -659,17 +659,17 @@ footer {
         font-weight: 700;
         border-radius: 10rem;
         @include isMobile {
-          width: 10.9rem;
+          width: 14.9rem;
           height: 3.2rem;
           font-size: 1.4rem;
         }
       }
       .right {
-        width: calc(100% - 29.8rem);
+        width: calc(100% - 35.8rem);
         padding: 0 4rem;
         @include isMobile {
           padding: 0;
-          width: calc(100% - 11.9rem);
+          width: calc(100% - 15.9rem);
         }
         .unitSwiper {
           [class^="swiper-button-"] {
@@ -734,9 +734,24 @@ footer {
               flex-wrap: wrap;
             }
             li {
+              @include isMobile {
+                &:last-child {
+                  width: 100%;
+                  margin-top: 0.4rem;
+                }
+              }
               a {
+                @include flexArea($gap: 0.6rem);
+                @include isMobile {
+                  gap: 1rem;
+                }
                 strong {
                   color: $co-primary;
+                }
+                > i {
+                  display: block;
+                  width: 2.2rem;
+                  height: 2.2rem;
                 }
               }
             }

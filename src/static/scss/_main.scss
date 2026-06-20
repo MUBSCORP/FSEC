@@ -44,7 +44,7 @@
               color: $co-white;
               padding: 0 1rem;
               background-repeat: no-repeat;
-              background-size: contain;
+              background-size: cover;
               background-position: center center;
               // &::before,
               // &::after {
@@ -163,19 +163,19 @@
           display: none;
         }
       }
-      &::after {
-        content: "";
-        position: absolute;
-        height: 21.2rem;
-        width: 50%;
-        background: $co-white;
-        bottom: 0;
-        left: 50%;
-        z-index: 2;
-        @include isMobile {
-          display: none;
-        }
-      }
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   height: 21.2rem;
+      //   width: 50%;
+      //   background: $co-white;
+      //   bottom: 0;
+      //   left: 50%;
+      //   z-index: 2;
+      //   @include isMobile {
+      //     display: none;
+      //   }
+      // }
       @include isMobile {
         padding: 2rem 2rem 1rem;
       }
@@ -183,19 +183,19 @@
         position: relative;
         max-width: 140rem;
         margin: auto;
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: -8rem;
-          left: 32rem;
-          width: calc(100% - 32rem);
-          height: 25rem;
-          background: $co-white;
-          z-index: 3;
-          @include isMobile {
-            display: none;
-          }
-        }
+        // &::before {
+        //   content: "";
+        //   position: absolute;
+        //   bottom: -8rem;
+        //   left: 32rem;
+        //   width: calc(100% - 32rem);
+        //   height: 25rem;
+        //   background: $co-white;
+        //   z-index: 3;
+        //   @include isMobile {
+        //     display: none;
+        //   }
+        // }
         &::after {
           content: "";
           position: absolute;
@@ -289,18 +289,22 @@
                   .top {
                     @include flexArea($gap: 1.6rem, $direction: column, $align: flex-start);
                     .cate {
-                      font-size: 1.7rem;
+                      font-size: 1.9rem;
                       font-weight: 700;
                       color: $co-primary;
+                      @include isMobile {
+                        font-size: 1.7rem;
+                      }
                       &.type2 {
                         color: $co-blue;
                       }
                     }
                     .tit {
-                      font-size: 1.9rem;
+                      font-size: 2.2rem;
                       font-weight: 700;
+                      letter-spacing: -1px;
                       color: $co-black;
-                      @include ellMulti($line: 2);
+                      @include ellMulti($line: 2, $height: 5.5rem);
                       @include isMobile {
                         font-size: 1.5rem;
                       }
@@ -441,7 +445,7 @@
                 }
                 .menu {
                   position: relative;
-                  font-size: 1.9rem;
+                  font-size: 2.2rem;
                   font-weight: 700;
                   color: $co-white;
                   border: none;
@@ -478,7 +482,7 @@
                   &.isActive {
                     color: $co-blue;
                     background: $co-white;
-                    border-radius: 10rem;
+                    border-radius: 1.2rem;
                     box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.1);
                     &::before {
                       opacity: 1;
@@ -486,14 +490,10 @@
                     @include isMobile {
                     }
                   }
-                  strong {
-                  }
                   span {
                     @include isMobile {
                       display: none;
                     }
-                  }
-                  i {
                   }
                 }
               }
@@ -549,13 +549,13 @@
                   }
                   a {
                     @include flexArea($justify: flex-start, $gap: 2rem);
-                    font-size: 1.9rem;
+                    font-size: 2.2rem;
                     font-weight: 500;
                     padding: 2.5rem 4.5rem;
                     height: 13rem;
                     word-break: keep-all;
                     background-color: $co-white;
-                    border-radius: 10rem;
+                    border-radius: 1.6rem;
                     border: 4px solid transparent;
                     box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.1);
                     @include trans;

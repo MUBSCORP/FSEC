@@ -27,6 +27,11 @@ $(document).ready(function () {
       $(this).addClass("is-active");
     });
   });
+  $("table tr").each(function () {
+    var $this = $(this);
+
+    $this.hasClass("fin") || $this.hasClass("mod") ? null : $this.children(".btn").children("a").hide();
+  });
 
   $(".openDevLog").on("click", function () {
     $(this).toggleClass("is-active");
