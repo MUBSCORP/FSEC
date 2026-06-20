@@ -186,7 +186,8 @@ const pathMove = () => {
 
 // watch
 const watchTask = () => {
-  watch(source.path, series(pathMove, hash));
+  // watch(source.path, series(pathMove, hash));
+  watch(source.path, series(pathMove));
   watch(source.commonResource, commonMove);
   watch(source.html, htmlTask);
   watch(source.guide, guideTask);
