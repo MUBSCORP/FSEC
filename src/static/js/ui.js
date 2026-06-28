@@ -306,6 +306,22 @@ $(document).ready(function () {
     });
   }
 
+  // 홍보영상
+  if ($(".movieCont").length) {
+    $(".movieCont .right a").on("click", function () {
+      $(".movieCont .right a").not(this).removeClass("isActive");
+      $(this).addClass("isActive");
+    });
+  }
+
+  // 연차보고서
+  if ($(".reportCont").length) {
+    $(".reportCont .right button").on("click", function () {
+      $(".reportCont .right button").not(this).removeClass("isActive");
+      $(this).addClass("isActive");
+    });
+  }
+
   /*
    * 스와이퍼
    */
@@ -403,20 +419,20 @@ $(document).ready(function () {
     },
   });
 
-  // 메인 알림마당
-  if ($(".swiperMainNotice .swiper-wrapper .swiper-slide").length == 1) {
-    $(".swiperMainVisual").parent().children(".controller").hide();
+  // 메인 자료마당
+  if ($(".swiperMainData .swiper-wrapper .swiper-slide").length == 1) {
+    $(".swiperMainData").parent().children(".controller").hide();
   }
-  var swiperMainNotice = new Swiper(".swiperMainNotice", {
-    slidesPerView: "auto",
-    spaceBetween: 0,
+  var swiperMainData = new Swiper(".swiperMainData", {
+    slidesPerView: 2,
+    spaceBetween: 10,
     loop: false,
     observer: true,
     observeParents: true,
     autoHeight: true,
     navigation: {
-      nextEl: ".swiperMainNotice-next",
-      prevEl: ".swiperMainNotice-prev",
+      nextEl: ".swiperMainData-next",
+      prevEl: ".swiperMainData-prev",
     },
     autoplay: {
       delay: 4000,
@@ -424,7 +440,7 @@ $(document).ready(function () {
     },
     watchOverflow: true,
     pagination: {
-      el: ".swiperMainNotice-pagin",
+      el: ".swiperMainData-pagin",
       type: "bullets",
       clickable: true,
     },
@@ -435,8 +451,13 @@ $(document).ready(function () {
       enabled: true,
     },
     breakpoints: {
+      760: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
       1280: {
         slidesPerView: 4,
+        spaceBetween: 24,
       },
     },
     on: {

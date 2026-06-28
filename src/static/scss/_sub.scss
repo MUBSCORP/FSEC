@@ -2,583 +2,284 @@
   header {
     background-color: transparent;
   }
+}
 
-  .subPageTit {
-    font-size: 4.2rem;
-    font-weight: 600;
-    line-height: 1;
-    margin-bottom: 3rem;
-    @include isMobile {
-      font-size: 2.4rem;
-      margin-bottom: 2rem;
-    }
+.subPageTit {
+  font-size: 4.2rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 3rem;
+  @include isMobile {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
   }
+}
 
-  .topBgArea {
+.topBgArea {
+  position: absolute;
+  top: -10rem;
+  left: 50%;
+  background: url(../img/sub/topArea_bg.png) center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 70.6rem;
+  transform: translateX(-50%);
+  @include isMobile {
+    display: none;
+  }
+}
+
+.btnArea {
+  @include flexArea;
+  margin-top: 6rem;
+}
+
+section.subTopArea {
+  position: relative;
+  margin: 2rem 0 6rem;
+  z-index: 2;
+  @include isMobile {
+    margin: 0 0 2rem;
+  }
+  &::before {
+    content: "";
     position: absolute;
-    top: -10rem;
-    left: 50%;
-    background: url(../img/sub/topArea_bg.png) center center no-repeat;
-    background-size: cover;
-    width: 100vw;
-    height: 70.6rem;
-    transform: translateX(-50%);
+    top: -2rem;
+    left: -2rem;
+    width: 26rem;
+    height: 13rem;
+    border-radius: 3rem;
+    background-color: #eae0d5;
     @include isMobile {
       display: none;
     }
   }
-
-  section.subTopArea {
-    position: relative;
-    margin: 2rem 0 6rem;
-    z-index: 2;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3rem;
+    right: -3rem;
+    width: 45rem;
+    height: 13rem;
+    border-radius: 3rem;
+    background-color: #e9dada;
     @include isMobile {
-      margin: 0 0 2rem;
+      display: none;
     }
-    &::before {
-      content: "";
-      position: absolute;
-      top: -2rem;
-      left: -2rem;
-      width: 26rem;
-      height: 13rem;
-      border-radius: 3rem;
-      background-color: #eae0d5;
-      @include isMobile {
-        display: none;
-      }
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -3rem;
-      right: -3rem;
-      width: 45rem;
-      height: 13rem;
-      border-radius: 3rem;
-      background-color: #e9dada;
-      @include isMobile {
-        display: none;
-      }
-    }
-    &[data-banner="intro"] {
-      .wrapper {
-        background-image: url(../img/sub/topArea_01.png);
-      }
-    }
-    &[data-banner="business"] {
-      .wrapper {
-        background-image: url(../img/sub/topArea_02.png);
-      }
-    }
-    &[data-banner="notice"] {
-      .wrapper {
-        background-image: url(../img/sub/topArea_03.png);
-      }
-    }
-    &[data-banner="data"] {
-      .wrapper {
-        background-image: url(../img/sub/topArea_04.png);
-      }
-    }
-    &[data-banner="customer"] {
-      .wrapper {
-        background-image: url(../img/sub/topArea_05.png);
-      }
-    }
+  }
+  &[data-banner="intro"] {
     .wrapper {
-      @include flexArea($justify: space-between);
-      position: relative;
-      height: 30rem;
-      border-radius: 3rem;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.4);
-      z-index: 1;
+      background-image: url(../img/sub/topArea_01.png);
+    }
+  }
+  &[data-banner="business"] {
+    .wrapper {
+      background-image: url(../img/sub/topArea_02.png);
+    }
+  }
+  &[data-banner="notice"] {
+    .wrapper {
+      background-image: url(../img/sub/topArea_03.png);
+    }
+  }
+  &[data-banner="data"] {
+    .wrapper {
+      background-image: url(../img/sub/topArea_04.png);
+    }
+  }
+  &[data-banner="customer"] {
+    .wrapper {
+      background-image: url(../img/sub/topArea_05.png);
+    }
+  }
+  .wrapper {
+    @include flexArea($justify: space-between);
+    position: relative;
+    height: 30rem;
+    border-radius: 3rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    @include isMobile {
+      height: 12rem;
+      justify-content: center;
+      border-radius: 0;
+      margin: 0 -2rem;
+    }
+    > .left {
+      margin-left: 7rem;
+      color: $co-white;
       @include isMobile {
-        height: 12rem;
-        justify-content: center;
-        border-radius: 0;
-        margin: 0 -2rem;
+        margin-left: 0;
       }
-      > .left {
-        margin-left: 7rem;
-        color: $co-white;
+      .tit {
+        font-size: 5.6rem;
+        font-weight: 700;
+        margin-top: 7rem;
+        line-height: 1;
+        text-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.56);
         @include isMobile {
-          margin-left: 0;
-        }
-        .tit {
-          font-size: 5.6rem;
-          font-weight: 700;
-          margin-top: 7rem;
-          line-height: 1;
-          text-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.56);
-          @include isMobile {
-            font-size: 3.6rem;
-            margin-top: 0;
-          }
-        }
-        .depth {
-          @include flexArea($gap: 2rem, $justify: flex-start);
-          margin-top: 3rem;
-          @include isMobile {
-            display: none;
-          }
-          .home {
-            @include flexArea;
-            width: 2.6rem;
-            height: 2.6rem;
-            background-color: $co-white;
-            border-radius: 50%;
-            i {
-              display: block;
-              width: 1.2rem;
-              height: 1.2rem;
-            }
-          }
-          > img {
-            width: 0.7rem;
-          }
-          .formSelect {
-            .select {
-              font-size: 1.8rem;
-              background: url(../img/icon/depth_selectArrow.png) no-repeat center right;
-              background-size: 2rem;
-              padding: 1rem 3rem 1rem 0;
-              border: none;
-              color: $co-white;
-            }
-            .option {
-              border: none;
-              background-color: rgba(15, 25, 52, 0.8);
-            }
-          }
+          font-size: 3.6rem;
+          margin-top: 0;
         }
       }
-      > .right {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        padding: 1.6rem 4rem;
-        font-size: 1.6rem;
-        font-weight: 500;
-        color: $co-white;
-        background-color: rgba(0, 0, 0, 0.7);
-        border-radius: 10rem 0 5.5rem 0;
+      .depth {
+        @include flexArea($gap: 2rem, $justify: flex-start);
+        margin-top: 3rem;
         @include isMobile {
           display: none;
         }
-        .breadcrumb {
-          @include flexArea($gap: 2rem);
+        .home {
+          @include flexArea;
+          width: 2.6rem;
+          height: 2.6rem;
+          background-color: $co-white;
+          border-radius: 50%;
           i {
             display: block;
-            width: 0.6rem;
+            width: 1.2rem;
             height: 1.2rem;
-            background: url(../img/icon/breadcrumb_arrow.png) no-repeat center / cover;
           }
-          strong {
-            color: $co-yellow;
+        }
+        > img {
+          width: 0.7rem;
+        }
+        .formSelect {
+          .select {
+            font-size: 1.8rem;
+            background: url(../img/icon/depth_selectArrow.png) no-repeat center right;
+            background-size: 2rem;
+            padding: 1rem 3rem 1rem 0;
+            border: none;
+            color: $co-white;
           }
+          .option {
+            border: none;
+            background-color: rgba(15, 25, 52, 0.8);
+          }
+        }
+      }
+    }
+    > .right {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 1.6rem 4rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: $co-white;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10rem 0 5.5rem 0;
+      @include isMobile {
+        display: none;
+      }
+      .breadcrumb {
+        @include flexArea($gap: 2rem);
+        i {
+          display: block;
+          width: 0.6rem;
+          height: 1.2rem;
+          background: url(../img/icon/breadcrumb_arrow.png) no-repeat center / cover;
+        }
+        strong {
+          color: $co-yellow;
         }
       }
     }
   }
+}
 
-  section.subContent {
-    position: relative;
-    .ceoCont {
-      position: relative;
+section.subContent {
+  position: relative;
+  .subTit {
+    @include flexArea($gap: 1rem, $justify: flex-start);
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2.4rem;
+    @include isMobile {
+      gap: 0.6rem;
+      font-size: 2.4rem;
+      margin-bottom: 1.6rem;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 3.2rem;
+      height: 3rem;
+      background: url(../img/icon/sub_title.png) no-repeat center center / contain;
       @include isMobile {
+        width: 2.4rem;
+        height: 2rem;
       }
-      > * {
-        position: relative;
+    }
+  }
+  .ceoCont {
+    position: relative;
+    @include isMobile {
+    }
+    > * {
+      position: relative;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100vw;
+      height: 70rem;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      background: url(../img/sub/intro_01.png) no-repeat top center / cover;
+      z-index: 1;
+      @include isMobile {
+        display: none;
       }
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100vw;
-        height: 70rem;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
-        background: url(../img/sub/intro_01.png) no-repeat top center / cover;
-        z-index: 1;
-        @include isMobile {
+    }
+    > .desc {
+      padding-top: 2rem;
+      padding-left: 2rem;
+      font-size: 3rem;
+      line-height: 1;
+      color: $co-primary;
+      @include isMobile {
+        padding: 2rem 0 0;
+        font-size: 2rem;
+      }
+    }
+    > .tit {
+      margin-top: 2rem;
+      font-size: 4rem;
+      font-weight: 500;
+      line-height: 1;
+      @include isMobile {
+        margin-top: 0.5rem;
+        font-size: 3rem;
+        word-break: keep-all;
+        line-height: 1.4;
+      }
+    }
+    > .sml {
+      display: block;
+      font-size: 1.8rem;
+      margin-top: 1.6rem;
+      color: #333;
+      @include isMobile {
+        font-size: 1.4rem;
+        margin-top: 1.2rem;
+        br {
           display: none;
         }
       }
-      > .desc {
-        padding-top: 2rem;
-        padding-left: 2rem;
-        font-size: 3rem;
-        line-height: 1;
-        color: $co-primary;
-        @include isMobile {
-          padding: 2rem 0 0;
-          font-size: 2rem;
-        }
-      }
-      > .tit {
-        margin-top: 2rem;
-        font-size: 4rem;
-        font-weight: 500;
-        line-height: 1;
-        @include isMobile {
-          margin-top: 0.5rem;
-          font-size: 3rem;
-          word-break: keep-all;
-          line-height: 1.4;
-        }
-      }
-      > .cont {
-        position: relative;
-        margin-top: 6rem;
-        padding: 6rem 2rem 17rem;
-        background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
-        @include isMobile {
-          margin: 5rem -2rem 0;
-          padding: 28rem 2rem 3rem;
-        }
-        &::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: -100%;
-          background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
-          @include isMobile {
-            display: none;
-          }
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          right: -100%;
-          background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
-          @include isMobile {
-            display: none;
-          }
-        }
-        .left {
-          .top {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-bottom: 4rem;
-            @include isMobile {
-              font-size: 1.6rem;
-              @include isMobile {
-                margin-bottom: 2rem;
-              }
-            }
-            p {
-              @include isMobile {
-                br {
-                  display: none;
-                }
-              }
-              + p {
-                margin-top: 0.5rem;
-              }
-            }
-          }
-          .center {
-            font-size: 1.4rem;
-            color: #555;
-            margin-bottom: 4rem;
-            @include isMobile {
-              font-size: 1.3rem;
-              @include isMobile {
-                margin-bottom: 2rem;
-              }
-            }
-            p {
-              @include isMobile {
-                br {
-                  display: none;
-                }
-              }
-              + p {
-                margin-top: 1rem;
-                @include isMobile {
-                  margin-top: 0.5rem;
-                }
-              }
-            }
-          }
-        }
-        .right {
-          position: absolute;
-          width: 43.8rem;
-          height: 50.5rem;
-          border-radius: 10rem 2rem 10rem 2rem;
-          border: 1px solid #ccc1b0;
-          background-color: $co-white;
-          overflow: hidden;
-          right: 0;
-          top: -9rem;
-          box-shadow: 0.8rem 0.8rem 3rem rgba(0, 0, 0, 0.2);
-          z-index: 1;
-          @include isMobile {
-            width: 25rem;
-            height: 30rem;
-            right: none;
-            top: -4rem;
-            left: 50%;
-            border-radius: 5rem 1rem 5rem 1rem;
-            transform: translateX(-50%);
-          }
-          img {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-          }
-          p {
-            position: absolute;
-            font-size: 1.8rem;
-            width: 34rem;
-            right: 0;
-            bottom: 0;
-            padding: 3rem 5rem;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 3rem 0 0 0;
-            color: $co-white;
-            @include isMobile {
-              width: 100%;
-              font-size: 1.6rem;
-              padding: 1.5rem 2rem;
-              border-radius: 0;
-              text-align: center;
-            }
-            strong {
-              font-size: 2.4rem;
-              font-weight: 500;
-              @include isMobile {
-                font-size: 2rem;
-              }
-            }
-          }
-        }
-      }
     }
-
-    .topMsgBox {
-      @include flexArea($justify: flex-start);
+    > .cont {
       position: relative;
       margin-top: 6rem;
-      min-height: 15.6rem;
+      padding: 6rem 2rem 8rem;
+      background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
       @include isMobile {
-        margin-top: 3rem;
-        min-height: 10rem;
-      }
-      .imgArea {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        width: 18rem;
-        height: 15.6rem;
-        @include isMobile {
-          width: 10rem;
-          height: 10rem;
-        }
-      }
-      .textArea {
-        .tit {
-          padding-left: 23.6rem;
-          @include isMobile {
-            padding-left: 12rem;
-          }
-        }
-        .desc {
-          padding-left: 23.6rem;
-          @include isMobile {
-            padding-left: 12rem;
-          }
-        }
-      }
-      .shareArea {
-        @include flexArea($gap: 1rem);
-        position: absolute;
-        right: 0;
-        top: 0;
-        background-color: $co-white;
-        border-radius: 10rem;
-        box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.2);
-        padding: 1rem;
-        @include isMobile {
-          gap: 0.5rem;
-          padding: 0.5rem;
-          top: -2rem;
-          box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
-        }
-        button {
-          width: 6rem;
-          height: 6rem;
-          border-radius: 50%;
-          @include isMobile {
-            width: 2.4rem;
-            height: 2.4rem;
-          }
-        }
-      }
-    }
-
-    .topTxtBox {
-      margin-bottom: 3rem;
-      padding: 3rem 3rem 3rem 5rem;
-      background: #f8f4f0;
-      border: 1px solid #d4cfca;
-      border-radius: 2rem;
-      box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.15);
-      &.type2 {
-        padding: 0 0 0 2rem;
-        border: none;
-        background: transparent;
-        box-shadow: none;
-        border-radius: 0;
-        @include isMobile {
-          padding: 0 0 0 1.2rem;
-        }
-      }
-      @include isMobile {
-        margin-bottom: 1rem;
-        padding: 2rem 2rem 2rem 3.2rem;
-        border-radius: 1.2rem;
-      }
-      > .tit {
-        position: relative;
-        font-size: 2.2rem;
-        font-weight: 600;
-        margin-bottom: 1.6rem;
-        line-height: 1.2;
-        @include isMobile {
-          font-size: 1.6rem;
-          margin-bottom: 1.2rem;
-        }
-        &::before {
-          content: "";
-          position: absolute;
-          width: 1.4rem;
-          height: 1.4rem;
-          top: 0.5rem;
-          left: -2rem;
-          background: #fff2e1;
-          border: 0.3rem solid $co-primary;
-          border-radius: 50%;
-          @include isMobile {
-            width: 0.8rem;
-            height: 0.8rem;
-            border-width: 0.2rem;
-            left: -1.2rem;
-            top: 0.6rem;
-          }
-        }
-      }
-      .desc {
-        color: $co-secondary;
-      }
-    }
-
-    .faqSelect {
-      padding: 0.2rem;
-      border-radius: 2rem;
-      background: #f4eee7;
-      border: 1px solid #beaf9e;
-      @include isMobile {
-        border-radius: 1rem;
-      }
-      > ul {
-        @include flexArea($gap: 0.2rem);
-        width: 100%;
-        flex-wrap: wrap;
-        > li {
-          width: calc(14% + 0.2rem);
-          @include isMobile {
-            width: calc(50% - 1px);
-          }
-          &:first-child {
-            button {
-              border-radius: 1.6rem 0.4rem 0.4rem 0.4rem;
-            }
-          }
-          &:nth-child(7n) {
-            button {
-              border-radius: 0.4rem 1.6rem 0.4rem 0.4rem;
-            }
-          }
-          &:nth-child(8n) {
-            button {
-              border-radius: 0 0.4rem 0.4rem 1.6rem;
-            }
-          }
-          &:nth-child(14n) {
-            button {
-              border-radius: 0.4rem 0 1.6rem 0.4rem;
-            }
-          }
-          @include isMobile {
-            &:first-child {
-              button {
-                border-radius: 0.8rem 0.4rem 0.4rem 0.4rem;
-              }
-            }
-            &:nth-child(2) {
-              button {
-                border-radius: 0.4rem 0.8rem 0.4rem 0.4rem;
-              }
-            }
-            &:nth-child(7n),
-            &:nth-child(8n) {
-              button {
-                border-radius: 0.4rem;
-              }
-            }
-            &:nth-child(13) {
-              button {
-                border-radius: 0.4rem 0.4rem 0.4rem 0.8rem;
-              }
-            }
-            &:nth-child(14) {
-              button {
-                border-radius: 0.4rem 0.4rem 0.8rem 0.4rem;
-              }
-            }
-          }
-          button {
-            font-size: 1.8rem;
-            color: #777;
-            width: 100%;
-            height: 5.2rem;
-            background: $co-white;
-            border: 1px solid #d8cec3;
-            border-radius: 0.4rem;
-            @include trans;
-            @include isMobile {
-              height: 4.5rem;
-              font-size: 1.5rem;
-            }
-            &.isActive {
-              color: $co-white;
-              font-weight: 600;
-              background: linear-gradient(45deg, #9d856a, #bd8f4e);
-            }
-          }
-        }
-      }
-    }
-
-    .subBgArea {
-      position: relative;
-      padding: 3rem 0;
-      background: #f5f2ef;
-      @include isMobile {
-        margin: 1.5rem -2rem 0;
-        padding: 1.5rem 2rem;
+        margin: 5rem -2rem 0;
+        padding: 28rem 2rem 3rem;
       }
       &::before {
         content: "";
@@ -587,7 +288,7 @@
         height: 100%;
         top: 0;
         left: -100%;
-        background: #f5f2ef;
+        background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
         @include isMobile {
           display: none;
         }
@@ -599,415 +300,1057 @@
         height: 100%;
         top: 0;
         right: -100%;
-        background: #f5f2ef;
+        background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
         @include isMobile {
           display: none;
         }
       }
-      &.type2 {
-        background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
-        &::before {
-          background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
+      .left {
+        .top {
+          font-size: 1.8rem;
+          font-weight: 500;
+          margin-bottom: 4rem;
+          @include isMobile {
+            font-size: 1.6rem;
+            @include isMobile {
+              margin-bottom: 2rem;
+            }
+          }
+          p {
+            @include isMobile {
+              br {
+                display: none;
+              }
+            }
+            + p {
+              margin-top: 0.5rem;
+            }
+          }
         }
-        &::after {
-          background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
+        .center {
+          font-size: 1.4rem;
+          color: #555;
+          margin-bottom: 4rem;
+          @include isMobile {
+            font-size: 1.3rem;
+            @include isMobile {
+              margin-bottom: 2rem;
+            }
+          }
+          p {
+            @include isMobile {
+              br {
+                display: none;
+              }
+            }
+            + p {
+              margin-top: 1rem;
+              @include isMobile {
+                margin-top: 0.5rem;
+              }
+            }
+          }
+        }
+        .historyCont {
+          width: 114.5rem;
+          border-top: 2px solid $co-secondary;
+          @include isMobile {
+            width: 100%;
+          }
+          > li {
+            @include flexArea($gap: 2.4rem, $justify: flex-start, $align: flex-start);
+            padding: 2.4rem 0;
+            @include isMobile {
+              flex-direction: column;
+              gap: 1rem;
+              padding: 1.8rem 0;
+            }
+            + li {
+              border-top: 1px solid #c9c0b1;
+            }
+            &.current {
+              .year {
+                color: #d46700;
+              }
+            }
+            .year {
+              font-size: 3.6rem;
+              font-weight: 100;
+              color: $co-secondary;
+              @include isMobile {
+                font-size: 2.8rem;
+              }
+            }
+            > ul {
+              @include flexArea($gap: 1.6rem, $direction: column, $align: flex-start);
+              margin-top: 1.2rem;
+              @include isMobile {
+                gap: 0.8rem;
+                margin-top: 0;
+              }
+              > li {
+                @include flexArea($gap: 1.6rem, $justify: flex-start, $align: flex-start);
+                font-size: 1.8rem;
+                @include isMobile {
+                  gap: 1.2rem;
+                  font-size: 1.6rem;
+                }
+                .month {
+                  color: $co-primary;
+                }
+                .desc {
+                  color: $co-secondary;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
         }
       }
-      .wrapper {
-        position: relative;
-        max-width: $maxWidth;
+      .right {
+        position: absolute;
+        width: 43.8rem;
+        height: 50.5rem;
+        border-radius: 10rem 2rem 10rem 2rem;
+        border: 1px solid #ccc1b0;
+        background-color: $co-white;
+        overflow: hidden;
+        right: 0;
+        top: -9rem;
+        box-shadow: 0.8rem 0.8rem 3rem rgba(0, 0, 0, 0.2);
         z-index: 1;
+        @include isMobile {
+          width: 25rem;
+          height: 30rem;
+          right: none;
+          top: -4rem;
+          left: 50%;
+          border-radius: 5rem 1rem 5rem 1rem;
+          transform: translateX(-50%);
+        }
+        img {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+        p {
+          position: absolute;
+          font-size: 1.8rem;
+          width: 34rem;
+          right: 0;
+          bottom: 0;
+          padding: 3rem 5rem;
+          background-color: rgba(0, 0, 0, 0.6);
+          border-radius: 3rem 0 0 0;
+          color: $co-white;
+          @include isMobile {
+            width: 100%;
+            font-size: 1.6rem;
+            padding: 1.5rem 2rem;
+            border-radius: 0;
+            text-align: center;
+          }
+          strong {
+            font-size: 2.4rem;
+            font-weight: 500;
+            @include isMobile {
+              font-size: 2rem;
+            }
+          }
+        }
       }
     }
-
-    .bizCont01 {
+    &.type2 {
+      &::before {
+        height: 105rem;
+        background: url(../img/sub/intro_01_2.png) no-repeat top center / cover;
+        @include isMobile {
+          display: none;
+        }
+      }
+      .cont {
+        .right {
+          top: -14rem;
+          @include isMobile {
+            top: -4rem;
+          }
+        }
+      }
+    }
+  }
+  .orgaCont {
+    .mo {
+      display: none;
+    }
+    @include isMobile {
+      .desk {
+        display: none;
+      }
+      .mo {
+        display: block;
+      }
+    }
+  }
+  .infoCont {
+    position: relative;
+    @include isMobile {
+    }
+    > * {
+      position: relative;
+    }
+    > .desc {
+      padding-top: 2rem;
+      font-size: 2.4rem;
+      color: #333;
+      @include isMobile {
+        padding: 2rem 0 0;
+        font-size: 2rem;
+      }
+    }
+    > .tit {
+      margin-top: 2rem;
+      font-size: 4.8rem;
+      font-weight: 600;
+      line-height: 1.2;
+      @include isMobile {
+        margin-top: 2rem;
+        font-size: 3rem;
+        word-break: keep-all;
+      }
+      small {
+        font-size: 3.6rem;
+        display: block;
+        font-weight: 500;
+        @include isMobile {
+          font-size: 2rem;
+        }
+      }
+    }
+    > .sml {
+      display: block;
+      font-size: 1.8rem;
+      margin-top: 1.6rem;
+      color: #333;
+      @include isMobile {
+        font-size: 1.4rem;
+        margin-top: 1.2rem;
+        br {
+          display: none;
+        }
+      }
+    }
+    > .cont {
+      position: relative;
       margin-top: 6rem;
-      padding: 6rem 0;
+      padding: 6rem 2rem 8rem;
+      background: #f5f5f3;
       @include isMobile {
         margin: 3rem -2rem 0;
         padding: 3rem 2rem;
       }
-      .wrapper {
-        max-width: $maxWidth;
-        .mo {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background: #f5f5f3;
+        @include isMobile {
           display: none;
         }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: -100%;
+        background: #f5f5f3;
         @include isMobile {
-          .pc {
-            display: none;
-          }
-          .mo {
-            display: block;
-          }
+          display: none;
         }
       }
-    }
-
-    .pageInfo {
-      @include flexArea;
-      .wrapper {
-        @include flexArea($gap: 3rem);
-        display: inline-flex;
-        width: auto;
-        padding: 1.2rem 2.4rem 1.2rem 1.2rem;
-        margin: 6rem auto 0;
-        background-color: $co-white;
-        border-radius: 10rem;
-        border: 1px solid #ccc;
-        box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.15);
-        @include isMobile {
-          width: 100%;
-          margin: 3rem auto 0;
-          flex-direction: column;
-          border-radius: 0.8rem;
-        }
-        .inquiry {
-          @include flexArea($gap: 0.6rem);
-          dt {
-            color: $co-white;
-            font-size: 1.4rem;
-            font-weight: 700;
-            padding: 0.5rem 1rem;
-            background-color: $co-secondary;
-            border-radius: 10rem;
-            @include isMobile {
-              font-size: 1.1rem;
-              padding: 0.25rem 1rem;
-            }
-          }
-          dd {
-            font-weight: 600;
-            color: $co-primary;
-          }
-        }
-        .tel,
-        .email {
-          @include flexArea($gap: 0.6rem);
-          dt {
-            @include flexArea;
-            img {
-              height: 1.8rem;
-            }
-          }
-          dd {
-            font-weight: 600;
-          }
-        }
-      }
-    }
-
-    .boxList {
-      .wrapper {
-        > ul {
-          @include flexArea($gap: 1.6rem, $direction: column);
+      .left {
+        .top {
+          font-size: 2.4rem;
+          margin-bottom: 2.1rem;
+          color: $co-primary;
           @include isMobile {
-            gap: 2.4rem;
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            br {
+              display: none;
+            }
+          }
+        }
+        .bottom {
+          color: #000;
+          > p {
+            margin-top: 2.4rem;
+          }
+          @include isMobile {
+            > p {
+              margin-top: 1.6rem;
+            }
+            br {
+              display: none;
+            }
+          }
+        }
+        .historyCont {
+          width: 114.5rem;
+          border-top: 2px solid $co-secondary;
+          @include isMobile {
+            width: 100%;
           }
           > li {
-            position: relative;
-            a {
-              display: block;
-              padding: 4rem;
-              border-radius: 2rem;
-              border: 1px solid #ccc;
-              background: $co-white;
-              box-shadow: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.2);
-              @include trans;
-              @include isMobile {
-                padding: 2rem;
-                border-radius: 1.6rem;
-                box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
-              }
-              &:hover {
-                border-color: $co-primary;
-                box-shadow: 0 0.6rem 4.6rem rgba(0, 0, 0, 0.2);
-                > .tit {
-                  text-decoration: underline;
-                  text-underline-offset: 0.5rem;
-                }
-              }
-              > .tit {
-                font-size: 2.4rem;
-                font-weight: 500;
-                margin-bottom: 1.6rem;
-                padding-right: 6rem;
-                line-height: 1.2;
-                @include isMobile {
-                  font-size: 2.2rem;
-                  margin-bottom: 1.2rem;
-                  padding-right: 4rem;
-                }
-              }
-              > .info {
-                @include flexArea($gap: 1.6rem, $justify: flex-start);
-                padding-right: 6rem;
-                @include isMobile {
-                  gap: 0.8rem;
-                  padding-right: 4rem;
-                }
-                .part {
-                  @include flexArea;
-                  color: $co-secondary;
-                  font-weight: 500;
-                  padding: 0 1.6rem;
-                  height: 2.8rem;
-                  background: #efeae5;
-                  border-radius: 10rem;
-                  @include isMobile {
-                    padding: 0 1.2rem;
-                  }
-                }
-                .attatch {
-                  @include flexArea($gap: 0.4rem);
-                  img {
-                    width: 1.5rem;
-                  }
-                  strong {
-                    font-weight: 400;
-                  }
-                  &.isActive {
-                    span {
-                      font-weight: 500;
-                      color: $co-red;
-                    }
-                  }
-                }
-                .icon {
-                  position: absolute;
-                  top: 4rem;
-                  right: 4rem;
-                  width: 6rem;
-                  height: 6rem;
-                  @include isMobile {
-                    top: 2rem;
-                    right: 2rem;
-                    width: 3rem;
-                    height: 2rem;
-                  }
-                }
-              }
-              > .desc {
-                font-size: 1.4rem;
-                margin-top: 2.6rem;
-                padding-top: 2.6rem;
-                border-top: 1px solid #ddd;
-                color: #555;
-                @include ellMulti($line: 4, $height: auto);
-                @include isMobile {
-                  margin-top: 1.6rem;
-                  padding-top: 1.6rem;
-                }
+            @include flexArea($gap: 2.4rem, $justify: flex-start, $align: flex-start);
+            padding: 2.4rem 0;
+            @include isMobile {
+              flex-direction: column;
+              gap: 1rem;
+              padding: 1.8rem 0;
+            }
+            + li {
+              border-top: 1px solid #c9c0b1;
+            }
+            &.current {
+              .year {
+                color: #d46700;
               }
             }
-          }
-          &[data-type="4"] {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 2rem;
-            > li {
-              width: calc(25% - 1.5rem);
+            .year {
+              font-size: 3.6rem;
+              font-weight: 100;
+              color: $co-secondary;
               @include isMobile {
-                width: 100%;
+                font-size: 2.8rem;
               }
-              > a {
-                padding: 3rem;
+            }
+            > ul {
+              @include flexArea($gap: 1.6rem, $direction: column, $align: flex-start);
+              margin-top: 1.2rem;
+              @include isMobile {
+                gap: 0.8rem;
+                margin-top: 0;
+              }
+              > li {
+                @include flexArea($gap: 1.6rem, $justify: flex-start, $align: flex-start);
+                font-size: 1.8rem;
                 @include isMobile {
-                  padding: 2rem;
+                  gap: 1.2rem;
+                  font-size: 1.6rem;
                 }
-                .imgArea {
-                  height: 18.4rem;
-                  margin-bottom: 2.4rem;
-                  border-radius: 1.8rem;
-                  overflow: hidden;
-                  @include isMobile {
-                    height: auto;
-                    border-radius: 1.6rem;
-                  }
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                  }
+                .month {
+                  color: $co-primary;
                 }
-                > .tit {
-                  @include ellMulti($line: 2, $height: 5.5rem);
-                  font-size: 1.8rem;
-                  height: 5.5rem;
-                  @include isMobile {
-                    font-size: 2.2rem;
-                    height: 6.5rem;
-                    max-height: 6.5rem;
-                  }
-                }
-                > .info {
-                  gap: 3rem;
-                  > * {
-                    position: relative;
-                    color: $co-secondary;
-                    + * {
-                      &::before {
-                        content: "";
-                        position: absolute;
-                        width: 1px;
-                        height: 1.2rem;
-                        background: #aaa;
-                        left: -1.5rem;
-                        top: 50%;
-                        transform: translateY(-50%);
-                      }
-                    }
-                  }
-                  .part {
-                    background: transparent;
-                    padding: 0;
-                  }
+                .desc {
+                  color: $co-secondary;
+                  font-weight: 600;
                 }
               }
             }
           }
         }
-
-        .accCont {
-          @include flexArea($direction: column, $gap: 2rem);
+      }
+      .right {
+        position: absolute;
+        width: 43.8rem;
+        height: 50.5rem;
+        border-radius: 10rem 2rem 10rem 2rem;
+        border: 1px solid #ccc1b0;
+        background-color: $co-white;
+        overflow: hidden;
+        right: 0;
+        top: -9rem;
+        box-shadow: 0.8rem 0.8rem 3rem rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        @include isMobile {
+          width: 25rem;
+          height: 30rem;
+          right: none;
+          top: -4rem;
+          left: 50%;
+          border-radius: 5rem 1rem 5rem 1rem;
+          transform: translateX(-50%);
+        }
+        img {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+        p {
+          position: absolute;
+          font-size: 1.8rem;
+          width: 34rem;
+          right: 0;
+          bottom: 0;
+          padding: 3rem 5rem;
+          background-color: rgba(0, 0, 0, 0.6);
+          border-radius: 3rem 0 0 0;
+          color: $co-white;
           @include isMobile {
-            gap: 1rem;
-          }
-          li {
             width: 100%;
+            font-size: 1.6rem;
+            padding: 1.5rem 2rem;
+            border-radius: 0;
+            text-align: center;
+          }
+          strong {
+            font-size: 2.4rem;
+            font-weight: 500;
+            @include isMobile {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .topMsgBox {
+    @include flexArea($justify: flex-start);
+    position: relative;
+    margin-top: 6rem;
+    min-height: 15.6rem;
+    @include isMobile {
+      margin-top: 3rem;
+      min-height: 10rem;
+    }
+    .imgArea {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 18rem;
+      height: 15.6rem;
+      @include isMobile {
+        width: 10rem;
+        height: 10rem;
+      }
+    }
+    .textArea {
+      .tit {
+        padding-left: 23.6rem;
+        @include isMobile {
+          padding-left: 12rem;
+        }
+      }
+      .desc {
+        padding-left: 23.6rem;
+        @include isMobile {
+          padding-left: 12rem;
+        }
+      }
+    }
+    .shareArea {
+      @include flexArea($gap: 1rem);
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: $co-white;
+      border-radius: 10rem;
+      box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      @include isMobile {
+        gap: 0.5rem;
+        padding: 0.5rem;
+        top: -2rem;
+        box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+      }
+      button {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        @include isMobile {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+    }
+  }
+
+  .topTxtBox {
+    margin-bottom: 3rem;
+    padding: 3rem 3rem 3rem 5rem;
+    background: #f8f4f0;
+    border: 1px solid #d4cfca;
+    border-radius: 2rem;
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.15);
+    &.type2 {
+      padding: 0 0 0 2rem;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      @include isMobile {
+        padding: 0 0 0 1.2rem;
+      }
+    }
+    @include isMobile {
+      margin-bottom: 1rem;
+      padding: 2rem 2rem 2rem 3.2rem;
+      border-radius: 1.2rem;
+    }
+    > .tit {
+      position: relative;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+      line-height: 1.2;
+      @include isMobile {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1.4rem;
+        height: 1.4rem;
+        top: 0.5rem;
+        left: -2rem;
+        background: #fff2e1;
+        border: 0.3rem solid $co-primary;
+        border-radius: 50%;
+        @include isMobile {
+          width: 0.8rem;
+          height: 0.8rem;
+          border-width: 0.2rem;
+          left: -1.2rem;
+          top: 0.6rem;
+        }
+      }
+    }
+    .desc {
+      color: $co-secondary;
+    }
+  }
+
+  .faqSelect {
+    padding: 0.2rem;
+    border-radius: 2rem;
+    background: #f4eee7;
+    border: 1px solid #beaf9e;
+    @include isMobile {
+      border-radius: 1rem;
+    }
+    > ul {
+      @include flexArea($gap: 0.2rem);
+      width: 100%;
+      flex-wrap: wrap;
+      > li {
+        width: calc(14% + 0.2rem);
+        @include isMobile {
+          width: calc(50% - 1px);
+        }
+        &:first-child {
+          button {
+            border-radius: 1.6rem 0.4rem 0.4rem 0.4rem;
+          }
+        }
+        &:nth-child(7n) {
+          button {
+            border-radius: 0.4rem 1.6rem 0.4rem 0.4rem;
+          }
+        }
+        &:nth-child(8n) {
+          button {
+            border-radius: 0 0.4rem 0.4rem 1.6rem;
+          }
+        }
+        &:nth-child(14n) {
+          button {
+            border-radius: 0.4rem 0 1.6rem 0.4rem;
+          }
+        }
+        @include isMobile {
+          &:first-child {
+            button {
+              border-radius: 0.8rem 0.4rem 0.4rem 0.4rem;
+            }
+          }
+          &:nth-child(2) {
+            button {
+              border-radius: 0.4rem 0.8rem 0.4rem 0.4rem;
+            }
+          }
+          &:nth-child(7n),
+          &:nth-child(8n) {
+            button {
+              border-radius: 0.4rem;
+            }
+          }
+          &:nth-child(13) {
+            button {
+              border-radius: 0.4rem 0.4rem 0.4rem 0.8rem;
+            }
+          }
+          &:nth-child(14) {
+            button {
+              border-radius: 0.4rem 0.4rem 0.8rem 0.4rem;
+            }
+          }
+        }
+        button {
+          font-size: 1.8rem;
+          color: #777;
+          width: 100%;
+          height: 5.2rem;
+          background: $co-white;
+          border: 1px solid #d8cec3;
+          border-radius: 0.4rem;
+          @include trans;
+          @include isMobile {
+            height: 4.5rem;
+            font-size: 1.5rem;
+          }
+          &.isActive {
+            color: $co-white;
+            font-weight: 600;
+            background: linear-gradient(45deg, #9d856a, #bd8f4e);
+          }
+        }
+      }
+    }
+  }
+
+  .subBgArea {
+    position: relative;
+    padding: 3rem 0;
+    background: #f5f2ef;
+    @include isMobile {
+      margin: 1.5rem -2rem 0;
+      padding: 1.5rem 2rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      background: #f5f2ef;
+      @include isMobile {
+        display: none;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: -100%;
+      background: #f5f2ef;
+      @include isMobile {
+        display: none;
+      }
+    }
+    &.type2 {
+      background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
+      &::before {
+        background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
+      }
+      &::after {
+        background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
+      }
+    }
+    .wrapper {
+      position: relative;
+      max-width: $maxWidth;
+      z-index: 1;
+    }
+  }
+
+  .bizCont01 {
+    margin-top: 6rem;
+    padding: 6rem 0;
+    @include isMobile {
+      margin: 3rem -2rem 0;
+      padding: 3rem 2rem;
+    }
+    .wrapper {
+      max-width: $maxWidth;
+      .mo {
+        display: none;
+      }
+      @include isMobile {
+        .pc {
+          display: none;
+        }
+        .mo {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .pageInfo {
+    @include flexArea;
+    .wrapper {
+      @include flexArea($gap: 3rem);
+      display: inline-flex;
+      width: auto;
+      padding: 1.2rem 2.4rem 1.2rem 1.2rem;
+      margin: 6rem auto 0;
+      background-color: $co-white;
+      border-radius: 10rem;
+      border: 1px solid #ccc;
+      box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.15);
+      @include isMobile {
+        width: 100%;
+        margin: 3rem auto 0;
+        flex-direction: column;
+        border-radius: 0.8rem;
+      }
+      .inquiry {
+        @include flexArea($gap: 0.6rem);
+        dt {
+          color: $co-white;
+          font-size: 1.4rem;
+          font-weight: 700;
+          padding: 0.5rem 1rem;
+          background-color: $co-secondary;
+          border-radius: 10rem;
+          @include isMobile {
+            font-size: 1.1rem;
+            padding: 0.25rem 1rem;
+          }
+        }
+        dd {
+          font-weight: 600;
+          color: $co-primary;
+        }
+      }
+      .tel,
+      .email {
+        @include flexArea($gap: 0.6rem);
+        dt {
+          @include flexArea;
+          img {
+            height: 1.8rem;
+          }
+        }
+        dd {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .boxList {
+    .wrapper {
+      > ul {
+        @include flexArea($gap: 1.6rem, $direction: column);
+        @include isMobile {
+          gap: 2.4rem;
+        }
+        > li {
+          position: relative;
+          a {
+            display: block;
             padding: 4rem;
-            background: $co-white;
+            border-radius: 2rem;
             border: 1px solid #ccc;
-            border-radius: 3rem;
+            background: $co-white;
             box-shadow: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.2);
+            @include trans;
             @include isMobile {
               padding: 2rem;
               border-radius: 1.6rem;
+              box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
             }
-            .badge {
-              @include flexArea($justify: flex-start, $gap: 3.1rem);
-              width: 100%;
-              margin-bottom: 2rem;
-              * {
-                position: relative;
-                + * {
-                  &::before {
-                    content: "";
-                    position: absolute;
-                    width: 1px;
-                    height: 1.2rem;
-                    left: -1.5rem;
-                    top: 50%;
-                    background: #ccc;
-                    transform: translateY(-50%);
-                  }
-                }
-              }
-              strong {
-                font-weight: 600;
-                color: #ff6600;
+            &:hover {
+              border-color: $co-primary;
+              box-shadow: 0 0.6rem 4.6rem rgba(0, 0, 0, 0.2);
+              > .tit {
+                text-decoration: underline;
+                text-underline-offset: 0.5rem;
               }
             }
-            details {
-              &[open] {
-                summary {
-                  > .tit {
-                    &::after {
-                      transform: rotate(0deg);
-                      opacity: 1;
-                    }
-                  }
-                }
+            > .tit {
+              font-size: 2.4rem;
+              font-weight: 500;
+              margin-bottom: 1.6rem;
+              padding-right: 6rem;
+              line-height: 1.2;
+              @include isMobile {
+                font-size: 2.2rem;
+                margin-bottom: 1.2rem;
+                padding-right: 4rem;
               }
-              summary {
-                list-style: none;
-                cursor: pointer;
-                &::-webkit-details-marker {
-                  display: none;
-                }
-                &::marker {
-                  display: none;
-                }
-                > .tit {
-                  position: relative;
-                  padding: 0 5rem 0 7rem;
-                  @include isMobile {
-                    padding: 0 2rem 0 3.5rem;
-                  }
-                  &::before {
-                    content: "Q";
-                    @include flexArea;
-                    position: absolute;
-                    color: $co-white;
-                    background: $co-secondary;
-                    font-size: 2.6rem;
-                    font-weight: 500;
-                    width: 6rem;
-                    height: 4rem;
-                    left: 0;
-                    top: -0.8rem;
-                    border-radius: 0 2rem 2rem 2rem;
-                    @include isMobile {
-                      font-size: 1.6rem;
-                      width: 3rem;
-                      height: 2rem;
-                      top: 0;
-                    }
-                  }
-                  &::after {
-                    content: "";
-                    position: absolute;
-                    right: 0;
-                    top: 0.5rem;
-                    width: 3.2rem;
-                    height: 1.6rem;
-                    background: url(../img/icon/acc_arrow.png) no-repeat center / cover;
-                    transform: rotate(180deg);
-                    transform-origin: center center;
-                    opacity: 0.4;
-                    @include trans;
-                    @include isMobile {
-                      width: 1.6rem;
-                      height: 1rem;
-                      top: 0.6rem;
-                    }
-                  }
-                }
+            }
+            > .info {
+              @include flexArea($gap: 1.6rem, $justify: flex-start);
+              padding-right: 6rem;
+              @include isMobile {
+                gap: 0.8rem;
+                padding-right: 4rem;
               }
-              > .desc {
-                position: relative;
-                font-size: 1.4rem;
-                color: #555;
-                margin-top: 2.8rem;
-                padding: 2rem 2rem 2rem 6rem;
-                background: #efefef;
-                border-radius: 2.6rem;
-                white-space: pre-line;
+              .part {
+                @include flexArea;
+                color: $co-secondary;
+                font-weight: 500;
+                padding: 0 1.6rem;
+                height: 2.8rem;
+                background: #efeae5;
+                border-radius: 10rem;
                 @include isMobile {
-                  margin-top: 1.2rem;
-                  padding: 1rem 1rem 1rem 4rem;
+                  padding: 0 1.2rem;
+                }
+              }
+              .attatch {
+                @include flexArea($gap: 0.4rem);
+                img {
+                  width: 1.5rem;
+                }
+                strong {
+                  font-weight: 400;
+                }
+                &.isActive {
+                  span {
+                    font-weight: 500;
+                    color: $co-red;
+                  }
+                }
+              }
+              .icon {
+                position: absolute;
+                top: 4rem;
+                right: 4rem;
+                width: 6rem;
+                height: 6rem;
+                @include isMobile {
+                  top: 2rem;
+                  right: 2rem;
+                  width: 3rem;
+                  height: 2rem;
+                }
+              }
+            }
+            > .desc {
+              font-size: 1.4rem;
+              margin-top: 2.6rem;
+              padding-top: 2.6rem;
+              border-top: 1px solid #ddd;
+              color: #555;
+              @include ellMulti($line: 4, $height: auto);
+              @include isMobile {
+                margin-top: 1.6rem;
+                padding-top: 1.6rem;
+              }
+            }
+          }
+        }
+        &[data-type="4"] {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 2rem;
+          > li {
+            width: calc(25% - 1.5rem);
+            @include isMobile {
+              width: 100%;
+            }
+            > a {
+              padding: 3rem;
+              @include isMobile {
+                padding: 2rem;
+              }
+              .imgArea {
+                height: 18.4rem;
+                margin-bottom: 2.4rem;
+                border-radius: 1.8rem;
+                overflow: hidden;
+                @include isMobile {
+                  height: auto;
                   border-radius: 1.6rem;
                 }
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              > .tit {
+                @include ellMulti($line: 2, $height: 5.5rem);
+                font-size: 1.8rem;
+                height: 5.5rem;
+                @include isMobile {
+                  font-size: 2.2rem;
+                  height: 6.5rem;
+                  max-height: 6.5rem;
+                }
+              }
+              > .info {
+                gap: 3rem;
+                > * {
+                  position: relative;
+                  color: $co-secondary;
+                  + * {
+                    &::before {
+                      content: "";
+                      position: absolute;
+                      width: 1px;
+                      height: 1.2rem;
+                      background: #aaa;
+                      left: -1.5rem;
+                      top: 50%;
+                      transform: translateY(-50%);
+                    }
+                  }
+                }
+                .part {
+                  background: transparent;
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .accCont {
+        @include flexArea($direction: column, $gap: 2rem);
+        @include isMobile {
+          gap: 1rem;
+        }
+        li {
+          width: 100%;
+          padding: 4rem;
+          background: $co-white;
+          border: 1px solid #ccc;
+          border-radius: 3rem;
+          box-shadow: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.2);
+          @include isMobile {
+            padding: 2rem;
+            border-radius: 1.6rem;
+          }
+          .badge {
+            @include flexArea($justify: flex-start, $gap: 3.1rem);
+            width: 100%;
+            margin-bottom: 2rem;
+            * {
+              position: relative;
+              + * {
                 &::before {
-                  content: "A";
+                  content: "";
+                  position: absolute;
+                  width: 1px;
+                  height: 1.2rem;
+                  left: -1.5rem;
+                  top: 50%;
+                  background: #ccc;
+                  transform: translateY(-50%);
+                }
+              }
+            }
+            strong {
+              font-weight: 600;
+              color: #ff6600;
+            }
+          }
+          details {
+            &[open] {
+              summary {
+                > .tit {
+                  &::after {
+                    transform: rotate(0deg);
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+            summary {
+              list-style: none;
+              cursor: pointer;
+              &::-webkit-details-marker {
+                display: none;
+              }
+              &::marker {
+                display: none;
+              }
+              > .tit {
+                position: relative;
+                padding: 0 5rem 0 7rem;
+                @include isMobile {
+                  padding: 0 2rem 0 3.5rem;
+                }
+                &::before {
+                  content: "Q";
                   @include flexArea;
                   position: absolute;
-                  top: 2rem;
-                  left: 2rem;
-                  width: 3rem;
-                  height: 3rem;
-                  font-size: 2rem;
-                  color: #ff8700;
-                  background: $co-white;
-                  border-radius: 50%;
+                  color: $co-white;
+                  background: $co-secondary;
+                  font-size: 2.6rem;
+                  font-weight: 500;
+                  width: 6rem;
+                  height: 4rem;
+                  left: 0;
+                  top: -0.8rem;
+                  border-radius: 0 2rem 2rem 2rem;
                   @include isMobile {
-                    top: 1rem;
-                    left: 1rem;
-                    width: 2rem;
+                    font-size: 1.6rem;
+                    width: 3rem;
                     height: 2rem;
-                    font-size: 1.1rem;
+                    top: 0;
                   }
+                }
+                &::after {
+                  content: "";
+                  position: absolute;
+                  right: 0;
+                  top: 0.5rem;
+                  width: 3.2rem;
+                  height: 1.6rem;
+                  background: url(../img/icon/acc_arrow.png) no-repeat center / cover;
+                  transform: rotate(180deg);
+                  transform-origin: center center;
+                  opacity: 0.4;
+                  @include trans;
+                  @include isMobile {
+                    width: 1.6rem;
+                    height: 1rem;
+                    top: 0.6rem;
+                  }
+                }
+              }
+            }
+            > .desc {
+              position: relative;
+              font-size: 1.4rem;
+              color: #555;
+              margin-top: 2.8rem;
+              padding: 2rem 2rem 2rem 6rem;
+              background: #efefef;
+              border-radius: 2.6rem;
+              white-space: pre-line;
+              @include isMobile {
+                margin-top: 1.2rem;
+                padding: 1rem 1rem 1rem 4rem;
+                border-radius: 1.6rem;
+              }
+              &::before {
+                content: "A";
+                @include flexArea;
+                position: absolute;
+                top: 2rem;
+                left: 2rem;
+                width: 3rem;
+                height: 3rem;
+                font-size: 2rem;
+                color: #ff8700;
+                background: $co-white;
+                border-radius: 50%;
+                @include isMobile {
+                  top: 1rem;
+                  left: 1rem;
+                  width: 2rem;
+                  height: 2rem;
+                  font-size: 1.1rem;
                 }
               }
             }
@@ -1017,204 +1360,1230 @@
     }
   }
 
-  aside.schCont {
-    @include flexArea($justify: space-between);
-    padding: 3rem 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    @include isMobile {
-      gap: 1rem;
-      flex-direction: column;
-      padding: 1.5rem 0 0;
-    }
-    &.type2 {
-      border-top: none;
-    }
-    > .left {
-      @include flexArea;
-      height: 4rem;
-      padding: 0 2rem;
-      background: #f9f9f9;
-      border: 1px solid #c7bfb5;
-      border-radius: 10rem;
-      @include isMobile {
-        width: 100%;
-      }
-      ul {
-        @include flexArea($gap: 3.1rem);
-        @include isMobile {
-          width: 100%;
-        }
-        li {
-          @include flexArea($gap: 0.8rem);
+  .subTab2 {
+    > ul {
+      > li {
+        .menu {
+          font-size: 4.2rem;
+          font-weight: 300;
+          color: #999;
+          padding: 2.4rem;
+          height: auto;
+          border: none;
+          border-bottom: 0.4rem solid #ddd;
+          border-radius: 0;
+          background: transparent;
           @include isMobile {
-            flex: 1;
+            font-size: 2rem;
+            padding: 1.2rem 0;
+            border-width: 0.2rem;
           }
-          font-weight: 500;
-          &.total {
-            img {
-              width: 0.8rem;
-            }
+          &.isActive {
+            color: #75589d;
+            border-color: #75589d;
+            font-weight: 700;
             span {
-              strong {
+              i {
+                background: url(../img/icon/arrow_both.png) no-repeat center center / contain;
               }
             }
           }
-          &.page {
+          span {
+            @include flexArea($gap: 1.8rem);
+            i {
+              display: block;
+              width: 3.2rem;
+              height: 2rem;
+              background: url(../img/icon/arrow_both_dis.png) no-repeat center center / contain;
+              @include isMobile {
+                width: 2rem;
+                height: 1.6rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .subTabHistory {
+    margin-top: 6rem;
+    @include isMobile {
+      margin-top: 2rem;
+    }
+    > ul {
+      > li {
+        .menu {
+          position: relative;
+          font-size: 4.8rem;
+          color: #888;
+          letter-spacing: -0.2rem;
+          font-weight: 100;
+          padding: 0.4rem;
+          background: transparent;
+          border: none;
+          @include isMobile {
+            font-size: 2.8rem;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            width: 4rem;
+            height: 1.6rem;
+            transform: translateX(-50%);
+            background: url(../img/icon/tab_arrow.png) no-repeat center center / contain;
+            opacity: 0;
+            @include trans;
+            @include isMobile {
+              display: none;
+            }
+          }
+          &.isActive {
+            color: #000;
+            font-size: 6rem;
+            font-weight: 500;
+            @include isMobile {
+              font-size: 3.4rem;
+            }
+            &::after {
+              content: "";
+              bottom: -2rem;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .historyInner {
+    position: relative;
+    background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f5f2ed);
+    padding: 6rem 0;
+    @include isMobile {
+      margin: 0 -2rem;
+      padding: 3rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f5f2ed);
+      top: 0;
+      left: -50%;
+      @include isMobile {
+        display: none;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f5f2ed);
+      top: 0;
+      right: -50%;
+      @include isMobile {
+        display: none;
+      }
+    }
+    > ul {
+      @include flexArea($gap: 1.2rem, $direction: column, $align: flex-start);
+      position: relative;
+      z-index: 1;
+      @include isMobile {
+        gap: 0.6rem;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 26rem;
+        height: 9rem;
+        top: -2.4rem;
+        left: -2.4rem;
+        border-radius: 2.6rem;
+        background: #eae0d5;
+        @include isMobile {
+          display: none;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 26rem;
+        height: 9rem;
+        bottom: -2.4rem;
+        right: -2.4rem;
+        border-radius: 2.6rem;
+        background: #eae0d5;
+        @include isMobile {
+          display: none;
+        }
+      }
+      > li {
+        @include flexArea($gap: 3rem, $align: flex-start, $justify: flex-start);
+        width: 100%;
+        padding: 3rem;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 2.6rem;
+        box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        @include isMobile {
+          gap: 1rem;
+          padding: 2rem;
+          border-radius: 1.4rem;
+        }
+        .tit {
+          @include flexArea($gap: 3rem);
+          font-size: 4.2rem;
+          font-weight: 100;
+          @include isMobile {
+            font-size: 2.4rem;
+            gap: 1.6rem;
+          }
+          &::after {
+            content: "";
+            width: 0.8rem;
+            height: 1.6rem;
+            display: block;
+            background: url(../img/icon/history_arrow2.png) no-repeat center center / contain;
+          }
+        }
+        .dtlList {
+          @include flexArea($gap: 1.2rem, $direction: column, $align: flex-start);
+          margin-top: 0.8rem;
+          @include isMobile {
+            margin-top: 0;
+          }
+          > li {
+            @include flexArea($gap: 1.8rem);
+            font-size: 1.8rem;
+            padding: 0.3rem 1.8rem 0.3rem 0.3rem;
+            border-radius: 10rem;
+            border: 1px solid #ddd;
+            background: #f3f3f3;
+            box-shadow: inset 0.3rem 0.3rem 0.4rem rgba(0, 0, 0, 0.1);
+            @include isMobile {
+              align-items: flex-start;
+              font-size: 1.6rem;
+              padding: 0.8rem 1.2rem;
+              border-radius: 1.6rem;
+            }
+            > span {
+              display: block;
+              width: 4.8rem;
+              padding: 0.5rem;
+              background: #75589d;
+              border-radius: 10rem;
+              font-size: 2rem;
+              font-weight: 500;
+              color: #fff;
+              text-align: center;
+              @include isMobile {
+                width: 3.2rem;
+                min-width: 3.2rem;
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ciCont {
+    margin-top: 6rem;
+    @include isMobile {
+      margin-top: 3rem;
+    }
+    > .top {
+      @include flexArea($gap: 6rem, $align: flex-start);
+      @include isMobile {
+        flex-direction: column;
+        gap: 3rem;
+      }
+      .right {
+        .tit {
+          font-size: 3rem;
+          font-weight: 600;
+          @include isMobile {
+            font-size: 2.4rem;
+          }
+        }
+        .desc {
+          margin: 2.4rem auto 8.4rem;
+          color: #555;
+          font-size: 1.8rem;
+          font-weight: 500;
+          @include isMobile {
+            font-size: 1.4rem;
+            margin: 1.2rem auto 6rem;
+          }
+          span {
+            display: block;
+            @include isMobile {
+              br {
+                display: none;
+              }
+            }
+            + span {
+              margin-top: 1.6rem;
+              @include isMobile {
+                margin-top: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    > .center {
+      @include flexArea($gap: 3rem, $align: flex-start);
+      margin-top: 6rem;
+      @include isMobile {
+        gap: 3rem;
+        flex-direction: column;
+        margin-top: 3rem;
+      }
+      .left {
+        width: 61rem;
+        @include isMobile {
+          width: 100%;
+        }
+        .tit {
+          font-size: 3rem;
+          font-weight: 600;
+          margin-bottom: 2.4rem;
+          @include isMobile {
+            font-size: 2.4rem;
+            margin-bottom: 1.2rem;
+          }
+        }
+        img {
+          box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+          border-radius: 2.4rem;
+          @include isMobile {
+            box-shadow: none;
+            border-radius: 0;
+          }
+        }
+      }
+      .right {
+        width: 76rem;
+        @include isMobile {
+          width: 100%;
+        }
+        .tit {
+          font-size: 3rem;
+          font-weight: 600;
+          margin-bottom: 2.4rem;
+          @include isMobile {
+            font-size: 2.4rem;
+            margin-bottom: 1.2rem;
+          }
+        }
+        img {
+          box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+          border-radius: 2.4rem;
+          @include isMobile {
+            box-shadow: none;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+    > .bottom {
+      margin-top: 6rem;
+      @include isMobile {
+        margin-top: 3rem;
+      }
+      .tit {
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 2.4rem;
+        @include isMobile {
+          font-size: 2.4rem;
+          margin-bottom: 1.2rem;
+        }
+      }
+      img {
+        box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+        border-radius: 2.4rem;
+        @include isMobile {
+          box-shadow: none;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  .movieCont {
+    @include flexArea($align: flex-start);
+    @include isMobile {
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+    > .left {
+      width: 96rem;
+      height: 63rem;
+      border-radius: 3rem;
+      overflow: hidden;
+      @include isMobile {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+      iframe {
+        width: 100%;
+        height: 63rem;
+        @include isMobile {
+          height: 100%;
+        }
+      }
+    }
+    > .right {
+      flex: 1;
+      height: 63rem;
+      overflow: auto;
+      padding-left: 3rem;
+      @include isMobile {
+        flex: none;
+        height: 28rem;
+        padding: 0;
+        width: 100%;
+      }
+      ul {
+        @include flexArea($gap: 1.2rem, $align: flex-start, $justify: flex-start, $direction: column);
+        > li {
+          width: 100%;
+          a {
+            @include flexArea($gap: 1.8rem);
             position: relative;
-            gap: 0;
+            width: 100%;
+            padding: 1.8rem;
+            border-radius: 1.2rem;
+            border: 1px solid #ccc;
+            @include isMobile {
+              padding: 0.8rem;
+            }
             &::before {
               content: "";
               position: absolute;
-              left: -1.5rem;
-              top: 50%;
-              width: 1px;
-              height: 1.6rem;
-              background-color: #ccc;
-              transform: translateY(-50%);
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border-radius: 1.2rem;
+              border: 0.6rem solid transparent;
+              @include trans;
             }
-            strong {
-              color: $co-secondary;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 2rem;
+              height: 3rem;
+              border: 1.6rem solid transparent;
+              border-right-color: #75589d;
+              left: 0rem;
+              opacity: 0;
+              @include trans;
+              @include isMobile {
+                display: none;
+              }
+            }
+            &.isActive {
+              &::before {
+                border: 0.6rem solid #75589d;
+                @include isMobile {
+                  border-width: 0.3rem;
+                }
+              }
+              &::after {
+                left: -3rem;
+                opacity: 1;
+              }
+            }
+            img {
+              width: 15rem;
+              min-width: 15rem;
+              border-radius: 1.2rem;
+              @include isMobile {
+                width: 10rem;
+                min-width: 10rem;
+              }
+            }
+            p {
+              width: calc(100% - 16.8rem);
+              @include isMobile {
+                width: calc(100% - 11.8rem);
+              }
+              span {
+                @include ell;
+                font-size: 1.8rem;
+                @include isMobile {
+                  font-size: 1.6rem;
+                }
+              }
+              small {
+                display: block;
+                margin-top: 1.2rem;
+                font-size: 1.2rem;
+                @include isMobile {
+                  margin-top: 0.4rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .marketingCont {
+    @include flexArea($align: stretch);
+    position: relative;
+    border-radius: 2.4rem;
+    overflow: hidden;
+    box-shadow: 0 0.6rem 1.8rem rgba(0, 0, 0, 0.15);
+    border: 1px solid #ccc;
+    @include isMobile {
+      border-radius: 1.8rem;
+      flex-direction: column;
+    }
+    > .left {
+      width: 36rem;
+      min-width: 36rem;
+      @include isMobile {
+        width: 100%;
+        min-width: auto;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    > .right {
+      flex: 1;
+      padding: 9.5rem 7.2rem;
+      @include isMobile {
+        padding: 2rem;
+      }
+      > .tit {
+        font-size: 5.4rem;
+        font-weight: 700;
+        @include isMobile {
+          font-size: 2.8rem;
+        }
+      }
+      > .eng {
+        font-size: 3rem;
+        color: #99710b;
+        font-weight: 300;
+        margin-top: 1.8rem;
+        @include isMobile {
+          font-size: 1.8rem;
+          margin-top: 1rem;
+        }
+      }
+      > .desc {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin-top: 2.4rem;
+        @include isMobile {
+          font-size: 1.6rem;
+          margin-top: 1rem;
+          br {
+            display: none;
+          }
+        }
+      }
+      > .txtIcon {
+        display: inline-block;
+        font-size: 2.4rem;
+        color: #fff;
+        padding: 0.8rem 2.4rem;
+        background: #32323e;
+        border-radius: 10rem;
+        margin: 3.6rem auto 2rem;
+        @include isMobile {
+          font-size: 1.8rem;
+          padding: 0.6rem 1.8rem;
+        }
+        span {
+          z-index: 1;
+          position: relative;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 0.2rem;
+          left: 36rem;
+          background-color: #32323e;
+          margin-top: 1.5rem;
+          @include isMobile {
+            left: -2rem;
+            width: calc(100% + 2rem);
+          }
+        }
+      }
+      .bottom {
+        @include flexArea($gap: 1.2rem);
+        margin-top: 6rem;
+        @include isMobile {
+          margin-top: 3rem;
+          flex-direction: column;
+        }
+        li {
+          @include flexArea($gap: 0.8rem, $justify: space-between);
+          flex: 1;
+          padding: 1rem 1rem 1rem 3rem;
+          border: 0.3rem solid #75589d;
+          border-radius: 10rem;
+          @include isMobile {
+            width: 100%;
+          }
+          > .tit {
+            font-size: 2rem;
+            font-weight: 600;
+            @include isMobile {
+              font-size: 1.6rem;
+            }
+          }
+          .boundary {
+            @include flexArea($gap: 0.8rem, $justify: space-between);
+            button {
+              @include flexArea($gap: 0.6rem);
+              background: #75589d;
+              padding: 1rem 1.6rem;
+              border-radius: 10rem;
+              color: #fff;
+              font-size: 1.6rem;
+              font-weight: 600;
+              @include isMobile {
+                font-size: 1.4rem;
+              }
+              i {
+                width: 1.6rem;
+                height: 1.6rem;
+                @include isMobile {
+                  width: 1.2rem;
+                  height: 1.2rem;
+                }
+              }
+            }
+          }
+          &.type2 {
+            background: #75589d;
+            > .tit {
+              color: #fff;
+            }
+            .boundary {
+              button {
+                background: #fff;
+                color: #75589d;
+                i {
+                  width: 1.6rem;
+                  height: 1.6rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .reportCont {
+    @include flexArea($gap: 1.8rem, $align: flex-start);
+    @include isMobile {
+      flex-direction: column;
+    }
+    > .left {
+      @include flexArea;
+      position: relative;
+      width: 91.2rem;
+      height: 63.7rem;
+      flex: 1;
+      @include isMobile {
+        flex-direction: column;
+        flex: none;
+        width: 100%;
+        height: auto;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 5rem;
+        height: 100%;
+        top: 0;
+        left: calc(50% - 5rem);
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2));
+        @include isMobile {
+          display: none;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 5rem;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        background: linear-gradient(-90deg, transparent, rgba(0, 0, 0, 0.2));
+        @include isMobile {
+          display: none;
+        }
+      }
+      > img {
+        width: 45rem;
+        height: auto;
+        @include isMobile {
+          width: 100%;
+        }
+      }
+      .index {
+        position: relative;
+        width: 45rem;
+        height: 100%;
+        padding: 4rem 4rem 11.2rem;
+        border: 1px solid #ccc;
+        background: #f7f7f7;
+        @include isMobile {
+          width: 100%;
+          height: 40rem;
+          padding: 2rem 2rem 7rem;
+        }
+        .reportBox {
+          height: 100%;
+          overflow: auto;
+          > * + span {
+            margin-top: 3.6rem;
+            @include isMobile {
+              margin-top: 1.8rem;
+            }
+          }
+          > span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 600;
+            @include isMobile {
+              font-size: 1.4rem;
+            }
+          }
+          > p {
+            margin-top: 1.6rem;
+            @include isMobile {
+              margin-top: 0.8rem;
+            }
+          }
+        }
+        .btnBox {
+          @include flexArea($gap: 1rem, $justify: center);
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 4rem;
+          @include isMobile {
+            bottom: 2rem;
+          }
+          button {
+            gap: 1rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding: 1rem 2.4rem;
+            background: #fff;
+            border: 1px solid #75589d;
+            border-radius: 10rem;
+            @include isMobile {
+              padding: 0.8rem 1.6rem;
+            }
+            &.type2 {
+              background: #75589d;
+              border: none;
+              color: #fff;
+            }
+            i {
+              width: 1.4rem;
+              height: 1.4rem;
+              @include isMobile {
+                width: 1.2rem;
+                height: 1.2rem;
+              }
             }
           }
         }
       }
     }
     > .right {
+      position: relative;
+      width: 47rem;
+      min-width: 47rem;
       @include isMobile {
         width: 100%;
+        min-width: auto;
       }
-      .schForm {
-        @include flexArea($gap: 0.8rem);
+      &::before {
+        content: "";
+        position: absolute;
+        width: calc(100% + 2rem);
+        height: 1rem;
+        background: #e4d5c3;
+        top: 14.5rem;
+        left: -1rem;
+        box-shadow: 0 0.6rem 0.4rem rgba(0, 0, 0, 0.1);
+        @include isMobile {
+          display: none;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 2rem);
+        height: 1rem;
+        background: #e4d5c3;
+        top: 33.5rem;
+        left: -1rem;
+        box-shadow: 0 0.6rem 0.4rem rgba(0, 0, 0, 0.1);
+        @include isMobile {
+          display: none;
+        }
+      }
+      > ul {
+        @include flexArea($gap: 4.6rem 1rem, $justify: flex-start);
+        flex-wrap: wrap;
+        position: relative;
+        @include isMobile {
+          gap: 2rem 1rem;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: calc(100% + 2rem);
+          height: 1rem;
+          background: #e4d5c3;
+          bottom: -1rem;
+          left: -1rem;
+          box-shadow: 0 0.6rem 0.4rem rgba(0, 0, 0, 0.1);
+          @include isMobile {
+            display: none;
+          }
+        }
+        > li {
+          width: 10.5rem;
+          @include isMobile {
+            width: calc(25% - 1rem);
+          }
+          button {
+            position: relative;
+            border: 1px solid #ccc;
+            @include trans();
+            &::before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 5rem;
+              bottom: 0;
+              left: 0;
+              background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), transparent);
+            }
+            &.isActive {
+              border: 0.3rem solid #75589d;
+              &::after {
+                content: "";
+                position: absolute;
+                border: 25px solid transparent;
+                border-left-color: #75589d;
+                top: -2.5rem;
+                left: -2.5rem;
+                transform: rotate(-135deg);
+              }
+            }
+            img {
+              @include isMobile {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+            span {
+              position: absolute;
+              left: 50%;
+              bottom: 0;
+              background: #fff;
+              font-size: 1.6rem;
+              padding: 0.8rem 1.6rem;
+              border-radius: 0.4rem 0.4rem 0 0;
+              transform: translateX(-50%);
+            }
+          }
+        }
+      }
+      .btnBox {
+        @include flexArea($justify: space-between);
+        margin-top: 3rem;
+        padding: 1rem;
+        button {
+          @include flexArea($gap: 1rem);
+          font-size: 1.4rem;
+          padding: 1.2rem 1.6rem;
+          border: 1px solid #ddd;
+          border-radius: 10rem;
+          box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
+          &.prev {
+            i {
+              transform: rotate(180deg);
+            }
+          }
+          i {
+            width: 0.4rem;
+            height: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .mapCont {
+    .map {
+      border-radius: 3rem;
+      overflow: hidden;
+      border: 1px solid #aaa;
+      margin-bottom: 6rem;
+      @include isMobile {
+        border-radius: 1.6rem;
+        margin-bottom: 1rem;
+      }
+      iframe {
+        width: 100%;
+        height: 50rem;
+        margin-bottom: -2rem;
+        border: none;
+        @include isMobile {
+          height: 35rem;
+        }
+      }
+    }
+    .tit {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin: 3.6rem auto 2.4rem;
+      @include isMobile {
+        font-size: 2rem;
+        margin: 1.8rem auto 1.2rem;
+        &.blank {
+          font-size: 1px;
+          margin: 1rem auto 0;
+        }
+      }
+    }
+    .info {
+      @include flexArea($gap: 6rem, $align: flex-start, $justify: flex-start);
+      + .info {
+        @include isMobile {
+          margin-top: 2rem;
+        }
+      }
+      @include isMobile {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .left {
+        width: 39rem;
         @include isMobile {
           width: 100%;
-          gap: 0.8rem;
+        }
+      }
+      .right {
+        flex: 1;
+        @include isMobile {
+          flex: auto;
+          width: 100%;
+        }
+      }
+      .desc {
+        @include flexArea($gap: 1.8rem, $justify: flex-start);
+        @include isMobile {
           flex-direction: column;
+          align-items: flex-start;
         }
-        > * {
-          width: 100%;
-        }
-        > .formSelect {
-          .select,
-          .option {
-            width: 100% !important;
-          }
-        }
-        .formArea {
-          @include flexArea($gap: 0.8rem);
-          @include isMobile {
-            gap: 0.8rem;
-            width: 100%;
-          }
-          .formSelect {
-            width: 13rem;
-            .select {
-              width: 100% !important;
+        > li {
+          > p {
+            @include flexArea($gap: 0.6rem, $justify: flex-start);
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #555;
+            &.point {
+              @include flexArea($gap: 0.6rem, $justify: flex-start);
+              color: #75589d;
+              font-size: 1.6rem;
+              font-weight: 700;
+              margin-top: 1.2rem;
+              &::before {
+                content: "";
+                width: 0.6rem;
+                height: 0.6rem;
+                border-radius: 100%;
+                background: #75589d;
+              }
             }
-          }
-          .formText {
-            width: 32rem;
             @include isMobile {
-              width: auto;
-              flex: 1;
+              font-size: 1.6rem;
+            }
+            i {
+              @include flexArea;
+              width: 2.6rem;
+              min-width: 2.6rem;
+              height: 2.6rem;
+              border-radius: 100%;
+              background: #75589d;
+              color: #fff;
+              font-style: normal;
+              font-size: 1.4rem;
+              @include isMobile {
+                width: 2rem;
+                min-width: 2rem;
+                height: 2rem;
+              }
+              img {
+                width: 1.6rem;
+                height: auto;
+                @include isMobile {
+                  width: 1.2rem;
+                }
+              }
             }
           }
-        }
-        > button {
-          gap: 1.6rem;
-          height: 4rem;
-          font-weight: 600;
-          color: $co-white;
-          padding: 0 1.6rem;
-          border-radius: 0.8rem;
-          background: linear-gradient(45deg, #71542f, #483113);
-          @include isMobile {
-            width: 100%;
-            justify-content: space-between;
-            height: 5rem;
-            font-size: 2.2rem;
-          }
-          img {
-            width: 1.6rem;
-            height: 1.6rem;
-            @include isMobile {
-              width: 2rem;
-              height: 2rem;
-            }
+          .unitList {
+            margin-top: 1.2rem;
+            color: #555;
+            font-size: 1.6rem;
           }
         }
-      }
-    }
-  }
-
-  aside.paginInfinite {
-    @include flexArea;
-    margin-top: 3rem;
-    @include isMobile {
-      margin-top: 2rem;
-    }
-    button {
-      gap: 1.8rem;
-      height: 4.6rem;
-      padding: 0 2.2rem;
-      font-size: 1.8rem;
-      border-radius: 10rem;
-      background: #f6ece3;
-      border: 1px solid #d1c1b2;
-      @include isMobile {
-        gap: 1.2rem;
-        height: 4rem;
-        padding: 0 1.6rem;
-      }
-      img {
-        width: 1.6rem;
-        @include isMobile {
-          width: 1.2rem;
-        }
-      }
-    }
-  }
-
-  aside.pagin {
-    @include flexArea($gap: 0.6rem);
-    margin-top: 3rem;
-    @include isMobile {
-      flex-wrap: wrap;
-      marign-top: 2rem;
-    }
-    > button {
-      width: 4rem;
-      height: 4rem;
-      font-size: 1.8rem;
-      color: #555;
-      background: #eee;
-      border-radius: 50%;
-      @include trans;
-      @include isMobile {
-        width: 3rem;
-        height: 3rem;
-        font-size: 1.4rem;
-      }
-      &:hover {
-        background-color: #ccc;
-      }
-      &.prev {
-        background: none;
-        margin-right: 1rem;
-        img {
-          width: 2.2rem;
-        }
-      }
-      &.next {
-        background: none;
-        margin-left: 1rem;
-        img {
-          width: 2.2rem;
-        }
-      }
-      &.isActive {
-        background-color: #333;
-        color: $co-white;
       }
     }
   }
 }
+
+aside.schCont {
+  @include flexArea($justify: space-between);
+  padding: 3rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  @include isMobile {
+    gap: 1rem;
+    flex-direction: column;
+    padding: 1.5rem 0 0;
+  }
+  &.type2 {
+    border-top: none;
+  }
+  > .left {
+    @include flexArea;
+    height: 4rem;
+    padding: 0 2rem;
+    background: #f9f9f9;
+    border: 1px solid #c7bfb5;
+    border-radius: 10rem;
+    @include isMobile {
+      width: 100%;
+    }
+    ul {
+      @include flexArea($gap: 3.1rem);
+      @include isMobile {
+        width: 100%;
+      }
+      li {
+        @include flexArea($gap: 0.8rem);
+        @include isMobile {
+          flex: 1;
+        }
+        font-weight: 500;
+        &.total {
+          img {
+            width: 0.8rem;
+          }
+          span {
+            strong {
+            }
+          }
+        }
+        &.page {
+          position: relative;
+          gap: 0;
+          &::before {
+            content: "";
+            position: absolute;
+            left: -1.5rem;
+            top: 50%;
+            width: 1px;
+            height: 1.6rem;
+            background-color: #ccc;
+            transform: translateY(-50%);
+          }
+          strong {
+            color: $co-secondary;
+          }
+        }
+      }
+    }
+  }
+  > .right {
+    @include isMobile {
+      width: 100%;
+    }
+    .schForm {
+      @include flexArea($gap: 0.8rem);
+      @include isMobile {
+        width: 100%;
+        gap: 0.8rem;
+        flex-direction: column;
+      }
+      > * {
+        width: 100%;
+      }
+      > .formSelect {
+        .select,
+        .option {
+          width: 100% !important;
+        }
+      }
+      .formArea {
+        @include flexArea($gap: 0.8rem);
+        @include isMobile {
+          gap: 0.8rem;
+          width: 100%;
+        }
+        .formSelect {
+          width: 13rem;
+          .select {
+            width: 100% !important;
+          }
+        }
+        .formText {
+          width: 32rem;
+          @include isMobile {
+            width: auto;
+            flex: 1;
+          }
+        }
+      }
+      > button {
+        gap: 1.6rem;
+        height: 4rem;
+        font-weight: 600;
+        color: $co-white;
+        padding: 0 1.6rem;
+        border-radius: 0.8rem;
+        background: linear-gradient(45deg, #71542f, #483113);
+        @include isMobile {
+          width: 100%;
+          justify-content: space-between;
+          height: 5rem;
+          font-size: 2.2rem;
+        }
+        img {
+          width: 1.6rem;
+          height: 1.6rem;
+          @include isMobile {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+aside.paginInfinite {
+  @include flexArea;
+  margin-top: 3rem;
+  @include isMobile {
+    margin-top: 2rem;
+  }
+  button {
+    gap: 1.8rem;
+    height: 4.6rem;
+    padding: 0 2.2rem;
+    font-size: 1.8rem;
+    border-radius: 10rem;
+    background: #f6ece3;
+    border: 1px solid #d1c1b2;
+    @include isMobile {
+      gap: 1.2rem;
+      height: 4rem;
+      padding: 0 1.6rem;
+    }
+    img {
+      width: 1.6rem;
+      @include isMobile {
+        width: 1.2rem;
+      }
+    }
+  }
+}
+
+aside.pagin {
+  @include flexArea($gap: 0.6rem);
+  margin-top: 3rem;
+  @include isMobile {
+    flex-wrap: wrap;
+    marign-top: 2rem;
+  }
+  > button {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.8rem;
+    color: #555;
+    background: #eee;
+    border-radius: 50%;
+    @include trans;
+    @include isMobile {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.4rem;
+    }
+    &:hover {
+      background-color: #ccc;
+    }
+    &.prev {
+      background: none;
+      margin-right: 1rem;
+      img {
+        width: 2.2rem;
+      }
+    }
+    &.next {
+      background: none;
+      margin-left: 1rem;
+      img {
+        width: 2.2rem;
+      }
+    }
+    &.isActive {
+      background-color: #333;
+      color: $co-white;
+    }
+  }
+}
+
+button {
+  @include flexArea($gap: 2.4rem);
+  &.btnCta {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #fff;
+    background: #555;
+    border: 1px solid #000;
+    border-radius: 10rem;
+    padding: 2.4rem 3.6rem;
+    i {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+// }

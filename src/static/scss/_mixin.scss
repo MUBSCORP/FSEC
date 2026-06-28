@@ -689,15 +689,16 @@
   }
   &.dot {
     > li {
-      padding-left: 1rem;
+      padding-left: 1.2rem;
       &:before {
         content: "";
         position: absolute;
-        width: 0.2rem;
-        height: 0.2rem;
-        background-color: $co-black;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 100%;
+        background-color: #a2a2d0;
         left: 0;
-        top: 1rem;
+        top: 0.8rem;
       }
     }
   }

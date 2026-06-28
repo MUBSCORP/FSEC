@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		@@include('@@webRoot/html/_inc/head.html',{"title": "조직도 > 금융보안원 안내"})
+
+		<!-- 추가 스크립트 -->
+		<script>
+			$(document).ready(function () {
+
+			})
+		</script>
+	</head>
+
+	<body>
+		@@include('@@webRoot/html/_inc/skipMenu.html')
+
+		<!-- 헤더 -->
+		@@include('@@webRoot/html/_inc/header.html')
+		<!-- 헤더 -->
+
+		<!-- 본문 -->
+		<main id="content">
+			<div class="container">
+				<!--
+					* [data-banner]
+					* intro: 금융보안원 안내
+					* business: 주요업무
+					* notice: 알림마당
+					* data: 자료마당
+					* customer: 고객센터
+				-->
+				<div class="topBgArea"></div>
+				<section class="subTopArea" data-banner="intro">
+					<div class="wrapper">
+						<div class="left">
+							<h2 class="tit">금융보안원 안내</h2>
+							<div class="depth">
+								<a href="javascript:void(0)" class="home" title="홈으로 이동"><i><img src="@@webRoot/static/img/icon/depth_home.png" alt=""></i></a>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="1"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>금융보안원 안내</span></a></li>
+										<li><a href="javascript:void(0)"><span>주요업무</span></a></li>
+										<li><a href="javascript:void(0)"><span>알림마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>자료마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>고객센터</span></a></li>
+									</ul>
+								</div>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="2"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>CEO 소개</span></a></li>
+										<li><a href="javascript:void(0)"><span>조직도</span></a></li>
+										<li><a href="javascript:void(0)"><span>금융보안원 안내</span></a></li>
+										<li><a href="javascript:void(0)"><span>홍보자료실</span></a></li>
+										<li><a href="javascript:void(0)"><span>찾아오시는 길</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							@@include('@@webRoot/html/_inc/breadcrumb.html',{"depth": "금융보안원 안내", "current": "조직도"})
+						</div>
+					</div>
+				</section>
+
+				<section class="subContent">
+					<h3 class="subPageTit">조직도</h3>
+					<div class="orgaCont">
+						<img src="@@webRoot/static/img/sub/orga.png" alt="조직도" class="desk">
+						<img src="@@webRoot/static/img/sub/orga_mo.png" alt="조직도" class="mo">
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- 푸터 -->
+		@@include('@@webRoot/html/_inc/footer.html')
+		<!-- 푸터 -->
+	</body>
+</html>

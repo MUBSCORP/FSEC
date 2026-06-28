@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		@@include('@@webRoot/html/_inc/head.html',{"title": "찾아오시는 길 > 금융보안원 안내"})
+
+		<!-- 추가 스크립트 -->
+		<script>
+			$(document).ready(function () {
+
+			})
+		</script>
+	</head>
+
+	<body>
+		@@include('@@webRoot/html/_inc/skipMenu.html')
+
+		<!-- 헤더 -->
+		@@include('@@webRoot/html/_inc/header.html')
+		<!-- 헤더 -->
+
+		<!-- 본문 -->
+		<main id="content">
+			<div class="container">
+				<!--
+					* [data-banner]
+					* intro: 금융보안원 안내
+					* business: 주요업무
+					* notice: 알림마당
+					* data: 자료마당
+					* customer: 고객센터
+				-->
+				<div class="topBgArea"></div>
+				<section class="subTopArea" data-banner="intro">
+					<div class="wrapper">
+						<div class="left">
+							<h2 class="tit">금융보안원 안내</h2>
+							<div class="depth">
+								<a href="javascript:void(0)" class="home" title="홈으로 이동"><i><img src="@@webRoot/static/img/icon/depth_home.png" alt=""></i></a>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="1"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>금융보안원 안내</span></a></li>
+										<li><a href="javascript:void(0)"><span>주요업무</span></a></li>
+										<li><a href="javascript:void(0)"><span>알림마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>자료마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>고객센터</span></a></li>
+									</ul>
+								</div>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="5"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>CEO 소개</span></a></li>
+										<li><a href="javascript:void(0)"><span>조직도</span></a></li>
+										<li><a href="javascript:void(0)"><span>금융보안원 안내</span></a></li>
+										<li><a href="javascript:void(0)"><span>홍보자료실</span></a></li>
+										<li><a href="javascript:void(0)"><span>찾아오시는 길</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							@@include('@@webRoot/html/_inc/breadcrumb.html',{"depth": "금융보안원 안내", "current": "찾아오시는 길"})
+						</div>
+					</div>
+				</section>
+
+				<section class="subContent">
+					<h3 class="subPageTit">금융보안원 안내</h3>
+
+					<div class="tabArea">
+						<div class="tabBg"></div>
+						<div class="unitTab subTab" data-init="0">
+							<ul>
+								<li><button data-tab="tab01" class="menu" title=""><span>죽전 본원</span></button></li>
+								<li><button data-tab="tab02" class="menu" title=""><span>여의도 사무소</span></button></li>
+								<li><button data-tab="tab03" class="menu" title=""><span>판교 사무소</span></button></li>
+							</ul>
+							<div class="contents tab01">
+								<h4 class="contName"></h4>
+								<div class="mapCont">
+									<div class="map">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357c9f3e0ad61afd%3A0xa44e10b3e2c4cb23!2z6riI7Jy167O07JWI7JuQ!5e0!3m2!1sko!2skr!4v1782631651019!5m2!1sko!2skr" allowfullscreen="" loading="lazy"></iframe>
+									</div>
+									<div class="info">
+										<div class="right">
+											<p class="tit">주소 및 연락처</p>
+											<ul class="desc">
+												<li>
+													<p><i><img src="../static/img/icon/map.png" alt=""></i><span>경기도 용인시 수지구 대지로 132(죽전동)</span></p>
+												</li>
+												<li>
+													<p><i><img src="../static/img/icon/tel.png" alt=""></i><span>02-3495-9000</span></p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="info">
+										<div class="left">
+											<p class="tit">찾아오시는 길</p>
+											<ul class="desc">
+												<li>
+													<p><i><img src="../static/img/icon/bus.png" alt=""></i><strong>버스 이용시 - 새터공원 정류장 하차</strong></p>
+													<ul class="unitList">
+														<li>분당선 미금역 1번출구 - 마을버스 22번(15분 소요)</li>
+														<li>분당선 미금역 8번출구 - 광역버스 9414번(15분 소요)</li>
+														<li>분당선 오리역 4번출구 - 마을버스 22번(12~13분 소요)</li>
+														<li>분당선 죽전역 1번출구 - 마을버스 59번(10분 소요)</li>
+														<li>신분당선 수지구청역 1번출구 - 마을버스 59번(15분 소요)</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+										<div class="right">
+											<p class="tit blank">&nbsp;</p>
+											<ul class="desc">
+												<li>
+													<p><i><img src="../static/img/icon/car.png" alt=""></i><strong>자가용 이용 시</strong></p>
+													<ul class="unitList">
+														<li>네비게이션 검색어를 "금융보안원" 또는 "용인 현암중학교", "용인 현암초등학교" 입력 시 쉽게 찾아오실 수 있습니다.</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="contents tab02">
+								<h4 class="contName"></h4>
+								<div class="mapCont">
+									<div class="map">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357c9f0026a9a619%3A0x4266be2e1e544c0e!2z6riI7Jy167O07JWI7JuQIOyXrOydmOuPhCDsgqzrrLTshow!5e0!3m2!1sko!2skr!4v1782633381305!5m2!1sko!2skr" allowfullscreen="" loading="lazy"></iframe>
+									</div>
+									<div class="info">
+										<div class="left">
+											<p class="tit">주소</p>
+											<ul class="desc">
+												<li>
+													<p><i><img src="../static/img/icon/map.png" alt=""></i><span>서울특별시 영등포구 의사당대로 143 금투센터</span>
+													</p>
+												</li>
+											</ul>
+										</div>
+										<div class="right">
+											<p class="tit">층별안내</p>
+											<ul class="desc">
+												<li>
+													<p><i>8F</i><span>금융보안교육센터(강의장)</span></p>
+												</li>
+												<li>
+													<p><i>7F</i><span>금융보안교육센터(사무실), 보안연구부, 디지털자산실, 개인정보보호부</span></p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="info">
+										<div class="left">
+											<p class="tit">찾아오시는 길</p>
+											<ul class="desc">
+												<li>
+													<p><i><img src="../static/img/icon/bus.png" alt=""></i><strong>버스 이용시</strong></p>
+													<p class="point">샛강역 1번 출구·여의도 자이 버스정류장</p>
+													<ul class="unitList">
+														<li>간선(B)버스 153, 162, 261, 262, 361, 461, 503, 753</li>
+														<li>지선(G)버스 5012, 5623, 6513</li>
+														<li>직행(R)버스 G7625 - 마을버스 영등포11</li>
+													</ul>
+													<p class="point">샛강역 4번 출구·여의도 자이 버스정류장</p>
+													<ul class="unitList">
+														<li>간선(B)버스 153, 162, 361, 461, 503, 753</li>
+														<li>지선(G)버스 5012, 5618, 5623, 6513</li>
+														<li>마을버스 영등포10</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+										<div class="right">
+											<p class="tit blank">&nbsp;</p>
+											<ul class="desc">
+												<li>
+													<p><i><img src="../static/img/icon/bus.png" alt=""></i><strong>지하철 이용 시</strong></p>
+													<p class="point">지하철 5호선·9호선 여의도역 5번출구</p>
+													<ul class="unitList">
+														<li>출구 반대 방향(CU편의점)으로 코너를 돌아 300m오시다가 횡단보도를 지나 100m 앞 금투센터에 위치하고 있습니다.</li>
+													</ul>
+													<p class="point">지하철 9호선·신림선 샛강역 1번출구</p>
+													<ul class="unitList">
+														<li>출구 방향으로 나오셔서 150m정도 오시면 ABL타워 옆 금투센터에 위치하고 있습니다.</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="contents tab03">
+								<h4 class="contName"></h4>
+								<div class="mapCont">
+									<div class="map">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357b59883ff31a3b%3A0xf13b7506a4c3309b!2z7JWM7YyM7YOA7JuM!5e0!3m2!1sko!2skr!4v1782634297725!5m2!1sko!2skr" allowfullscreen="" loading="lazy"></iframe>
+									</div>
+									<div class="info">
+										<div class="left">
+											<p class="tit">주소</p>
+											<ul class="desc">
+												<li>
+													<p><i><img src="../static/img/icon/map.png" alt=""></i><span>경기도 성남시 분당구 판교역로 180 알파타워 5층</span>
+													</p>
+												</li>
+											</ul>
+										</div>
+										<div class="right">
+											<p class="tit">층별안내</p>
+											<ul class="desc">
+												<li>
+													<p><i>5F</i><span>AI혁신부, 디지털인증평가부</span></p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="info">
+										<div class="left">
+											<p class="tit">찾아오시는 길</p>
+											<ul class="desc">
+												<li>
+													<p><i><img src="../static/img/icon/bus.png" alt=""></i><strong>버스 이용시</strong></p>
+													<p class="point">판교역 북편 버스정류장</p>
+													<ul class="unitList">
+														<li>일반버스 101, 375, 380</li>
+														<li>직행버스 3100, 9007</li>
+														<li>마을버스 32</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+										<div class="right">
+											<p class="tit blank">&nbsp;</p>
+											<ul class="desc">
+												<li>
+													<p><i><img src="../static/img/icon/bus.png" alt=""></i><strong>지하철 이용 시</strong></p>
+													<p class="point">지하철 신분당선·경강선 판교역 1번 출구</p>
+													<ul class="unitList">
+														<li>출구 방향으로 나오셔서 좌회전 후 횡단보도를 지나 50m 앞 알파타워에 위치하고 있습니다.</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- 푸터 -->
+		@@include('@@webRoot/html/_inc/footer.html')
+		<!-- 푸터 -->
+	</body>
+</html>
