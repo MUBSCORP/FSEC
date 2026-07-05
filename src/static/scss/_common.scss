@@ -518,6 +518,9 @@ header {
           }
         }
         .topIcon {
+          @include isMobile {
+            @include flexArea;
+          }
           .lan {
             width: 4rem;
             height: 4rem;
@@ -818,6 +821,33 @@ footer {
           }
         }
       }
+    }
+  }
+  .floatMenu {
+    position: absolute;
+    padding: 2rem;
+    left: -15rem;
+    color: $co-white;
+    background-color: $co-secondary;
+    border-radius: 1rem;
+    opacity: 0;
+    box-shadow: 0 0.2rem 1.6rem rgba(0, 0, 0, 0.2);
+    @include trans;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -0.5rem;
+      width: 0;
+      height: 0;
+      border-top: 1.6rem solid transparent;
+      border-bottom: 1.6rem solid transparent;
+      border-left: 1.6rem solid $co-secondary;
+      transform: translateY(-50%);
+    }
+    &.isActive {
+      opacity: 1;
+      left: -17rem;
     }
   }
 }

@@ -825,6 +825,58 @@ section.subContent {
     }
     .desc {
       color: $co-secondary;
+      > strong {
+        font-size: 2.2rem;
+        display: block;
+        margin-bottom: 0.6rem;
+      }
+      > span {
+        + strong {
+          margin-top: 2.2rem;
+        }
+      }
+    }
+    .footer {
+      margin-top: 1.2rem;
+      display: inline-block;
+      dl {
+        @include flexArea($gap: 1rem, $justify: flex-start);
+        padding: 0.4rem 1.2rem 0.4rem 0.4rem;
+        background: $co-white;
+        border-radius: 10rem;
+        border: 1px solid $co-primary;
+        &.type2 {
+          dd {
+            span {
+              padding: 0 1.2rem;
+            }
+          }
+        }
+        dt {
+          @include flexArea($gap: 0.4rem);
+          font-size: 1.6rem;
+          padding: 0.2rem 1.4rem;
+          border-radius: 10rem;
+          background: #e4e4e4;
+          @include isMobile {
+            font-size: 1.2rem;
+          }
+          img {
+            width: 1.4rem;
+            @include isMobile {
+              width: 1.2rem;
+            }
+          }
+        }
+        dd {
+          @include flexArea($gap: 1rem);
+          strong {
+          }
+          span {
+            color: #8a3500;
+          }
+        }
+      }
     }
   }
 
@@ -956,6 +1008,20 @@ section.subContent {
       &::after {
         background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #e1d9ce);
       }
+    }
+    &.type3 {
+      background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #f5f2ed);
+      &::before {
+        background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #f5f2ed);
+      }
+      &::after {
+        background: linear-gradient(0deg, #fff, #fff, #fff, #fff, #f8f6f4, #f5f2ed);
+      }
+    }
+    .wrapper {
+      position: relative;
+      max-width: $maxWidth;
+      z-index: 1;
     }
     .wrapper {
       position: relative;
@@ -1219,48 +1285,53 @@ section.subContent {
           gap: 1rem;
         }
         li {
+          position: relative;
           width: 100%;
-          padding: 4rem;
+          padding: 3rem 3rem 4rem 10.3rem;
           background: $co-white;
           border: 1px solid #ccc;
           border-radius: 3rem;
           box-shadow: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.2);
           @include isMobile {
-            padding: 2rem;
+            padding: 4rem 2rem 4rem;
             border-radius: 1.6rem;
           }
-          .badge {
-            @include flexArea($justify: flex-start, $gap: 3.1rem);
-            width: 100%;
-            margin-bottom: 2rem;
-            * {
-              position: relative;
-              + * {
-                &::before {
-                  content: "";
-                  position: absolute;
-                  width: 1px;
-                  height: 1.2rem;
-                  left: -1.5rem;
-                  top: 50%;
-                  background: #ccc;
-                  transform: translateY(-50%);
-                }
-              }
-            }
-            strong {
-              font-weight: 600;
-              color: #ff6600;
+          &::before {
+            content: "Q";
+            @include flexArea;
+            position: absolute;
+            color: $co-white;
+            background: $co-secondary;
+            font-size: 3.6rem;
+            font-weight: 500;
+            width: 8.7rem;
+            height: 6rem;
+            left: 0;
+            top: 0;
+            border-radius: 3rem 0 3rem 0;
+            text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+            box-shadow: inset -0.6rem -0.6rem 1.8rem rgba(0, 0, 0, 0.3);
+            @include isMobile {
+              font-size: 1.6rem;
+              width: 5rem;
+              border-radius: 1.6rem 0 1.6rem;
+              height: 3rem;
+              top: 0;
             }
           }
           details {
+            summary {
+              font-weight: 500;
+              padding: 0;
+            }
             &[open] {
-              summary {
-                > .tit {
-                  &::after {
-                    transform: rotate(0deg);
-                    opacity: 1;
-                  }
+              + .tag {
+                background: #766552;
+                &::before {
+                  content: "답변닫기";
+                }
+                img {
+                  transform: rotate(180deg);
                 }
               }
             }
@@ -1275,47 +1346,23 @@ section.subContent {
               }
               > .tit {
                 position: relative;
-                padding: 0 5rem 0 7rem;
+                padding: 0;
+                font-size: 2.4rem;
+                font-weight: 500;
                 @include isMobile {
-                  padding: 0 2rem 0 3.5rem;
+                  font-size: 2rem;
+                  padding: 0 2rem 0 0;
                 }
-                &::before {
-                  content: "Q";
-                  @include flexArea;
-                  position: absolute;
-                  color: $co-white;
-                  background: $co-secondary;
-                  font-size: 2.6rem;
-                  font-weight: 500;
-                  width: 6rem;
-                  height: 4rem;
-                  left: 0;
-                  top: -0.8rem;
-                  border-radius: 0 2rem 2rem 2rem;
-                  @include isMobile {
-                    font-size: 1.6rem;
-                    width: 3rem;
-                    height: 2rem;
-                    top: 0;
-                  }
-                }
-                &::after {
-                  content: "";
-                  position: absolute;
-                  right: 0;
-                  top: 0.5rem;
-                  width: 3.2rem;
-                  height: 1.6rem;
-                  background: url(../img/icon/acc_arrow.png) no-repeat center / cover;
-                  transform: rotate(180deg);
-                  transform-origin: center center;
-                  opacity: 0.4;
-                  @include trans;
-                  @include isMobile {
-                    width: 1.6rem;
-                    height: 1rem;
-                    top: 0.6rem;
-                  }
+              }
+              > small {
+                display: block;
+                margin-top: 1.6rem;
+                font-size: 1.6rem;
+                font-weight: 600;
+                color: #ff6600;
+                @include isMobile {
+                  margin-top: 1rem;
+                  font-size: 1.4rem;
                 }
               }
             }
@@ -1352,6 +1399,34 @@ section.subContent {
                   height: 2rem;
                   font-size: 1.1rem;
                 }
+              }
+            }
+          }
+          .tag {
+            @include flexArea($gap: 0.8rem);
+            position: absolute;
+            right: 3rem;
+            bottom: 0;
+            padding: 0.6rem 1.6rem;
+            background: #d18e31;
+            color: $co-white;
+            font-size: 1.4rem;
+            border-radius: 1.6rem 1.6rem 0 0;
+            @include trans;
+            @include isMobile {
+              right: 2rem;
+              font-size: 1.2rem;
+              border-radius: 1rem 1rem 0 0;
+            }
+            &::before {
+              content: "답변보기";
+            }
+            img {
+              width: 1.2rem;
+              transform: rotate(0deg);
+              @include trans;
+              @include isMobile {
+                width: 1rem;
               }
             }
           }
@@ -2362,6 +2437,708 @@ section.subContent {
             margin-top: 1.2rem;
             color: #555;
             font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+
+  .boardList {
+    .wrapper {
+      position: relative;
+      margin: 2rem 0;
+      ul {
+        @include flexArea($gap: 2rem, $align: stretch, $justify: flex-start);
+        position: relative;
+        flex-wrap: wrap;
+        margin: 3rem 0 8rem;
+        @include isMobile {
+          margin: 1.6rem 0 4rem;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 26rem;
+          height: 13rem;
+          border-radius: 2.6rem;
+          top: -2rem;
+          left: -2rem;
+          background: #eae0d5;
+          @include isMobile {
+            display: none;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 26rem;
+          height: 13rem;
+          border-radius: 2.6rem;
+          bottom: -2rem;
+          right: -2rem;
+          background: #eae0d5;
+          @include isMobile {
+            display: none;
+          }
+        }
+        li {
+          position: relative;
+          width: calc(33.3333% - 1.4rem);
+          z-index: 1;
+          @include isMobile {
+            width: 100%;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 8.1rem;
+            height: 1.3rem;
+            bottom: 3rem;
+            right: 3rem;
+            background: url(../img/icon/board_arrow.png) no-repeat center center / contain;
+          }
+          > a {
+            display: block;
+            height: 100%;
+            padding: 0 3rem 8rem;
+            background: $co-white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.2);
+            border-radius: 2rem;
+            @include trans;
+            @include isMobile {
+              padding: 0 2rem 6rem;
+            }
+            &:hover {
+              box-shadow: 0 0.6rem 3.6rem rgba(0, 0, 0, 0.2);
+            }
+            > .head {
+              @include flexArea($gap: 1rem, $justify: space-between);
+              position: relative;
+              margin: 0 -3rem 3rem;
+              padding: 2rem 3rem;
+              background: #f9f9f9;
+              border-bottom: 1px solid #ddd;
+              border-radius: 2rem 2rem 0 0;
+              @include isMobile {
+                margin: 0 -2rem 2rem;
+              }
+              &::after {
+                content: "";
+                position: absolute;
+                width: 2.6rem;
+                height: 2rem;
+                top: 50%;
+                left: -0.6rem;
+                background: url(../img/icon/board_clip.png) no-repeat center center / contain;
+                transform: translateY(-50%);
+              }
+              > .left {
+                @include flexArea($gap: 1rem, $justify: flex-start);
+                color: #555;
+                > strong {
+                  color: #ff6200;
+                  font-weight: 600;
+                }
+              }
+              > .right {
+                @include flexArea($gap: 0.4rem);
+
+                i {
+                  width: 1.6rem;
+                  height: 1.6rem;
+                }
+              }
+            }
+            > .tit {
+              font-size: 2rem;
+              font-weight: 500;
+              color: $co-black;
+              margin-bottom: 1.2rem;
+              @include ellMulti(2);
+              max-height: 5.6rem;
+            }
+            .desc {
+              font-size: 1.4rem;
+              color: #777;
+              @include ellMulti(3);
+              max-height: 6rem;
+            }
+          }
+        }
+      }
+    }
+    &.typeGallery {
+      .wrapper {
+        ul {
+          li {
+            &::after {
+              display: none;
+            }
+            a {
+              padding: 3rem;
+              @include isMobile {
+                padding: 2rem;
+              }
+              .imgArea {
+                height: 26rem;
+                border-radius: 1.8rem;
+                overflow: hidden;
+                @include isMobile {
+                  height: 20rem;
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              .tit {
+                margin-top: 2.4rem;
+                font-size: 1.8rem;
+                @include ellMulti($line: 1);
+                @include isMobile {
+                  margin-top: 2rem;
+                  font-size: 1.6rem;
+                }
+              }
+              .bottom {
+                @include flexArea($gap: 1rem, $justify: space-between);
+                font-size: 1.4rem;
+                color: $co-secondary;
+                font-weight: 500;
+                margin-top: 3rem;
+                @include isMobile {
+                  margin-top: 2rem;
+                }
+                .right {
+                  @include flexArea($gap: 0.8rem);
+                }
+                i {
+                  width: 1.5rem;
+                  height: 1.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.typeFull {
+      .wrapper {
+        ul {
+          li {
+            width: 100%;
+            &::after {
+              top: 4rem;
+              bottom: auto;
+              right: 4rem;
+              width: 2.8rem;
+              height: 2.4rem;
+              background: url(../img/icon/board_arrow2.png) no-repeat center center / contain;
+              @include isMobile {
+                display: none;
+              }
+            }
+            > a {
+              @include flexArea($gap: 4rem);
+              padding: 4rem;
+              @include isMobile {
+                gap: 2rem;
+                padding: 2rem;
+                flex-direction: column;
+              }
+              .left {
+                min-width: 30rem;
+                height: 20rem;
+                border-radius: 1.8rem;
+                overflow: hidden;
+                @include isMobile {
+                  min-width: 100%;
+                  height: 16rem;
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              .right {
+                width: calc(100% - 34rem);
+                @include isMobile {
+                  width: 100%;
+                }
+                > .tit {
+                  font-size: 3rem;
+                  font-weight: 700;
+                  margin-bottom: 1.2rem;
+                  padding-right: 20rem;
+                  @include ell;
+                  @include isMobile {
+                    font-size: 2rem;
+                    margin-bottom: 0.8rem;
+                    padding-right: 0;
+                  }
+                }
+                > .info {
+                  @include flexArea($gap: 2.4rem, $justify: flex-start);
+                  flex-wrap: wrap;
+                  @include isMobile {
+                    gap: 1.2rem;
+                  }
+                  dl {
+                    @include flexArea($gap: 1.2rem, $justify: flex-start);
+                    dt {
+                      font-size: 1.4rem;
+                      font-weight: 500;
+                      color: $co-white;
+                      background: $co-primary;
+                      padding: 0.4rem 1.2rem;
+                      border-radius: 10rem;
+                    }
+                    dd {
+                      font-weight: 500;
+                      color: $co-black;
+                    }
+                  }
+                }
+                > .bottom {
+                  @include flexArea($gap: 1rem, $justify: flex-start);
+                  margin-top: 3rem;
+                  flex-wrap: wrap;
+                  @include isMobile {
+                    margin-top: 1.6rem;
+                  }
+                  dl {
+                    @include flexArea($gap: 1.2rem, $justify: flex-start);
+                    &.full {
+                      width: 100%;
+                      dt {
+                        color: $co-white;
+                        background: #8c8c8c;
+                      }
+                    }
+                    dt {
+                      font-size: 1.4rem;
+                      font-weight: 500;
+                      color: $co-black;
+                      background: #eee;
+                      padding: 0.4rem 1.2rem;
+                      border-radius: 10rem;
+                    }
+                    dd {
+                      font-weight: 500;
+                      color: $co-black;
+                    }
+                  }
+                }
+                .btnApply {
+                  position: absolute;
+                  font-size: 2.2rem;
+                  font-weight: 500;
+                  color: $co-black;
+                  padding: 1.2rem 2.4rem;
+                  border-radius: 1rem;
+                  background: #dcbb04;
+                  bottom: 4rem;
+                  right: 4rem;
+                  @include isMobile {
+                    position: relative;
+                    font-size: 1.8rem;
+                    padding: 1rem 2rem;
+                    margin-top: 2.4rem;
+                    width: 100%;
+                    bottom: auto;
+                    right: auto;
+                  }
+                }
+              }
+              .single {
+                width: 100%;
+                > .tit {
+                  font-size: 2.4rem;
+                  font-weight: 500;
+                  padding-right: 10rem;
+                  margin-bottom: 1.6rem;
+                  @include ell;
+                  @include isMobile {
+                    font-size: 1.8rem;
+                    padding: 0;
+                    margin-bottom: 1rem;
+                  }
+                }
+                .addInfo {
+                  dl {
+                    @include flexArea($gap: 1.6rem, $justify: flex-start);
+                    display: inline-flex;
+                    padding: 0 2.2rem 0 0;
+                    background: #ebe5df;
+                    border-radius: 10rem;
+                    dt {
+                      padding: 0.6rem 1.6rem;
+                      background: $co-secondary;
+                      color: $co-white;
+                      font-size: 1.6rem;
+                      border-radius: 10rem;
+                      @include isMobile {
+                        padding: 0.4rem 1rem;
+                        font-size: 1.4rem;
+                      }
+                    }
+                    dd {
+                      @include flexArea($gap: 0.4rem, $justify: flex-start);
+                      font-size: 1.4rem;
+                      img {
+                        width: 1.4rem;
+                      }
+                    }
+                  }
+                }
+                > .desc {
+                  margin-top: 1.6rem;
+                  padding-top: 1.6rem;
+                  border-top: 1px solid #ddd;
+                  @include ellMulti($line: 3, $height: 8rem);
+                  @include isMobile {
+                    margin-top: 1rem;
+                    padding-top: 1rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.typeSimple {
+      .wrapper {
+        ul {
+          li {
+            .head {
+              gap: 0;
+              padding: 2rem 3rem 0 3rem;
+              border: none;
+              @include isMobile {
+                padding: 2rem 2rem 0 2rem;
+              }
+              &::after {
+                display: none;
+              }
+              .left {
+                gap: 1.6rem;
+                background: #ebe5df;
+                width: 100%;
+                padding: 0rem;
+                border-radius: 10rem 0 0 10rem;
+                strong {
+                  color: $co-white;
+                  padding: 0.6rem 1.6rem;
+                  background: $co-secondary;
+                  border-radius: 10rem;
+                  font-weight: 400;
+                }
+              }
+              .right {
+                background: #ebe5df;
+                padding: 0.6rem 1.2rem;
+                border-radius: 0 10rem 10rem 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.addDeco {
+      .wrapper {
+        ul {
+          li {
+            &::before {
+              content: "";
+              position: absolute;
+              width: 2.2rem;
+              height: 2.2rem;
+              left: 1.6rem;
+              top: 1.6rem;
+              background: url(../img/icon/board_badge.png) no-repeat center center / contain;
+              @include isMobile {
+                display: none;
+              }
+            }
+            &::after {
+              width: 6rem;
+              height: 6rem;
+              background: url(../img/icon/board_arrow3.png) no-repeat center center / contain;
+              @include isMobile {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .boardDetail {
+    > .tit {
+      padding: 3rem;
+      font-size: 3rem;
+      font-weight: 600;
+      @include isMobile {
+        padding: 0 0 2rem 0;
+        font-size: 2rem;
+      }
+    }
+    > .wrapper {
+      background: #f5f2ed;
+      border-radius: 3rem;
+      .top {
+        @include flexArea($gap: 1rem, $justify: flex-start);
+        padding: 3rem;
+        @include isMobile {
+          padding: 2rem;
+          gap: 0.6rem;
+        }
+        .tag {
+          font-weight: 500;
+          color: $co-white;
+          padding: 0.4rem 1.2rem;
+          background: #75589d;
+          border-radius: 10rem;
+        }
+      }
+      .cont {
+        border-radius: 3rem;
+        padding: 3rem;
+        background: $co-white;
+        box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.15);
+        @include isMobile {
+          padding: 2rem;
+        }
+        .attatchArea {
+          background: #f5f2ed;
+          padding: 1.2rem;
+          margin-top: 1.2rem;
+          border-radius: 1.2rem;
+          ul {
+            @include flexArea($gap: 0.6rem, $justify: flex-start);
+            flex-wrap: wrap;
+            li {
+              width: 8rem;
+              background: $co-white;
+              padding: 0.6rem;
+              border-radius: 0.6rem;
+              border: 1px solid #aaa;
+              &.txt {
+                @include flexArea($gap: 0.6rem, $justify: flex-start);
+                width: auto;
+                padding: 0.6rem 1.2rem;
+                border-radius: 10rem;
+                > button {
+                  margin-top: 0;
+                  span {
+                    @include ell;
+                    max-width: 25rem;
+                  }
+                }
+              }
+              > span {
+                display: block;
+                height: 5rem;
+                border-radius: 0.6rem;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              > button {
+                font-size: 1.2rem;
+                color: #555;
+                gap: 1rem;
+                margin-top: 0.5rem;
+                img {
+                  width: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .bottom {
+        padding: 3rem;
+        @include isMobile {
+          padding: 2rem;
+        }
+        > dl {
+          @include flexArea($gap: 2.4rem, $justify: flex-start);
+          padding: 0 0 1rem 0;
+          @include isMobile {
+            gap: 1.2rem;
+          }
+          + dl {
+            border-top: 1px solid rgba(0, 0, 0, 0.15);
+          }
+          &.next {
+            padding: 1rem 0 0 0;
+            dt {
+              img {
+                transform: rotate(180deg);
+              }
+            }
+          }
+          dt {
+            a {
+              @include flexArea($gap: 1.2rem);
+              font-size: 1.8rem;
+              font-weight: 600;
+              padding: 0.8rem 1.6rem;
+              background: $co-white;
+              border: 1px solid #ccc;
+              width: 10rem;
+              min-width: 10rem;
+              border-radius: 10rem;
+              @include isMobile {
+                gap: 0.6rem;
+                font-size: 1.2rem;
+                padding: 0.4rem;
+                width: 8rem;
+                min-width: 8rem;
+              }
+              img {
+                height: 0.7rem;
+                width: auto;
+              }
+            }
+          }
+          dd {
+            font-size: 1.8rem;
+            @include ell;
+            @include isMobile {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .notiImg {
+    margin-top: 6rem;
+    .mobile {
+      display: none;
+    }
+    @include isMobile {
+      display: block;
+      margin-top: 3rem;
+      .mobile {
+        display: block;
+      }
+      .desktop {
+        display: none;
+      }
+    }
+  }
+
+  .contactList {
+    border-radius: 2.4rem;
+    background: $co-white;
+    border: 1px solid #ccc;
+    padding: 1.8rem;
+    > ul {
+      @include flexArea($gap: 1.2rem, $direction: column, $justify: flex-start, $align: flex-start);
+      width: 100%;
+      li {
+        width: 100%;
+        border-radius: 2.4rem;
+        background: #fafafa;
+        border: 1px solid #eee;
+        padding: 1.8rem 1.8rem 1.8rem 23rem;
+        position: relative;
+        @include isMobile {
+          padding: 2rem;
+        }
+        > p {
+          position: absolute;
+          width: 23rem;
+          font-size: 1.8rem;
+          font-weight: 600;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          text-align: center;
+
+          @include isMobile {
+            position: relative;
+            left: auto;
+            top: auto;
+            transform: none;
+            width: 100%;
+            margin-bottom: 1.2rem;
+          }
+        }
+        .inner {
+          border-radius: 1.2rem;
+          border: 1px solid #ccc;
+          overflow: hidden;
+        }
+        dl {
+          @include flexArea;
+          width: 100%;
+          background: #fff;
+          @include isMobile {
+            flex-direction: column;
+          }
+          + dl {
+            border-top: 1px solid #ccc;
+          }
+          dt {
+            @include flexArea($justify: flex-start);
+            width: 16rem;
+            min-width: 16rem;
+            height: 4rem;
+            padding: 0 1.4rem;
+            background: #f5f2ec;
+            @include isMobile {
+              width: 100%;
+              min-width: 100%;
+              text-align: center;
+              justify-content: center;
+              font-weight: 600;
+            }
+          }
+          dd {
+            @include flexArea($justify: space-between);
+            flex: 1;
+            padding: 0 1.4rem;
+            font-size: 1.4rem;
+            @include isMobile {
+              padding: 2rem;
+              flex-direction: column;
+            }
+            > .left {
+              @include isMobile {
+                margin-bottom: 1rem;
+              }
+            }
+            > .right {
+              @include flexArea;
+              @include isMobile {
+                flex-direction: column;
+                gap: 1rem;
+              }
+              span {
+                @include flexArea($justify: flex-start, $gap: 0.6rem);
+                width: 22rem;
+                @include isMobile {
+                  width: 100%;
+                  justify-content: center;
+                }
+                img {
+                  height: 1.2rem;
+                }
+              }
+            }
           }
         }
       }

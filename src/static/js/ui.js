@@ -322,6 +322,20 @@ $(document).ready(function () {
     });
   }
 
+  // 푸터 플로팅
+  // pub_04
+  if ($(".floating").length) {
+    $(".floating .btn02").on("mouseenter", function () {
+      $(".floating .floatMenu").addClass("isActive");
+    });
+
+    $(document).on("click", function (e) {
+      if (!$(e.target).closest(".btn02").length) {
+        $(".floating .floatMenu").removeClass("isActive");
+      }
+    });
+  }
+
   /*
    * 스와이퍼
    */
