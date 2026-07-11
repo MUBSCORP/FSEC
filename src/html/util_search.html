@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		@@include('@@webRoot/html/_inc/head.html',{"title": "통합검색"})
+
+		<!-- 추가 스크립트 -->
+		<script>
+			$(document).ready(function () {
+
+			})
+		</script>
+	</head>
+
+	<body> <!-- pub_03 -->
+		@@include('@@webRoot/html/_inc/skipMenu.html')
+
+		<!-- 헤더 -->
+		@@include('@@webRoot/html/_inc/header.html')
+		<!-- 헤더 -->
+
+		<!-- 본문 -->
+		<main id="content">
+			<div class="container">
+				<!--
+					* [data-banner]
+					* intro: 금융보안원 안내
+					* business: 주요업무
+					* notice: 알림마당
+					* data: 자료마당
+					* customer: 고객센터
+				-->
+				<div class="topBgArea"></div>
+
+				<section class="subContent">
+					<h3 class="subPageTit type2">통합검색</h3>
+
+					<div class="schArea">
+						<div class="formText">
+							<div class="inpZone">
+								<input type="text" id="inpTxt" placeholder="검색어를 입력해 주세요.">
+							</div>
+							<button type="button" class="btnSch" title="검색"><span><img src="@@webRoot/static/img/icon/sch2.png" alt=""></span></button>
+						</div>
+						<div class="schDtl">
+							<dl class="period">
+								<dt><img src="@@webRoot/static/img/icon/calendar.png" alt=""><strong>검색기간</strong></dt>
+								<dd>
+									<div class="radioGroup">
+										<span class="formRadio button"><input type="radio" name="radioSch" id="radioSch-1" checked><label for="radioSch-1"><span>전체</span></label></span>
+										<span class="formRadio button"><input type="radio" name="radioSch" id="radioSch-2"><label for="radioSch-2"><span>오늘</span></label></span>
+										<span class="formRadio button"><input type="radio" name="radioSch" id="radioSch-3"><label for="radioSch-3"><span>1주</span></label></span>
+										<span class="formRadio button"><input type="radio" name="radioSch" id="radioSch-4"><label for="radioSch-4"><span>1개월</span></label></span>
+									</div>
+								</dd>
+							</dl>
+							<dl class="sorting">
+								<dt><img src="@@webRoot/static/img/icon/sorting.png" alt=""><strong>정렬조건</strong></dt>
+								<dd>
+									<div class="radioGroup">
+										<span class="formRadio button"><input type="radio" name="radioSorting" id="radioSorting-1" checked><label for="radioSorting-1"><span>날짜순</span></label></span>
+										<span class="formRadio button"><input type="radio" name="radioSorting" id="radioSorting-2"><label for="radioSorting-2"><span>정확도순</span></label></span>
+									</div>
+								</dd>
+							</dl>
+						</div>
+						<div class="descArea">
+							<p>검색 연산자는 <em>기본연산자(Boolean Operation)와 고급연산자(Advanced Operation)</em>로 구분됩니다.</p>
+							<p class="coBlue">기본 연산자는 효율적이고 정확한 검색을 위해 검색어 사이의 논리적인 관계를 지정해주는 검색 연산자 입니다.<br><strong>AND, OR, NOT 연산자가 이에 포함됩니다.</strong></p>
+						</div>
+					</div>
+
+					<h4 class="pageTit">기본연산자(Boolean Operation)의 표현</h4>
+					<div class="unitTable">
+						<table>
+							<caption>기본연산자(Boolean Operation)의 표현: 검색연산자, 사용사례로 구성</caption>
+							<colgroup>
+								<col style="width:50%;">
+								<col style="width:50%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">검색연산자</th>
+									<th scope="col">사용사례</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="bg">AND 연산자 [&], [ ]</td>
+									<td>검색 & 기업 또는 검색 기업</td>
+								</tr>
+								<tr>
+									<td class="bg">OR 연산자 [|]</td>
+									<td>검색 | 기업</td>
+								</tr>
+								<tr>
+									<td class="bg">NOT 연산자 [!]</td>
+									<td>검색 | 기업</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="decList">
+						<dl>
+							<dt>검색 & 기업</dt>
+							<dd>'검색'과 '기업' 두 개의 키워드가 모두 포함된 결과를 찾습니다.</dd>
+						</dl>
+						<dl>
+							<dt>검색 | 기업</dt>
+							<dd>'검색'이나 '기업' 둘 중 하나의 검색어라도 포함되면 검색결과로 찾아줍니다. 보다 포괄적인 검색결과를 얻을 수 있습니다.</dd>
+						</dl>
+						<dl>
+							<dt>검색 | 기업</dt>
+							<dd>'검색'과 '기업' 두 개의 키워드가 모두 포함된 결과를 찾습니다.</dd>
+						</dl>
+					</div>
+					<p class="refTxt">고급 연산자는 검색할 대상을 세밀하게 지정하여 보다 정확한 검색 결과를 얻을 수 있는 검색 연산자 입니다. 근접검색, Wild검색, 유의어 확장 검색이 이에 포함됩니다</p>
+
+					<h4 class="pageTit">고급연산자(Advanced Operation)의 표현</h4>
+					<div class="unitTable">
+						<table>
+							<caption>고급연산자(Advanced Operation)의 표현: 검색연산자, 사용사례로 구성</caption>
+							<colgroup>
+								<col style="width:50%;">
+								<col style="width:50%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">검색연산자</th>
+									<th scope="col">사용사례</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="bg">유의어 확장 연산자 [@]</td>
+									<td>매거진@</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="decList">
+						<dl>
+							<dt>매거진@</dt>
+							<dd>매거진 키워드의 유의어 확장을 검색엔진의 유의어 사전에 검색하여 보다 포괄적으로 검색결과를 얻을 수 있습니다.</dd>
+						</dl>
+						<dl>
+							<dt>매거진#</dt>
+							<dd>검색결과는 매거진 | 저널 | 잡지 | 신문 | journal | newspaper | magazine 의 검색결과와 동일합니다</dd>
+						</dl>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- 푸터 -->
+		@@include('@@webRoot/html/_inc/footer.html')
+		<!-- 푸터 -->
+	</body>
+</html>

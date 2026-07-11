@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		@@include('@@webRoot/html/_inc/head.html',{"title": "검색결과 > 통합검색"})
+
+		<!-- 추가 스크립트 -->
+		<script>
+			$(document).ready(function () {
+
+			})
+		</script>
+	</head>
+
+	<body> <!-- pub_03 -->
+		@@include('@@webRoot/html/_inc/skipMenu.html')
+
+		<!-- 헤더 -->
+		@@include('@@webRoot/html/_inc/header.html')
+		<!-- 헤더 -->
+
+		<!-- 본문 -->
+		<main id="content">
+			<div class="container">
+				<!--
+					* [data-banner]
+					* intro: 금융보안원 안내
+					* business: 주요업무
+					* notice: 알림마당
+					* data: 자료마당
+					* customer: 고객센터
+				-->
+				<div class="topBgArea"></div>
+
+				<section class="subContent">
+					<h3 class="subPageTit type2">통합검색</h3>
+
+					<div class="schArea">
+						<div class="formText">
+							<div class="inpZone">
+								<input type="text" id="inpTxt" placeholder="검색어를 입력해 주세요.">
+							</div>
+							<button type="button" class="btnSch" title="검색"><span><img src="@@webRoot/static/img/icon/sch2.png" alt=""></span></button>
+						</div>
+						<div class="schDtl">
+							<dl class="period">
+								<dt><img src="@@webRoot/static/img/icon/calendar.png" alt=""><strong>검색기간</strong></dt>
+								<dd>
+									<div class="radioGroup">
+										<span class="formRadio button"><input type="radio" name="radioSch" id="radioSch-1" checked><label for="radioSch-1"><span>전체</span></label></span>
+										<span class="formRadio button"><input type="radio" name="radioSch" id="radioSch-2"><label for="radioSch-2"><span>오늘</span></label></span>
+										<span class="formRadio button"><input type="radio" name="radioSch" id="radioSch-3"><label for="radioSch-3"><span>1주</span></label></span>
+										<span class="formRadio button"><input type="radio" name="radioSch" id="radioSch-4"><label for="radioSch-4"><span>1개월</span></label></span>
+									</div>
+								</dd>
+							</dl>
+							<dl class="sorting">
+								<dt><img src="@@webRoot/static/img/icon/sorting.png" alt=""><strong>정렬조건</strong></dt>
+								<dd>
+									<div class="radioGroup">
+										<span class="formRadio button"><input type="radio" name="radioSorting" id="radioSorting-1" checked><label for="radioSorting-1"><span>날짜순</span></label></span>
+										<span class="formRadio button"><input type="radio" name="radioSorting" id="radioSorting-2"><label for="radioSorting-2"><span>정확도순</span></label></span>
+									</div>
+								</dd>
+							</dl>
+						</div>
+						<div class="descArea">
+							<p>검색 연산자는 <em>기본연산자(Boolean Operation)와 고급연산자(Advanced Operation)</em>로 구분됩니다.</p>
+							<p class="coBlue">기본 연산자는 효율적이고 정확한 검색을 위해 검색어 사이의 논리적인 관계를 지정해주는 검색 연산자 입니다.<br><strong>AND, OR, NOT 연산자가 이에 포함됩니다.</strong></p>
+						</div>
+					</div>
+
+					<h4 class="schResultTxt"><em>"금융"</em>에 대한 검색 결과는 총 <strong>2,666</strong>건 입니다.</h4>
+
+					<div class="tabArea">
+						<div class="tabBg"></div>
+						<div class="unitTab subTab" data-init="0">
+							<ul>
+								<li><button data-tab="tab01" class="menu" title=""><span>통합검색</span></button></li>
+								<li><button data-tab="tab02" class="menu" title=""><span>메뉴</span></button></li>
+								<li><button data-tab="tab03" class="menu" title=""><span>게시글</span></button></li>
+								<li><button data-tab="tab04" class="menu" title=""><span>첨부파일</span></button></li>
+							</ul>
+							<div class="contents tab01">
+								<h4 class="contName"></h4>
+
+								<div class="schResultSummary">
+									<dl>
+										<dt class="total">통합검색</dt>
+										<dd><strong>2,666</strong></dd>
+									</dl>
+									<dl>
+										<dt>메뉴</dt>
+										<dd><strong>37</strong> / 2,666</dd>
+									</dl>
+									<dl>
+										<dt>게시글</dt>
+										<dd><strong>37</strong> / 2,666</dd>
+									</dl>
+									<dl>
+										<dt>첨부파일</dt>
+										<dd><strong>37</strong> / 2,666</dd>
+									</dl>
+								</div>
+
+								<div class="schResultCard">
+									<div class="top">
+										<div class="left"><img src="@@webRoot/static/img/icon/arrow_blk.png" alt=""> <span>메뉴 총 <strong>37</strong>건</span></div>
+										<div class="right">
+											<a href="javascipt:void(0)">자세히보기<img src="@@webRoot/static/img/icon/arrow_brown.png" alt=""></a>
+										</div>
+									</div>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a></dt>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a></dt>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a></dt>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+								</div>
+
+								<div class="schResultCard">
+									<div class="top">
+										<div class="left"><img src="@@webRoot/static/img/icon/arrow_blk.png" alt=""> <span>메뉴 총 <strong>37</strong>건</span></div>
+										<div class="right">
+											<a href="javascipt:void(0)">자세히보기<img src="@@webRoot/static/img/icon/arrow_brown.png" alt=""></a>
+										</div>
+									</div>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span></span></dt>
+										<dd class="tit"><span>제목: <em>금융</em>부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제</span></dd>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span></span></dt>
+										<dd class="tit"><span>제목: <em>금융</em>부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제</span></dd>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span></span></dt>
+										<dd class="tit"><span>제목: <em>금융</em>부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제</span></dd>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+								</div>
+
+								<div class="schResultCard">
+									<div class="top">
+										<div class="left"><img src="@@webRoot/static/img/icon/arrow_blk.png" alt=""> <span>메뉴 총 <strong>37</strong>건</span></div>
+										<div class="right">
+											<a href="javascipt:void(0)">자세히보기<img src="@@webRoot/static/img/icon/arrow_brown.png" alt=""></a>
+										</div>
+									</div>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span> <button type="button" class="tag down">다운로드<img src="@@webRoot/static/img/icon/download_g.png" alt=""></button></span></dt>
+										<dd class="attach"><span>[금융보안원, 'SW공급망보안 자율점검 체크리스트' 개발]</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span> <button type="button" class="tag down">다운로드<img src="@@webRoot/static/img/icon/download_g.png" alt=""></button></span></dt>
+										<dd class="attach"><span>[금융보안원, 'SW공급망보안 자율점검 체크리스트' 개발]</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span> <button type="button" class="tag down">다운로드<img src="@@webRoot/static/img/icon/download_g.png" alt=""></button></span></dt>
+										<dd class="attach"><span>[금융보안원, 'SW공급망보안 자율점검 체크리스트' 개발]</span></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="contents tab02">
+								<h4 class="contName"></h4>
+
+								<div class="schResultCard">
+									<div class="top">
+										<div class="left"><img src="@@webRoot/static/img/icon/arrow_blk.png" alt=""> <span>메뉴 총 <strong>37</strong>건</span></div>
+										<div class="right">
+											<a href="javascipt:void(0)">자세히보기<img src="@@webRoot/static/img/icon/arrow_brown.png" alt=""></a>
+										</div>
+									</div>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a></dt>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a></dt>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a></dt>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="contents tab03">
+								<h4 class="contName"></h4>
+
+								<div class="schResultCard">
+									<div class="top">
+										<div class="left"><img src="@@webRoot/static/img/icon/arrow_blk.png" alt=""> <span>메뉴 총 <strong>37</strong>건</span></div>
+										<div class="right">
+											<a href="javascipt:void(0)">자세히보기<img src="@@webRoot/static/img/icon/arrow_brown.png" alt=""></a>
+										</div>
+									</div>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span></span></dt>
+										<dd class="tit"><span>제목: <em>금융</em>부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제</span></dd>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span></span></dt>
+										<dd class="tit"><span>제목: <em>금융</em>부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제</span></dd>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span></span></dt>
+										<dd class="tit"><span>제목: <em>금융</em>부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제부문 통합보안관제</span></dd>
+										<dd class="depth"><span>주요업무</span><span>주요업무</span><span><em>금융</em>부문 통합보안관제</span></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="contents tab04">
+								<h4 class="contName"></h4>
+
+								<div class="schResultCard">
+									<div class="top">
+										<div class="left"><img src="@@webRoot/static/img/icon/arrow_blk.png" alt=""> <span>메뉴 총 <strong>37</strong>건</span></div>
+										<div class="right">
+											<a href="javascipt:void(0)">자세히보기<img src="@@webRoot/static/img/icon/arrow_brown.png" alt=""></a>
+										</div>
+									</div>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span> <button type="button" class="tag down">다운로드<img src="@@webRoot/static/img/icon/download_g.png" alt=""></button></span></dt>
+										<dd class="attach"><span>[금융보안원, 'SW공급망보안 자율점검 체크리스트' 개발]</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span> <button type="button" class="tag down">다운로드<img src="@@webRoot/static/img/icon/download_g.png" alt=""></button></span></dt>
+										<dd class="attach"><span>[금융보안원, 'SW공급망보안 자율점검 체크리스트' 개발]</span></dd>
+									</dl>
+									<dl>
+										<dt><a href="javascript:void(0)"><em>금융</em>부문 통합보안관제</a> <span class="tagList"><span class="tag date">2026.12.31</span> <button type="button" class="tag down">다운로드<img src="@@webRoot/static/img/icon/download_g.png" alt=""></button></span></dt>
+										<dd class="attach"><span>[금융보안원, 'SW공급망보안 자율점검 체크리스트' 개발]</span></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- 푸터 -->
+		@@include('@@webRoot/html/_inc/footer.html')
+		<!-- 푸터 -->
+	</body>
+</html>

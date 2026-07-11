@@ -136,7 +136,50 @@
 													<dd><span>2023-10-01 ~ 2023-10-01</span></dd>
 												</dl>
 											</div>
-											<button type="button" class="btnApply"><span>참가신청</span></button>
+											<!-- pub_05 -->
+											<div class="btnArea">
+												<button type="button" class="btnApply"><span>참가신청</span></button>
+												<button type="button" class="btnApply line"><span>신청확인</span></button>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="left">
+											<img src="@@webRoot/static/img/common/thumbDummy.png" alt="">
+										</div>
+										<div class="right">
+											<p class="tit">금융보안원 계약직원(사무사원) 고용공고 금융보안원 계약직원(사무사원) 고용공고 금융보안원 계약직원(사무사원) 고용공고 금융보안원 계약직원(사무사원) 고용공고 금융보안원 계약직원(사무사원) 고용공고 </p>
+											<div class="info">
+												<dl>
+													<dt><span>장소</span></dt>
+													<dd><span>콘레드호텔</span></dd>
+												</dl>
+												<dl>
+													<dt class="dis"><span>종료</span></dt> <!-- pub_05 -->
+													<dd><span>2024-11-01 09:00 ~ 2024-11-01 17:00</span></dd>
+												</dl>
+											</div>
+											<div class="bottom">
+												<dl>
+													<dt><span>행사주최</span></dt>
+													<dd><span>금융보안원</span></dd>
+												</dl>
+												<dl>
+													<dt><span>담당부서</span></dt>
+													<dd><span>보안연구부</span></dd>
+												</dl>
+												<dl class="full">
+													<dt class="dis"><span>신청종료</span></dt> <!-- pub_05 -->
+													<dd><span>2023-10-01 ~ 2023-10-01</span></dd>
+												</dl>
+											</div>
+											<!-- pub_05 -->
+											<div class="btnArea">
+												<button type="button" class="btnApply" disabled><span>신청마감</span></button>
+												<button type="button" class="btnApply line modal-01" onclick="openModalMulti('modal-01')"><span>확인증발급</span></button>
+											</div>
 										</div>
 									</a>
 								</li>
@@ -171,7 +214,11 @@
 													<dd><span>2023-10-01 ~ 2023-10-01</span></dd>
 												</dl>
 											</div>
-											<button type="button" class="btnApply"><span>참가신청</span></button>
+											<!-- pub_05 -->
+											<div class="btnArea">
+												<button type="button" class="btnApply"><span>참가신청</span></button>
+												<button type="button" class="btnApply line"><span>신청확인</span></button>
+											</div>
 										</div>
 									</a>
 								</li>
@@ -206,42 +253,11 @@
 													<dd><span>2023-10-01 ~ 2023-10-01</span></dd>
 												</dl>
 											</div>
-											<button type="button" class="btnApply"><span>참가신청</span></button>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)">
-										<div class="left">
-											<img src="@@webRoot/static/img/common/thumbDummy.png" alt="">
-										</div>
-										<div class="right">
-											<p class="tit">금융보안원 계약직원(사무사원) 고용공고 금융보안원 계약직원(사무사원) 고용공고 금융보안원 계약직원(사무사원) 고용공고 금융보안원 계약직원(사무사원) 고용공고 금융보안원 계약직원(사무사원) 고용공고 </p>
-											<div class="info">
-												<dl>
-													<dt><span>장소</span></dt>
-													<dd><span>콘레드호텔</span></dd>
-												</dl>
-												<dl>
-													<dt><span>일시</span></dt>
-													<dd><span>2024-11-01 09:00 ~ 2024-11-01 17:00</span></dd>
-												</dl>
+											<!-- pub_05 -->
+											<div class="btnArea">
+												<button type="button" class="btnApply"><span>참가신청</span></button>
+												<button type="button" class="btnApply line"><span>신청확인</span></button>
 											</div>
-											<div class="bottom">
-												<dl>
-													<dt><span>행사주최</span></dt>
-													<dd><span>금융보안원</span></dd>
-												</dl>
-												<dl>
-													<dt><span>담당부서</span></dt>
-													<dd><span>보안연구부</span></dd>
-												</dl>
-												<dl class="full">
-													<dt><span>신청기간</span></dt>
-													<dd><span>2023-10-01 ~ 2023-10-01</span></dd>
-												</dl>
-											</div>
-											<button type="button" class="btnApply"><span>참가신청</span></button>
 										</div>
 									</a>
 								</li>
@@ -259,5 +275,40 @@
 		<!-- 푸터 -->
 		@@include('@@webRoot/html/_inc/footer.html')
 		<!-- 푸터 -->
+
+		<aside class="unitModal modal-01" data-type="">
+			<div class="wrapper">
+				<div class="content">
+					<div class="reportBox">
+						<div class="tit">
+							<strong>확인증 발급 <small><img src="../static/img/icon/req.png" alt=""> 참가 신청 시 입력한 이메일과 비밀번호를 입력하세요.</small></strong>
+						</div>
+						<ul>
+							<li>
+								<span class="tit">이메일</span>
+								<div class="formText">
+									<div class="inpZone">
+										<input type="text" placeholder="" title="이메일">
+									</div>
+								</div>
+							</li>
+							<li>
+								<span class="tit">비밀번호</span>
+								<div class="formText">
+									<div class="inpZone">
+										<input type="password" placeholder="" title="비밀번호">
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="modalFooter">
+					<button type="button" onclick="modalClose('modal-01')"><span>발급</span></button>
+					<button type="button" class="line" onclick="modalClose('modal-01')"><span>취소</span></button>
+				</div>
+			</div>
+		</aside>
 	</body>
 </html>

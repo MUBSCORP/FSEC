@@ -518,9 +518,7 @@ header {
           }
         }
         .topIcon {
-          @include isMobile {
-            @include flexArea;
-          }
+          @include flexArea($gap: 1rem);
           .lan {
             width: 4rem;
             height: 4rem;
@@ -825,8 +823,11 @@ footer {
   }
   .floatMenu {
     position: absolute;
-    padding: 2rem;
-    left: -15rem;
+    padding: 0;
+    left: 0rem;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
     color: $co-white;
     background-color: $co-secondary;
     border-radius: 1rem;
@@ -846,6 +847,10 @@ footer {
       transform: translateY(-50%);
     }
     &.isActive {
+      padding: 2rem;
+      width: 16.4rem;
+      height: 17.5rem;
+      overflow: visible;
       opacity: 1;
       left: -17rem;
     }

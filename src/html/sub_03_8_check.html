@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		@@include('@@webRoot/html/_inc/head.html',{"title": "신청확인 > 행사안내 > 알림마당"})
+
+		<!-- 추가 스크립트 -->
+		<script>
+			$(document).ready(function () {
+
+			})
+		</script>
+	</head>
+
+	<body> <!-- pub_03 -->
+		@@include('@@webRoot/html/_inc/skipMenu.html')
+
+		<!-- 헤더 -->
+		@@include('@@webRoot/html/_inc/header.html')
+		<!-- 헤더 -->
+
+		<!-- 본문 -->
+		<main id="content">
+			<div class="container">
+				<!--
+					* [data-banner]
+					* intro: 금융보안원 안내
+					* business: 주요업무
+					* notice: 알림마당
+					* data: 자료마당
+					* customer: 고객센터
+				-->
+				<div class="topBgArea"></div>
+				<section class="subTopArea" data-banner="notice">
+					<div class="wrapper">
+						<div class="left">
+							<h2 class="tit">알림마당</h2>
+							<div class="depth">
+								<a href="javascript:void(0)" class="home" title="홈으로 이동"><i><img src="@@webRoot/static/img/icon/depth_home.png" alt=""></i></a>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="3"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>금융보안원 안내</span></a></li>
+										<li><a href="javascript:void(0)"><span>주요업무</span></a></li>
+										<li><a href="javascript:void(0)"><span>알림마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>자료마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>고객센터</span></a></li>
+									</ul>
+								</div>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="8"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>공지사항</span></a></li>
+										<li><a href="javascript:void(0)"><span>입찰공고</span></a></li>
+										<li><a href="javascript:void(0)"><span>보도자료</span></a></li>
+										<li><a href="javascript:void(0)"><span>보안원 소식</span></a></li>
+										<li><a href="javascript:void(0)"><span>기고 및 인터뷰</span></a></li>
+										<li><a href="javascript:void(0)"><span>사회공헌활동</span></a></li>
+										<li><a href="javascript:void(0)"><span>채용정보</span></a></li>
+										<li><a href="javascript:void(0)"><span>행사안내</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							@@include('@@webRoot/html/_inc/breadcrumb.html',{"depth": "알림마당", "current": "행사안내"})
+						</div>
+					</div>
+				</section>
+
+				<section class="subContent">
+					<h3 class="subPageTit">신청확인</h3>
+
+					<div class="applyCont">
+						<div class="topArea">
+							<h4 class="tit">금융정보보호 컨퍼런스 FISCON 2024</h4>
+							<div class="desc">
+								<dl>
+									<dt>담당자</dt>
+									<dd>보안연구부</dd>
+								</dl>
+								<dl>
+									<dt>문의</dt>
+									<dd>02-3495-9712</dd>
+								</dl>
+							</div>
+						</div>
+
+						<div class="formBox">
+							<div class="tit">
+								<strong>참가자 정보</strong>
+							</div>
+							<ul>
+								<li>
+									<div class="line">
+										<dl>
+											<dt><span>이름</span></dt>
+											<dd>
+												<div class="formText">
+													<div class="inpZone">
+														<input type="text" placeholder="" title="이름" value="홍길동" readonly>
+													</div>
+												</div>
+											</dd>
+										</dl>
+										<dl>
+											<dt><span>직급</span></dt>
+											<dd>
+												<div class="formText">
+													<div class="inpZone">
+														<input type="text" placeholder="" title="직급" value="대리" readonly>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<div class="line">
+										<dl>
+											<dt><span>회사</span></dt>
+											<dd>
+												<div class="formText">
+													<div class="inpZone">
+														<input type="text" placeholder="" title="회사" value="금융보안원" readonly>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<li>
+									<div class="line">
+										<dl>
+											<dt><span>연락처</span></dt>
+											<dd>
+												<div class="formText">
+													<div class="inpZone">
+														<input type="text" placeholder="“-” 없이 숫자만 입력해 주세요." title="연락처" value="010-1234-5678" readonly>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<div class="line">
+										<dl>
+											<dt><span>이메일</span></dt>
+											<dd>
+												<div class="formText">
+													<div class="inpZone">
+														<input type="text" placeholder="" title="이메일" value="abc@def.com" readonly>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="ctaArea">
+						<button type="button" class="btnCta"><img src="@@webRoot/static/img/icon/list_w.png" alt=""><span>목록보기</span></button>
+						<button type="button" class="btnCta line"><img src="@@webRoot/static/img/icon/list_gray.png" alt=""><span>신청취소</span></button>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- 푸터 -->
+		@@include('@@webRoot/html/_inc/footer.html')
+		<!-- 푸터 -->
+	</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
-		@@include('@@webRoot/html/_inc/head.html',{"title": "상세보기 > 공지사항 > 알림마당"})
+		@@include('@@webRoot/html/_inc/head.html',{"title": "신청완료 > 행사안내 > 알림마당"})
 
 		<!-- 추가 스크립트 -->
 		<script>
@@ -49,9 +49,8 @@
 								</div>
 								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
 								<div class="formSelect">
-									<button type="button" class="select" data-value="1"><span>선택하세요.</span></button>
+									<button type="button" class="select" data-value="8"><span>선택하세요.</span></button>
 									<ul class="option">
-										<!-- pub_04 -->
 										<li><a href="javascript:void(0)"><span>공지사항</span></a></li>
 										<li><a href="javascript:void(0)"><span>입찰공고</span></a></li>
 										<li><a href="javascript:void(0)"><span>보도자료</span></a></li>
@@ -65,23 +64,39 @@
 							</div>
 						</div>
 						<div class="right">
-							@@include('@@webRoot/html/_inc/breadcrumb.html',{"depth": "알림마당", "current": "공지사항"})
+							@@include('@@webRoot/html/_inc/breadcrumb.html',{"depth": "알림마당", "current": "행사안내"})
 						</div>
 					</div>
 				</section>
 
 				<section class="subContent">
-					<h3 class="subPageTit">공지사항</h3>
+					<h3 class="subPageTit">행사신청</h3>
+
+
 
 					<div class="boardDetail">
-						<h3 class="tit">「Next Finance, Next Security : 토큰증권(STO) 보안 강화 전략」 세미나 개최 안내</h3>
+						<div class="tit">
+							금융정보보호 컨퍼런스 FISCON 2024
+							<span class="desc">
+								<small><span>장소</span>콜데드호텔</small>
+								<small><span>종료</span>2024-11-01 09:00 ~ 2024-11-01 17:00</small>
+								<small class="dis"><span>신청종료</span>2024-11-01 ~ 2024-11-01</small>
+							</span>
+							<div class="topBtn">
+								<button type="button">참가신청</button>
+								<button type="button" class="line">신청확인</button>
+								<button type="button" class="line modal-01" onclick="openModalMulti('modal-01')">확인증발급</button>
+							</div>
+						</div>
 						<div class="wrapper">
 							<div class="top">
-								<span class="tag">디저털자산실</span>
-								<span class="date">2026-00-00</span>
+								<span class="tag line">주최</span>
+								<span class="date">금융보안원</span>
+								<span class="tag line">담당부서</span>
+								<span class="date">보안연구부</span>
 							</div>
 							<div class="cont">
-								<img src="@@webRoot/static/img/dummy/@006.png" alt="">
+								<img src="@@webRoot/static/img/dummy/@007.png" alt="">
 								<div class="attatchArea">
 									<ul>
 										<li>
@@ -126,7 +141,6 @@
 								</dl>
 							</div>
 						</div>
-						<!-- pub_05 -->
 						<div class="ctaArea">
 							<button type="button" class="btnCta"><img src="@@webRoot/static/img/icon/list_w.png" alt=""><span>목록으로</span></button>
 						</div>
@@ -138,5 +152,40 @@
 		<!-- 푸터 -->
 		@@include('@@webRoot/html/_inc/footer.html')
 		<!-- 푸터 -->
+
+		<aside class="unitModal modal-01" data-type="">
+			<div class="wrapper">
+				<div class="content">
+					<div class="reportBox">
+						<div class="tit">
+							<strong>확인증 발급 <small><img src="../static/img/icon/req.png" alt=""> 참가 신청 시 입력한 이메일과 비밀번호를 입력하세요.</small></strong>
+						</div>
+						<ul>
+							<li>
+								<span class="tit">이메일</span>
+								<div class="formText">
+									<div class="inpZone">
+										<input type="text" placeholder="" title="이메일">
+									</div>
+								</div>
+							</li>
+							<li>
+								<span class="tit">비밀번호</span>
+								<div class="formText">
+									<div class="inpZone">
+										<input type="password" placeholder="" title="비밀번호">
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="modalFooter">
+					<button type="button" onclick="modalClose('modal-01')"><span>발급</span></button>
+					<button type="button" class="line" onclick="modalClose('modal-01')"><span>취소</span></button>
+				</div>
+			</div>
+		</aside>
 	</body>
 </html>

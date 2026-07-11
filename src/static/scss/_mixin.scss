@@ -127,6 +127,14 @@
   }
 }
 
+@mixin focusUnderline {
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+  }
+}
+
 ////////////////////////////////////////////////////
 
 @mixin formGroup($gap: 1rem, $direction: row) {
@@ -157,9 +165,11 @@
       padding: 0 1.6rem;
       width: 100%;
       font-size: inherit;
+      font-weight: 600;
       border-radius: 0.8rem;
       &::placeholder {
         color: #999;
+        font-weight: 400;
       }
       &:focus {
         + .btn-clear {
@@ -169,6 +179,9 @@
       &:disabled {
         color: #ccc;
         background-color: #f1f1f1;
+      }
+      &:read-only {
+        background-color: #f8f8f8;
       }
       // &:read-only{background-color:#fafafa;border:none;}
       &[type="number"] {
@@ -372,11 +385,9 @@
       width: 2.4rem;
       height: 2.4rem;
       border-radius: 50%;
-      border: 2px solid $co-brd;
-      background: #fff;
+      background: $co-white url(../img/icon/radio.png) center center no-repeat;
+      background-size: 100%;
       @include trans;
-      background-position: center center;
-      background-size: 1.6rem 1.6rem;
     }
   }
   input {
@@ -481,42 +492,35 @@
     }
   }
   &.button {
-    display: inline-block;
+    @include flexArea;
+    display: inline-flex;
+    width: 12rem;
     label {
       padding: 1.2rem 2.4rem;
-      border-radius: 10rem;
+      border-radius: 0.6rem;
       color: $co-black;
-      height: 4.6rem;
+      height: 4.8rem;
       > span {
         z-index: 1;
       }
       &::before {
         background: $co-white;
-        border: 1px solid $co-brd;
+        border: 1px solid #333428;
         width: 100%;
         height: 100%;
-        border-radius: 10rem;
+        border-radius: 0.6rem;
       }
     }
     input {
       &:checked + label {
         color: $co-white;
+        font-weight: 600;
       }
       &:checked + label:before {
-        background: $co-primary;
+        background: #6d6e67;
         border: none;
         width: 100%;
         height: 100%;
-        border-radius: 10rem;
-      }
-    }
-  }
-  @include isMobile {
-    label {
-      font-size: 1.2rem;
-      padding-left: 3rem;
-      &:before {
-        top: -0.5rem;
       }
     }
   }
@@ -577,6 +581,63 @@
 }
 .formSelect {
   @include formSelect;
+}
+
+// Table
+@mixin unitTable {
+  border: 1px solid #ccc;
+  border-radius: 2.4rem;
+  overflow: hidden;
+  @include isMobile {
+    border-radius: 1.6rem;
+  }
+  table {
+    font-size: 2.2rem;
+    @include isMobile {
+      font-size: 1.6rem;
+    }
+    thead {
+      tr {
+        border-bottom: 1px solid #ccc;
+        th {
+          background: #f9f9f9;
+          padding: 1.8rem;
+          font-weight: 600;
+          @include isMobile {
+            padding: 1.2rem;
+          }
+          + th {
+            border-left: 1px solid #ccc;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid #ccc;
+        &:last-child {
+          border-bottom: none;
+        }
+        td {
+          background: $co-white;
+          padding: 1.8rem;
+          text-align: center;
+          @include isMobile {
+            padding: 1.2rem;
+          }
+          &.bg {
+            background: #f9f9f9;
+          }
+          + td {
+            border-left: 1px solid #ccc;
+          }
+        }
+      }
+    }
+  }
+}
+.unitTable {
+  @include unitTable;
 }
 
 // Tab
@@ -849,11 +910,15 @@
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 67rem;
-    border-radius: 0.5rem;
+    padding: 6rem 8rem;
+    border: 1px solid #ccc;
+    border-radius: 2.4rem;
     max-height: calc(100% - 6rem);
-    overflow-y: auto;
     background-color: $co-white;
     word-break: keep-all;
+    @include isMobile {
+      padding: 3rem 2rem;
+    }
     .closeModal {
       position: absolute;
       right: 2.5rem;
@@ -875,57 +940,29 @@
         color: #999;
       }
     }
-    > .contArea {
-      padding: 2rem;
-      > .msg {
-        font-size: 1.4rem;
-        color: $co-darkGray;
-        text-align: center;
-        padding: 0 2rem;
-        line-height: 1.5;
-      }
-      .unitTable.typeRow {
-        table {
-          tbody {
-            tr {
-              th {
-                padding: 1.5rem;
-              }
-              td {
-                padding: 1rem 1.5rem;
-              }
-            }
-          }
-        }
-      }
-      aside.termsChk {
-        .txtBox {
-          padding: 2rem;
-          > .tit {
-            font-size: 1.8rem;
-          }
-        }
-        > .chkCont {
-          margin-top: 1rem;
-        }
-      }
+    > .content {
     }
-    .unitBtn {
-      margin: 0;
-      .flexArea {
-        gap: 0;
-        overflow: hidden;
-        button {
+    .modalFooter {
+      @include flexArea($gap: 1rem);
+      margin-top: 3rem;
+      @include isMobile {
+        margin-top: 2rem;
+      }
+      > button {
+        height: 5.2rem;
+        padding: 0 3rem;
+        background: #574130;
+        border-radius: 1.2rem;
+        color: $co-white;
+        font-size: 2rem;
+        font-weight: 600;
+        @include isMobile {
           font-size: 1.6rem;
-          padding: 2rem 1.2rem;
-          border-radius: 0;
-          font-size: 1.6rem;
-          &.dis {
-            flex: 0.5;
-            &.full {
-              flex: 1;
-            }
-          }
+        }
+        &.line {
+          color: #574130;
+          background: $co-white;
+          border: 1px solid #574130;
         }
       }
     }
