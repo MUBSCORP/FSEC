@@ -433,6 +433,50 @@ $(document).ready(function () {
     },
   });
 
+  // pub_06
+  // 메인 알림마당
+  if ($(".swiperMainNotice .swiper-wrapper .swiper-slide").length == 1) {
+    $(".swiperMainVisual").parent().children(".controller").hide();
+  }
+  var swiperMainNotice = new Swiper(".swiperMainNotice", {
+    slidesPerView: "auto",
+    spaceBetween: 0,
+    loop: false,
+    observer: true,
+    observeParents: true,
+    autoHeight: true,
+    navigation: {
+      nextEl: ".swiperMainNotice-next",
+      prevEl: ".swiperMainNotice-prev",
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    watchOverflow: true,
+    pagination: {
+      el: ".swiperMainNotice-pagin",
+      type: "bullets",
+      clickable: true,
+    },
+    a11y: {
+      slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+    },
+    keyboard: {
+      enabled: true,
+    },
+    breakpoints: {
+      1280: {
+        slidesPerView: 4,
+      },
+    },
+    on: {
+      transitionStart: function () {},
+
+      transitionEnd: function () {},
+    },
+  });
+
   // 메인 자료마당
   if ($(".swiperMainData .swiper-wrapper .swiper-slide").length == 1) {
     $(".swiperMainData").parent().children(".controller").hide();

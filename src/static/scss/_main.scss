@@ -42,10 +42,26 @@
               @include flexArea;
               height: 60rem;
               color: $co-white;
-              padding: 0 1rem;
+              // padding: 0 1rem;
               background-repeat: no-repeat;
               background-size: cover;
               background-position: center center;
+              > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                &.mo {
+                  display: none;
+                }
+                @include isMobile {
+                  &.pc {
+                    display: none;
+                  }
+                  &.mo {
+                    display: block;
+                  }
+                }
+              }
               // &::before,
               // &::after {
               //   content: "";
@@ -650,6 +666,7 @@
               }
               .formGroup {
                 .formRadio {
+                  width: auto;
                   @include isMobile {
                     flex: 1;
                     font-size: 1.6rem;

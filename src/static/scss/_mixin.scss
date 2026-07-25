@@ -628,8 +628,61 @@
           &.bg {
             background: #f9f9f9;
           }
+          &.brdR {
+            border-right: 1px solid #ccc;
+          }
           + td {
             border-left: 1px solid #ccc;
+          }
+        }
+      }
+    }
+  }
+  &.data {
+    border-radius: 0;
+    border: none;
+    border-top: 2px solid #bcaea0;
+    border-bottom: 1px solid #ccc;
+    &.scroll {
+      @include isMobile {
+        overflow-x: auto;
+        table {
+          width: 75rem;
+        }
+      }
+    }
+    table {
+      thead {
+        tr {
+          background: #f5f2ef;
+          border-bottom: 1px solid #bcaea0;
+          th {
+            padding: 1.2rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            vertical-align: middle;
+            border: none;
+            @include isMobile {
+              padding: 0.8rem;
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            color: #555;
+            font-size: 1.6rem;
+            padding: 1.2rem;
+            vertical-align: middle;
+            @include isMobile {
+              padding: 0.8rem;
+              font-size: 1.3rem;
+            }
+            &.left {
+              text-align: left;
+            }
           }
         }
       }
@@ -642,6 +695,22 @@
 
 // Tab
 @mixin unitTab {
+  &.type2 {
+    > ul {
+      flex-wrap: wrap;
+      @include isMobile {
+        flex-wrap: nowrap;
+      }
+      > li {
+        flex: auto;
+        width: calc(33.333% - 0.7rem);
+        @include isMobile {
+          flex: 1;
+          width: auto;
+        }
+      }
+    }
+  }
   > ul {
     position: relative;
     color: #555;
@@ -659,6 +728,7 @@
         font-size: 2.4rem;
         font-weight: 400;
         width: 100%;
+        letter-spacing: -1px;
         @include trans;
         &.isActive {
           color: $co-white;
@@ -757,7 +827,7 @@
         width: 0.6rem;
         height: 0.6rem;
         border-radius: 100%;
-        background-color: #a2a2d0;
+        background-color: #936334;
         left: 0;
         top: 0.8rem;
       }

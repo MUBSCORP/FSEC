@@ -792,9 +792,17 @@ section.subContent {
     @include flexArea($justify: flex-start);
     position: relative;
     margin-top: 6rem;
+    margin-bottom: 6rem;
     min-height: 15.6rem;
+    & + [class*="bizCont"]:not(.subBgArea) {
+      margin-top: -6rem;
+      @include isMobile {
+        margin-top: -3rem;
+      }
+    }
     @include isMobile {
       margin-top: 3rem;
+      margin-bottom: 3rem;
       min-height: 10rem;
     }
     .imgArea {
@@ -807,17 +815,72 @@ section.subContent {
       @include isMobile {
         width: 10rem;
         height: 10rem;
+        top: 6rem;
       }
     }
     .textArea {
+      width: 100%;
       .tit {
+        font-size: 3.2rem;
+        font-weight: 600;
         padding-left: 23.6rem;
+        margin-bottom: 2rem;
         @include isMobile {
+          font-size: 2rem;
+          margin-bottom: 1rem;
           padding-left: 12rem;
         }
       }
       .desc {
         padding-left: 23.6rem;
+        > strong {
+          font-size: 2.2rem;
+          font-weight: 500;
+          @include isMobile {
+            font-size: 1.6rem;
+          }
+        }
+        .unitList {
+          display: block;
+          margin-top: 1.2rem;
+          @include isMobile {
+            margin-top: 0.6rem;
+          }
+          li {
+            color: #ff6600;
+            &::before {
+              background: #93673b;
+            }
+          }
+        }
+        > dl {
+          @include flexArea($gap: 1.2rem, $justify: flex-start);
+          width: 100%;
+          font-size: 1.8rem;
+          margin-top: 1.8rem;
+          padding-top: 1.8rem;
+          border-top: 1px solid #ccc;
+          @include isMobile {
+            font-size: 1.4rem;
+            margin-left: -12rem;
+            width: calc(100% + 12rem);
+          }
+          + dl {
+            margin-top: 1.4rem;
+            padding: 0;
+            border: none;
+          }
+          dt {
+            font-weight: 500;
+            line-height: 1;
+            color: #493f24;
+            background: #efe8d5;
+            padding: 0.6rem 1.2rem;
+            border-radius: 10rem;
+          }
+          dd {
+          }
+        }
         @include isMobile {
           padding-left: 12rem;
         }
@@ -1108,25 +1171,1101 @@ section.subContent {
     }
   }
 
-  .bizCont01 {
+  .msgBlk {
+    @include flexArea($gap: 2.4rem);
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #555;
+    border: 1px solid #ccc;
+    border-radius: 1.6rem;
+    color: $co-white;
+    @include isMobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    dt {
+      @include flexArea($gap: 1.8rem);
+      background: #ffdd00;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $co-black;
+      padding: 0.5rem 1.8rem;
+      border-radius: 10rem;
+      img {
+        width: 0.8rem;
+      }
+      @include isMobile {
+        font-size: 1.4rem;
+        img {
+          width: 0.6rem;
+        }
+      }
+    }
+  }
+
+  [class*="bizCont"] {
     margin-top: 6rem;
     padding: 6rem 0;
+    + [class*="bizCont"]:not(.subBgArea) {
+      padding: 0;
+      @include isMobile {
+        margin: 2rem -2rem 0;
+        padding: 0 2rem;
+      }
+    }
+    &.first {
+      padding: 0;
+      @include isMobile {
+        padding: 0 2rem;
+      }
+    }
     @include isMobile {
       margin: 3rem -2rem 0;
       padding: 3rem 2rem;
     }
     .wrapper {
       max-width: $maxWidth;
-      .mo {
+    }
+    .mo {
+      display: none;
+    }
+    @include isMobile {
+      .pc {
         display: none;
       }
+      .mo {
+        display: block;
+      }
+    }
+  }
+
+  .bizCont04 {
+    .boxIcon {
+      @include flexArea($gap: 2.4rem);
       @include isMobile {
-        .pc {
-          display: none;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 1.2rem;
+      }
+      > li {
+        flex: 1;
+        padding: 4rem 4rem 5rem;
+        text-align: center;
+        background: $co-white;
+        border-radius: 2.4rem;
+        border: 1px solid #c4b4a3;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        @include isMobile {
+          padding: 4rem 2rem 2rem;
+          flex: auto;
+          width: calc(50% - 0.6rem);
         }
-        .mo {
+        img {
+          @include isMobile {
+            height: 6rem;
+          }
+        }
+        p {
+          font-size: 2rem;
+          padding: 3rem 0 0 0;
+          margin: 2rem 0 0 0;
+          border-top: 1px solid #aaa;
+          @include isMobile {
+            font-size: 1.4rem;
+            padding: 1.5rem 0 0 0;
+            margin: 1.5rem 0 0 0;
+          }
+        }
+      }
+    }
+    .boxList {
+      @include flexArea($direction: column, $gap: 1.2rem, $align: flex-start);
+      > li {
+        @include flexArea($gap: 5rem);
+        width: 100%;
+        height: 22rem;
+        padding: 3rem;
+        background: $co-white;
+        border: 1px solid #ccc;
+        border-radius: 2.4rem;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        @include isMobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+          height: auto;
+          padding: 2rem;
+        }
+        .left {
+          @include flexArea;
+          position: relative;
+          width: 26rem;
+          height: 100%;
+          font-size: 3rem;
+          font-weight: 600;
+          background: #f5efe8;
+          border-radius: 2rem;
+          padding: 1rem;
+          @include isMobile {
+            width: 100%;
+            font-size: 2rem;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            right: -4rem;
+            border: 2rem solid transparent;
+            border-left-color: #f5efe8;
+            @include isMobile {
+              right: auto;
+              left: 50%;
+              bottom: -3rem;
+              border: 2rem solid transparent;
+              border-top-color: #f5efe8;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        .right {
+          flex: 1;
+          > strong {
+            font-size: 2.4rem;
+            font-weight: 500;
+            @include isMobile {
+              font-size: 1.4rem;
+            }
+          }
+          .unitList {
+            display: inline-block;
+            &.dot {
+              margin-top: 1.2rem;
+              li {
+                font-size: 2rem;
+                font-weight: 500;
+                color: #773a04;
+                padding: 0.8rem 1.6rem 0.8rem 3rem;
+                background: #f1e8e0;
+                border-radius: 0.6rem;
+                @include isMobile {
+                  font-size: 1.4rem;
+                }
+                &::before {
+                  left: 1.5rem;
+                  top: 1.7rem;
+                  background: #ff6600;
+                }
+              }
+            }
+            &.ref {
+              display: block;
+              margin-top: 1.2rem;
+              li {
+                font-size: 1.6rem;
+                color: #ff6600;
+                @include isMobile {
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bizCont05 {
+    .boxArrowList {
+      background: $co-white;
+      border: 1px solid #ccc;
+      border-radius: 2.4rem;
+      padding: 4rem;
+      @include isMobile {
+        padding: 2rem;
+      }
+      > dl {
+        @include flexArea($gap: 2rem, $align: stretch);
+        width: 100%;
+        @include isMobile {
+          flex-direction: column;
+        }
+        > dt {
+          @include flexArea;
+          width: 25rem;
+          font-size: 2.4rem;
+          font-weight: 600;
+          border-radius: 1.6rem;
+          background: #f6f1ec;
+          @include isMobile {
+            width: 100%;
+            padding: 2rem;
+            font-size: 2rem;
+          }
+        }
+        > dd {
+          @include flexArea($gap: 1.2rem, $align: stretch);
+          flex: 1;
+          @include isMobile {
+            flex-direction: column;
+          }
+          > dl {
+            flex: 1;
+            border: 1px solid #d0c7b6;
+            border-radius: 1.6rem;
+            overflow: hidden;
+            > dt {
+              font-size: 1.6rem;
+              font-weight: 600;
+              padding: 1.2rem;
+              background: #f0eae3;
+              text-align: center;
+            }
+            > dd {
+              padding: 2rem 2rem 2rem 4rem;
+              @include isMobile {
+                padding: 2rem;
+              }
+              > p {
+                font-weight: 600;
+                color: #6d4920;
+                margin-bottom: 2rem;
+              }
+              ul {
+                @include flexArea($gap: 2rem, $justify: flex-start, $align: flex-start);
+                flex-wrap: wrap;
+                &.full {
+                  li {
+                    width: 100%;
+                  }
+                }
+                li {
+                  width: calc(50% - 1rem);
+                  font-size: 1.6rem;
+                  color: #555;
+                  @include isMobile {
+                    width: 100%;
+                  }
+                  & + li {
+                    margin-top: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      hr {
+        margin: 4rem 0;
+        border: none;
+        height: 1px;
+        background: #ccc;
+        position: relative;
+        overflow: visible;
+        @include isMobile {
+          margin: 3rem 0;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 10rem;
+          top: 50%;
+          width: 4.6rem;
+          height: 4.6rem;
+          border-radius: 50%;
+          background: url(../img/sub/biz_05_icon.png) no-repeat center center / contain;
+          transform: translateY(-50%);
+          box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.15);
+          @include isMobile {
+            width: 3rem;
+            height: 3rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+
+  .bizCont06 {
+    .boxIcon {
+      @include flexArea($gap: 2.4rem, $align: stretch);
+      @include isMobile {
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 1.2rem;
+      }
+      > li {
+        flex: 1;
+        padding: 4rem 4rem 5rem;
+        text-align: center;
+        background: $co-white;
+        border-radius: 2.4rem;
+        border: 1px solid #c4b4a3;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        @include isMobile {
+          flex: auto;
+          padding: 4rem 2rem 2rem;
+          width: 100%;
+        }
+        img {
+          @include isMobile {
+            height: 6rem;
+          }
+        }
+        strong {
           display: block;
+          margin: 4.2rem auto 2.4rem;
+          font-size: 2.6rem;
+          font-weight: 700;
         }
+        p {
+          font-size: 1.8rem;
+          color: #555;
+          @include isMobile {
+            font-size: 1.4rem;
+          }
+        }
+        small {
+          display: block;
+          margin-top: 1.8rem;
+          font-size: 1.6rem;
+          color: #b3671b;
+        }
+      }
+    }
+    .boxList {
+      @include flexArea($direction: column, $gap: 1.2rem, $align: flex-start);
+      > li {
+        @include flexArea($gap: 5rem);
+        width: 100%;
+        height: 22rem;
+        padding: 3rem;
+        background: $co-white;
+        border: 1px solid #ccc;
+        border-radius: 2.4rem;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        @include isMobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+          height: auto;
+          padding: 2rem;
+        }
+        .left {
+          @include flexArea;
+          position: relative;
+          width: 26rem;
+          height: 100%;
+          font-size: 3rem;
+          font-weight: 600;
+          background: #f5efe8;
+          border-radius: 2rem;
+          padding: 1rem;
+          @include isMobile {
+            width: 100%;
+            font-size: 2rem;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            right: -4rem;
+            border: 2rem solid transparent;
+            border-left-color: #f5efe8;
+            @include isMobile {
+              right: auto;
+              left: 50%;
+              bottom: -3rem;
+              border: 2rem solid transparent;
+              border-top-color: #f5efe8;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        .right {
+          flex: 1;
+          > strong {
+            font-size: 2.4rem;
+            font-weight: 500;
+            @include isMobile {
+              font-size: 1.4rem;
+            }
+          }
+          .unitList {
+            display: inline-block;
+            &.dot {
+              margin-top: 1.2rem;
+              li {
+                font-size: 2rem;
+                font-weight: 500;
+                color: #773a04;
+                padding: 0.8rem 1.6rem 0.8rem 3rem;
+                background: #f1e8e0;
+                border-radius: 0.6rem;
+                @include isMobile {
+                  font-size: 1.4rem;
+                }
+                &::before {
+                  left: 1.5rem;
+                  top: 1.7rem;
+                  background: #ff6600;
+                }
+              }
+            }
+            &.ref {
+              display: block;
+              margin-top: 1.2rem;
+              li {
+                font-size: 1.6rem;
+                color: #ff6600;
+                @include isMobile {
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bizCont07 {
+    .boxIcon {
+      @include flexArea($gap: 2.4rem, $align: stretch);
+      @include isMobile {
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 1.2rem;
+      }
+      > li {
+        flex: 1;
+        padding: 4rem 4rem 5rem;
+        text-align: center;
+        background: $co-white;
+        border-radius: 2.4rem;
+        border: 1px solid #c4b4a3;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        @include isMobile {
+          flex: auto;
+          padding: 4rem 2rem 2rem;
+          width: 100%;
+        }
+        img {
+          @include isMobile {
+            height: 6rem;
+          }
+        }
+        strong {
+          display: block;
+          margin: 4.2rem auto 2.4rem;
+          font-size: 2.6rem;
+          font-weight: 700;
+        }
+        p {
+          font-size: 1.8rem;
+          color: #555;
+          @include isMobile {
+            font-size: 1.4rem;
+          }
+        }
+        small {
+          display: block;
+          margin-top: 1.8rem;
+          font-size: 1.6rem;
+          color: #b3671b;
+        }
+      }
+    }
+    .bottomTxt {
+      margin-top: 8rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 500;
+      color: #5a4329;
+      @include isMobile {
+        margin-top: 4rem;
+        font-size: 1.6rem;
+      }
+      strong {
+        display: block;
+        color: #ff6600;
+        margin-top: 1.6rem;
+        @include isMobile {
+          margin-top: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .bizCont09 {
+    .boxList {
+      @include flexArea($direction: column, $gap: 1.2rem, $align: flex-start);
+      > li {
+        @include flexArea($gap: 5rem);
+        width: 100%;
+        height: 22rem;
+        padding: 3rem;
+        background: $co-white;
+        border: 1px solid #ccc;
+        border-radius: 2.4rem;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        @include isMobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+          height: auto;
+          padding: 2rem;
+        }
+        .left {
+          @include flexArea;
+          position: relative;
+          width: 26rem;
+          height: 100%;
+          font-size: 3rem;
+          font-weight: 600;
+          background: #f5efe8;
+          border-radius: 2rem;
+          padding: 1rem;
+          @include isMobile {
+            width: 100%;
+            font-size: 2rem;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            right: -4rem;
+            border: 2rem solid transparent;
+            border-left-color: #f5efe8;
+            @include isMobile {
+              right: auto;
+              left: 50%;
+              bottom: -3rem;
+              border: 2rem solid transparent;
+              border-top-color: #f5efe8;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        .right {
+          flex: 1;
+          > strong {
+            font-size: 2.4rem;
+            font-weight: 500;
+            @include isMobile {
+              font-size: 1.4rem;
+            }
+          }
+          .unitList {
+            display: inline-block;
+            &.dot {
+              margin-top: 1.2rem;
+              li {
+                font-size: 2rem;
+                font-weight: 500;
+                color: #773a04;
+                padding: 0.8rem 1.6rem 0.8rem 3rem;
+                background: #f1e8e0;
+                border-radius: 0.6rem;
+                @include isMobile {
+                  font-size: 1.4rem;
+                }
+                &::before {
+                  left: 1.5rem;
+                  top: 1.7rem;
+                  background: #ff6600;
+                }
+              }
+            }
+            &.ref {
+              display: block;
+              margin-top: 1.2rem;
+              li {
+                font-size: 1.6rem;
+                color: #ff6600;
+                @include isMobile {
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bizCont11 {
+    .boxList {
+      @include flexArea($direction: column, $gap: 1.2rem, $align: flex-start);
+      > li {
+        @include flexArea($gap: 5rem);
+        width: 100%;
+        height: auto;
+        padding: 3rem;
+        background: $co-white;
+        border: 1px solid #ccc;
+        border-radius: 2.4rem;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        &.alignTop {
+          align-items: flex-start;
+        }
+        @include isMobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+          height: auto;
+          padding: 2rem;
+        }
+        .left {
+          @include flexArea;
+          position: relative;
+          width: 26rem;
+          height: 100%;
+          font-size: 3rem;
+          font-weight: 600;
+          background: #f5efe8;
+          border-radius: 2rem;
+          padding: 3rem 1rem;
+          @include isMobile {
+            width: 100%;
+            font-size: 2rem;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            right: -4rem;
+            border: 2rem solid transparent;
+            border-left-color: #f5efe8;
+            @include isMobile {
+              right: auto;
+              left: 50%;
+              bottom: -3rem;
+              border: 2rem solid transparent;
+              border-top-color: #f5efe8;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        .right {
+          flex: 1;
+          > strong {
+            @include flexArea($gap: 1.2rem, $justify: flex-start);
+            font-size: 2.4rem;
+            font-weight: 500;
+            + strong {
+              margin-top: 1.8rem;
+            }
+            em {
+              background: #a6998a;
+              color: #fff;
+              padding: 0.6rem 1.8rem;
+              border-radius: 10rem;
+            }
+            @include isMobile {
+              font-size: 1.4rem;
+              + strong {
+                margin-top: 1rem;
+              }
+            }
+          }
+          .unitList {
+            display: inline-block;
+            &.dot {
+              margin-top: 1.2rem;
+              li {
+                font-size: 2rem;
+                font-weight: 500;
+                color: #773a04;
+                padding: 0.8rem 1.6rem 0.8rem 3rem;
+                background: #f1e8e0;
+                border-radius: 0.6rem;
+                @include isMobile {
+                  font-size: 1.4rem;
+                }
+                &::before {
+                  left: 1.5rem;
+                  top: 1.7rem;
+                  background: #ff6600;
+                }
+              }
+            }
+            &.ref {
+              display: block;
+              margin-top: 1.2rem;
+              li {
+                font-size: 1.6rem;
+                color: #ff6600;
+                @include isMobile {
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+          .boxDataList {
+            @include flexArea($gap: 1.2rem, $justify: flex-start, $direction: column, $align: flex-start);
+            font-size: 2rem;
+            font-weight: 500;
+            + .boxDataList {
+              margin-top: 2.4rem;
+            }
+            dt {
+              font-size: 2.4rem;
+              background: #a6998a;
+              color: #fff;
+              padding: 0.6rem 1.8rem;
+              border-radius: 10rem;
+              @include isMobile {
+                width: 100%;
+                text-align: center;
+                font-size: 1.6rem;
+              }
+            }
+            dd {
+              position: relative;
+              font-weight: 500;
+              padding-left: 2.4rem;
+              @include isMobile {
+                padding-left: 1.6rem;
+              }
+              &::before {
+                content: "";
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                left: 0;
+                top: 1.2rem;
+                background: #a6998a;
+                @include isMobile {
+                  width: 0.6rem;
+                  height: 0.6rem;
+                  top: 0.6rem;
+                }
+              }
+            }
+            @include isMobile {
+              font-size: 1.4rem;
+              + .boxDataList {
+                margin-top: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bizCont12 {
+    .boxList {
+      @include flexArea($direction: column, $gap: 1.2rem, $align: flex-start);
+      > li {
+        @include flexArea($gap: 5rem);
+        width: 100%;
+        height: auto;
+        padding: 3rem;
+        background: $co-white;
+        border: 1px solid #ccc;
+        border-radius: 2.4rem;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        &.alignTop {
+          align-items: flex-start;
+        }
+        @include isMobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+          height: auto;
+          padding: 2rem;
+        }
+        .left {
+          @include flexArea;
+          position: relative;
+          width: 26rem;
+          height: 100%;
+          font-size: 3rem;
+          font-weight: 600;
+          background: #f5efe8;
+          border-radius: 2rem;
+          padding: 3rem 1rem;
+          @include isMobile {
+            width: 100%;
+            font-size: 2rem;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            right: -4rem;
+            border: 2rem solid transparent;
+            border-left-color: #f5efe8;
+            @include isMobile {
+              right: auto;
+              left: 50%;
+              bottom: -3rem;
+              border: 2rem solid transparent;
+              border-top-color: #f5efe8;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        .right {
+          flex: 1;
+          > strong {
+            @include flexArea($gap: 1.2rem, $justify: flex-start);
+            font-size: 2.4rem;
+            font-weight: 500;
+            + strong {
+              margin-top: 1.8rem;
+            }
+            em {
+              background: #a6998a;
+              color: #fff;
+              padding: 0.6rem 1.8rem;
+              border-radius: 10rem;
+              &.dot {
+                padding: 0;
+                width: 1rem;
+                height: 1rem;
+              }
+            }
+            @include isMobile {
+              font-size: 1.4rem;
+              + strong {
+                margin-top: 1rem;
+                &.dot {
+                  padding: 0;
+                  width: 0.6rem;
+                  height: 0.6rem;
+                }
+              }
+            }
+          }
+          .unitList {
+            display: inline-block;
+            &.dot {
+              margin-top: 1.2rem;
+              li {
+                font-size: 2rem;
+                font-weight: 500;
+                color: #773a04;
+                padding: 0.8rem 1.6rem 0.8rem 3rem;
+                background: #f1e8e0;
+                border-radius: 0.6rem;
+                @include isMobile {
+                  font-size: 1.4rem;
+                }
+                &::before {
+                  left: 1.5rem;
+                  top: 1.7rem;
+                  background: #ff6600;
+                }
+              }
+            }
+            &.ref {
+              display: block;
+              margin-top: 1.2rem;
+              li {
+                font-size: 1.6rem;
+                color: #ff6600;
+                @include isMobile {
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+          .boxDataList {
+            @include flexArea($gap: 1.2rem, $justify: flex-start, $direction: column, $align: flex-start);
+            font-size: 2rem;
+            font-weight: 500;
+            + .boxDataList {
+              margin-top: 2.4rem;
+            }
+            dt {
+              font-size: 2.4rem;
+              background: #a6998a;
+              color: #fff;
+              padding: 0.6rem 1.8rem;
+              border-radius: 10rem;
+              @include isMobile {
+                width: 100%;
+                text-align: center;
+                font-size: 1.6rem;
+              }
+            }
+            dd {
+              position: relative;
+              font-weight: 500;
+              padding-left: 2.4rem;
+              @include isMobile {
+                padding-left: 1.6rem;
+              }
+              &::before {
+                content: "";
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                left: 0;
+                top: 1.2rem;
+                background: #a6998a;
+                @include isMobile {
+                  width: 0.6rem;
+                  height: 0.6rem;
+                  top: 0.6rem;
+                }
+              }
+            }
+            @include isMobile {
+              font-size: 1.4rem;
+              + .boxDataList {
+                margin-top: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bizCont14 {
+    .grayBox {
+      position: relative;
+      .qrCont {
+        position: absolute;
+        top: 50%;
+        right: 4rem;
+        transform: translateY(-50%);
+        @include isMobile {
+          position: relative;
+          top: auto;
+          right: auto;
+          transform: none;
+          height: 16rem;
+          text-align: center;
+          margin-top: 2rem;
+          img {
+            height: 100%;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .boxTit {
+    font-size: 2.7rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    &:not(:first-child) {
+      margin-top: 6rem;
+      @include isMobile {
+        margin-top: 3rem;
+      }
+    }
+    @include isMobile {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    > small {
+      display: block;
+      margin-top: 2rem;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #71542f;
+      @include isMobile {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .innerTit {
+    &:first-child {
+      margin: 0 auto 3rem;
+      @include isMobile {
+        margin-top: 0 auto 1.5rem;
+      }
+    }
+    + .subDesc {
+      padding-left: 0;
+    }
+    margin: 6rem auto 3rem;
+    font-size: 3.2rem;
+    font-weight: 600;
+    @include isMobile {
+      margin: 3rem auto 1.5rem;
+      font-size: 2rem;
+    }
+  }
+
+  .smlTit {
+    @include flexArea($gap: 0.6rem, $justify: flex-start);
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin: 4rem auto 2.4rem;
+    em {
+      @include flexArea;
+      width: 2.4rem;
+      height: 2.4rem;
+      color: #fff;
+      background: #71542f;
+      font-size: 2rem;
+      font-weight: 400;
+      border-radius: 50%;
+    }
+  }
+
+  .subDesc {
+    padding-left: 2rem;
+    color: #555;
+    font-size: 2rem;
+    &.type2 {
+      padding-left: 0;
+    }
+    + .grayBox,
+    + img {
+      margin-top: 2.4rem;
+      @include isMobile {
+        margin-top: 1.2rem;
+      }
+    }
+    @include isMobile {
+      padding-left: 1.2rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  .dotTit {
+    position: relative;
+    font-size: 2.6rem;
+    font-weight: 600;
+    padding-left: 2rem;
+    margin: 3rem auto 1.6rem;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: #c38e09;
+      left: 0;
+      top: 1.2rem;
+    }
+    @include isMobile {
+      margin: 1.5rem auto 1rem;
+      font-size: 1.8rem;
+      padding-left: 1.2rem;
+      &::before {
+        width: 0.6rem;
+        height: 0.6rem;
+        top: 0.8rem;
       }
     }
   }
@@ -1509,6 +2648,213 @@ section.subContent {
             }
           }
         }
+      }
+    }
+  }
+
+  .boxDataList {
+    @include flexArea($gap: 1.2rem, $justify: flex-strat);
+    font-size: 2rem;
+    font-weight: 500;
+    color: #4d3516;
+    + * {
+      margin-top: 1rem;
+      @include isMobile {
+        marign-top: 0.5rem;
+      }
+    }
+    @include isMobile {
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 1.6rem;
+      align-items: flex-start;
+    }
+    dt {
+      padding: 0.5rem 1.5rem;
+      background: #6d6e67;
+      color: $co-white;
+      border-radius: 10rem;
+      line-height: 1;
+      min-width: 12rem;
+      text-align: center;
+    }
+  }
+
+  .grayBox {
+    padding: 4rem;
+    background: #f5f2ef;
+    border: 1px solid #b9b046;
+    border-radius: 2.4rem;
+    @include isMobile {
+      padding: 2rem;
+    }
+    &.type2 {
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    > .unitList {
+      &.half {
+        @include flexArea($gap: 2rem, $justify: flex-start);
+        flex-wrap: wrap;
+        @include isMobile {
+          gap: 1rem;
+        }
+        > li {
+          width: calc(50% - 1rem);
+          margin-top: 0;
+          font-weight: 500;
+          @include isMobile {
+            width: 100%;
+          }
+        }
+      }
+      &.sml {
+        > li {
+          font-size: 20px;
+          font-weight: 500;
+          color: #4d3516;
+          @include isMobile {
+            font-size: 1.4rem;
+          }
+          + li {
+            margin-top: 1.8rem;
+          }
+          &::before {
+            top: 1rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            background: #888;
+            @include isMobile {
+              top: 0.6rem;
+              width: 0.4rem;
+              height: 0.4rem;
+            }
+          }
+        }
+        &.num {
+          > li {
+            padding-left: 2.5rem;
+            &::before {
+              width: 2rem;
+              height: 2rem;
+              background: transparent;
+              left: 0;
+              top: 0.4rem;
+              @include isMobile {
+                width: 1.4rem;
+                height: 1.4rem;
+                top: 0.3rem;
+              }
+            }
+          }
+        }
+      }
+      > li {
+        font-size: 2.2rem;
+        color: #555;
+        padding-left: 2rem;
+        @include isMobile {
+          font-size: 1.6rem;
+          padding-left: 1.5rem;
+        }
+        + li {
+          margin-top: 2rem;
+          @include isMobile {
+            margin-top: 1rem;
+          }
+        }
+        > strong {
+          display: block;
+          font-weight: 600;
+          margin-bottom: 1.6rem;
+          @include isMobile {
+            margin-bottom: 0.8rem;
+          }
+        }
+        > p {
+          font-size: 2rem;
+          color: #555;
+          @include isMobile {
+            font-size: 1.3rem;
+          }
+        }
+        > ul {
+          margin-top: 1.2rem;
+          @include isMobile {
+            margin-top: 0.6rem;
+          }
+          > li {
+            color: #ff6600;
+            font-size: 1.8rem;
+            @include isMobile {
+              font-size: 1.2rem;
+              &::before {
+                top: 0.6rem;
+                width: 0.4rem;
+                height: 0.4rem;
+              }
+            }
+          }
+        }
+        &::before {
+          top: 1rem;
+          width: 1rem;
+          height: 1rem;
+          background: #c38e09;
+          @include isMobile {
+            top: 0.8rem;
+            width: 0.6rem;
+            height: 0.6rem;
+          }
+        }
+      }
+      + .warning {
+        margin-top: 2rem;
+        @include isMobile {
+          marign-top: 1rem;
+        }
+      }
+    }
+    .warning {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #ff6600;
+      &.sml {
+        font-size: 1.6rem;
+      }
+      &.ref {
+        position: relative;
+        padding-left: 2rem;
+        &::before {
+          content: "※";
+          position: absolute;
+          left: 0;
+        }
+      }
+      + * {
+        margin-bottom: 1.8rem;
+      }
+      @include isMobile {
+        font-size: 1.6rem;
+        &.sml {
+          font-size: 1.2rem;
+        }
+        + * {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .grayBox {
+      margin-top: 1.6rem;
+      @include isMobile {
+        margin-top: 0.8rem;
+      }
+    }
+    + .boxList {
+      margin-top: 3rem;
+      @include isMobile {
+        margin-top: 1.5rem;
       }
     }
   }
@@ -2574,6 +3920,18 @@ section.subContent {
             bottom: 3rem;
             right: 3rem;
             background: url(../img/icon/board_arrow.png) no-repeat center center / contain;
+          }
+          &.noData {
+            width: 100%;
+            height: 45rem;
+            &::after {
+              display: none;
+            }
+            > a {
+              @include flexArea;
+              padding: 4rem;
+              cursor: default;
+            }
           }
           > a {
             display: block;

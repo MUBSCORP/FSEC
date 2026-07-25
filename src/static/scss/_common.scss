@@ -142,6 +142,39 @@ body.isFixed {
   color: $co-lightGray !important;
 }
 
+.co-brown {
+  color: $co-brown !important;
+}
+
+.co-orange {
+  color: $co-orange !important;
+}
+
+.mt10 {
+  margin-top: 1rem !important;
+  @include isMobile {
+    margin-top: 0.5rem !important;
+  }
+}
+.mt20 {
+  margin-top: 2rem !important;
+  @include isMobile {
+    margin-top: 1rem !important;
+  }
+}
+.mt30 {
+  margin-top: 3rem !important;
+  @include isMobile {
+    margin-top: 1.5rem !important;
+  }
+}
+.fs18 {
+  font-size: 1.8rem !important;
+  @include isMobile {
+    font-size: 1.4rem !important;
+  }
+}
+
 //header
 header {
   @include flexArea;
