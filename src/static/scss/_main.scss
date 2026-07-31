@@ -853,3 +853,172 @@
     }
   }
 }
+
+aside.mainPop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  > .wrapper {
+    position: absolute;
+    width: 100%;
+    max-width: 140rem;
+    padding: 0 5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    // overflow: hidden;
+    .btnClose {
+      position: absolute;
+      right: 6rem;
+      top: -11rem;
+      width: 5rem;
+      height: 5rem;
+      @include isMobile {
+        right: 1rem;
+        top: -6rem;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+    .swiperModal01-prev {
+      padding: 1rem;
+      background-color: $co-white;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      left: -5rem;
+      top: calc(50% - 4rem);
+      img {
+        transform: rotate(180deg);
+        height: 1.8rem;
+        width: auto;
+      }
+    }
+    .swiperModal01-next {
+      padding: 1rem;
+      background-color: $co-white;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      right: -5rem;
+      top: calc(50% - 4rem);
+      img {
+        transform: rotate(180deg);
+        height: 1.8rem;
+        width: auto;
+      }
+    }
+    .controller {
+      @include flexArea;
+      position: relative;
+      justify-content: center;
+      bottom: auto;
+      .swiperModal01-pagin {
+        bottom: 0;
+        gap: 0.6rem;
+        width: auto;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        border-radius: 10rem;
+        margin: 3rem auto;
+        @include isMobile {
+          margin: 1rem auto;
+        }
+        > * {
+          width: 2rem;
+          height: 0.6rem;
+          margin: auto;
+          background: #fff;
+          opacity: 1;
+          &.swiper-pagination-bullet-active {
+            width: 9rem;
+            background: #dcb515;
+          }
+        }
+      }
+      .btnCont {
+        position: relative;
+      }
+    }
+    .swiperCont {
+      // width: 100%;
+      border-radius: 2.4rem;
+      overflow: hidden;
+      .swiper-wrapper {
+        align-items: center;
+        &.isCenter {
+          justify-content: center;
+        }
+        .swiper-slide {
+          text-align: center;
+          overflow: hidden;
+          padding: 0 1.5rem;
+          img {
+            border-radius: 2.4rem;
+          }
+        }
+      }
+    }
+    .footArea {
+      position: relative;
+      font-size: 1.5rem;
+      width: 100%;
+      margin-top: 3rem;
+      z-index: 1;
+      @include flexArea($gap: 1rem, $justify: center);
+      @include isMobile {
+        margin-top: 1rem;
+      }
+      .formCheckbox {
+        input {
+          &:checked + label {
+            color: #dcb515;
+          }
+          &:checked + label:before {
+            background: url(../img/icon/chk_checked_yellow.png) no-repeat center center / contain;
+          }
+        }
+        label {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+          color: $co-white;
+          &:before {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+  @include isMobile {
+    top: 0;
+    > .wrapper {
+      padding: 0;
+      max-width: 45rem;
+      .swiperCont {
+        margin: auto;
+      }
+      .swiperModal01-prev {
+        display: none;
+      }
+      .swiperModal01-next {
+        display: none;
+      }
+    }
+    .footArea {
+      font-size: 1.3rem;
+    }
+  }
+}

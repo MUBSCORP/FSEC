@@ -336,9 +336,17 @@ $(document).ready(function () {
     });
   }
 
+  // 메인 팝
+  if ($("aside.mainPop").length) {
+    $("aside.mainPop .btnClose").on("click", function () {
+      $("aside.mainPop").slideUp(10);
+    });
+  }
+
   /*
    * 스와이퍼
    */
+
   // 스와이퍼 버튼
   if ($(".unitSwiper .controller .btnCont").length) {
     $(".unitSwiper .controller .btnCont > button").on("click", function () {
@@ -346,6 +354,55 @@ $(document).ready(function () {
       $(this).removeClass("isActive");
     });
   }
+
+  // pub_07
+  // 메인 모달
+  if ($(".swiperModal01 .swiper-wrapper .swiper-slide").length == 1) {
+    $(".swiperModal01").parent().children(".controller").hide();
+  }
+  if ($(".swiperModal01 .swiper-wrapper .swiper-slide").length < 3) {
+    $(".swiperModal01 .swiper-wrapper").addClass("isCenter");
+  }
+  var swiperModal01 = new Swiper(".swiperModal01", {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 0,
+    loop: false,
+    observer: true,
+    observeParents: true,
+    autoHeight: true,
+    navigation: {
+      nextEl: ".swiperModal01-next",
+      prevEl: ".swiperModal01-prev",
+    },
+    autoplay: {
+      delay: 50000,
+      disableOnInteraction: false,
+    },
+    watchOverflow: true,
+    pagination: {
+      el: ".swiperModal01-pagin",
+      type: "bullets",
+      clickable: false,
+    },
+    a11y: {
+      slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+    },
+    keyboard: {
+      enabled: true,
+    },
+    breakpoints: {
+      1280: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+    },
+    on: {
+      transitionStart: function () {},
+
+      transitionEnd: function () {},
+    },
+  });
 
   // 푸터
   if ($(".swiperFooter .swiper-wrapper .swiper-slide").length == 1) {

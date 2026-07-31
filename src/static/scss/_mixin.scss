@@ -236,25 +236,21 @@
       width: 2.4rem;
       height: 2.4rem;
       border-radius: 50%;
-      border: 2px solid $co-brd;
-      background: #fff url(../img/icon/chk.png) center center no-repeat;
+      background: url(../img/icon/chk.png) no-repeat center center / contain;
       @include trans;
-      background-position: center center;
-      background-size: 1.6rem 1.6rem;
     }
   }
   input {
     &:checked + label:before {
       border-color: $co-primary;
-      background: $co-white url(../img/icon/chk_checked.png) center center no-repeat;
-      background-size: 1.6rem 1.6rem;
+      background: url(../img/icon/chk_checked.png) no-repeat center center / contain;
     }
     &:disabled + label:before {
       background: #f3f6fb;
       border-color: #f3f6fb;
     }
     &:checked:disabled + label:before {
-      background: #f3f6fb url(../img/icon/chk_checked_dis.png) center center no-repeat;
+      background: #f3f6fb url(../img/icon/chk_checked_dis.png) no-repeat center center / contain;
       background-size: 1.6rem 1.6rem;
     }
     &:disabled + label {
