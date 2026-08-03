@@ -199,7 +199,7 @@ section.subTopArea {
         line-height: 1;
         text-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.56);
         @include isMobile {
-          font-size: 3.6rem;
+          font-size: 3rem;
           margin-top: 0;
         }
       }
@@ -1204,7 +1204,9 @@ section.subContent {
     }
   }
 
-  [class*="bizCont"] {
+  [class*="bizCont"],
+  [class*="notiCont"],
+  [class*="termsCont"] {
     margin-top: 6rem;
     padding: 6rem 0;
     + [class*="bizCont"]:not(.subBgArea) {
@@ -5083,6 +5085,46 @@ section.subContent {
     }
   }
 
+  .schNoData {
+    @include flexArea;
+    margin-top: 3rem;
+    padding: 0 3rem;
+    background: $co-white;
+    border: 1px solid #ccc;
+    border-radius: 2.4rem;
+    box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+    width: 100%;
+    height: 56rem;
+    @include isMobile {
+      height: 30rem;
+    }
+    > span {
+      @include flexArea($direction: column);
+      color: #555;
+      font-size: 2rem;
+      padding: 4rem;
+      @include isMobile {
+        font-size: 1.4rem;
+      }
+      &::before {
+        content: "";
+        display: block;
+        width: 20rem;
+        height: 20rem;
+        margin-bottom: 1.3rem;
+        background: url(../img/icon/noData2.png) no-repeat center center / contain;
+        @include isMobile {
+          width: 8rem;
+          height: 8rem;
+        }
+      }
+      @include isMobile {
+        padding: 0 2rem;
+        border-radius: 2rem;
+      }
+    }
+  }
+
   .applyCont {
     &.bg {
       background: url(../img/sub/app_bg.png) no-repeat top center / 100% auto;
@@ -5468,6 +5510,229 @@ section.subContent {
       strong {
         font-weight: 600;
         color: #a64800;
+      }
+    }
+  }
+
+  .termsCont {
+    .wrapper {
+      .alignCenter {
+        text-align: center;
+      }
+      .termsLink {
+        @include flexArea($gap: 1rem, $justify: flex-start);
+        color: $co-orange;
+        margin: 0.4rem 0 1.6rem;
+        font-weight: 600;
+        @include isMobile {
+          margin: 0.2rem 0 0.8rem;
+        }
+        img {
+          width: 1.6rem;
+        }
+      }
+      .smlTit {
+        @include flexArea($gap: 1rem, $justify: flex-start);
+        font-size: 2.2rem;
+        font-weight: 500;
+        margin: 2rem auto 0.8rem;
+        color: #000;
+        @include isMobile {
+          gap: 0.5rem;
+          font-size: 1.5rem;
+        }
+        &::before {
+          content: "";
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+          background: #c38e09;
+          @include isMobile {
+            width: 0.5rem;
+            height: 0.5rem;
+          }
+        }
+      }
+      .history {
+        margin-top: 2rem;
+      }
+      .under {
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+      }
+      .emailArea {
+        @include flexArea($gap: 4rem);
+        @include isMobile {
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .left {
+          width: 40rem;
+          @include isMobile {
+            width: 25rem;
+          }
+        }
+        .right {
+          flex: 1;
+          font-size: 3rem;
+          @include isMobile {
+            font-size: 1.8rem;
+            text-align: center;
+            br {
+              display: none;
+            }
+          }
+          strong {
+            display: block;
+            margin-top: 2rem;
+            font-weight: 600;
+            color: #a25900;
+            @include isMobile {
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+      > .desc {
+        font-size: 2rem;
+        font-weight: 400;
+        color: #555;
+        @include isMobile {
+          font-size: 1.4rem;
+          text-align: 1.4rem;
+        }
+      }
+      .iconList {
+        @include flexArea($justify: space-between, $align: flex-start);
+        @include isMobile {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 3rem 1.5rem;
+        }
+        > li {
+          text-align: center;
+          @include isMobile {
+            width: calc(30% - 1rem);
+          }
+          img {
+            width: 16rem;
+            @include isMobile {
+              width: 9rem;
+            }
+          }
+          span {
+            display: block;
+            text-align: center;
+            margin-top: 1.6rem;
+            font-size: 2rem;
+            @include isMobile {
+              font-size: 1.4rem;
+              margin-top: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .notiCont06 {
+    padding: 0;
+    @include isMobile {
+      padding: 0 2rem;
+    }
+    .boxList {
+      @include flexArea($direction: column, $gap: 1.2rem, $align: flex-start);
+      > li {
+        @include flexArea($gap: 5rem);
+        width: 100%;
+        height: auto;
+        padding: 3rem;
+        background: $co-white;
+        border: 1px solid #ccc;
+        border-radius: 2.4rem;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        &.alignTop {
+          align-items: flex-start;
+        }
+        @include isMobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+          height: auto;
+          padding: 2rem;
+        }
+        .left {
+          @include flexArea;
+          position: relative;
+          width: 28rem;
+          height: 100%;
+          font-size: 2.6rem;
+          font-weight: 600;
+          background: #f5efe8;
+          border-radius: 2rem;
+          padding: 3rem 1rem;
+          @include isMobile {
+            width: 100%;
+            font-size: 2rem;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            right: -4rem;
+            border: 2rem solid transparent;
+            border-left-color: #f5efe8;
+            @include isMobile {
+              right: auto;
+              left: 50%;
+              bottom: -3rem;
+              border: 2rem solid transparent;
+              border-top-color: #f5efe8;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        .right {
+          flex: 1;
+          > strong,
+          > span {
+            font-size: 2.4rem;
+            font-weight: 400;
+            @include isMobile {
+              font-size: 1.4rem;
+            }
+            > em {
+              font-weight: 600;
+              color: $co-orange;
+            }
+          }
+        }
+      }
+    }
+    .typeGallery {
+      > .wrapper {
+        > ul {
+          > li {
+            text-align: center;
+            a {
+              cursor: default;
+              .tit {
+                font-size: 2.6rem;
+                @include isMobile {
+                  font-size: 1.8rem;
+                }
+              }
+              .desc {
+                font-size: 1.8rem;
+                max-height: none;
+                @include isMobile {
+                  font-size: 1.4rem;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -150,6 +150,10 @@ body.isFixed {
   color: $co-orange !important;
 }
 
+.mt0 {
+  margin-top: 0rem !important;
+}
+
 .mt10 {
   margin-top: 1rem !important;
   @include isMobile {
