@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		@@include('@@webRoot/html/_inc/head.html',{"title": "개인(신용)정보 보호"})
+
+		<!-- 추가 스크립트 -->
+		<script>
+			$(document).ready(function () {
+
+			})
+		</script>
+	</head>
+
+	<body> <!-- pub_03 -->
+		@@include('@@webRoot/html/_inc/skipMenu.html')
+
+		<!-- 헤더 -->
+		@@include('@@webRoot/html/_inc/header.html')
+		<!-- 헤더 -->
+
+		<!-- 본문 -->
+		<main id="content">
+			<div class="container">
+				<!--
+					* [data-banner]
+					* intro: 금융보안원 안내
+					* business: 주요업무
+					* notice: 알림마당
+					* data: 자료마당
+					* customer: 고객센터
+				-->
+				<div class="topBgArea"></div>
+				<section class="subTopArea" data-banner="business">
+					<div class="wrapper">
+						<div class="left">
+							<h2 class="tit">주요업무</h2>
+							<div class="depth">
+								<a href="javascript:void(0)" class="home" title="홈으로 이동"><i><img src="@@webRoot/static/img/icon/depth_home.png" alt=""></i></a>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="1"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>금융보안원 안내</span></a></li>
+										<li><a href="javascript:void(0)"><span>주요업무</span></a></li>
+										<li><a href="javascript:void(0)"><span>알림마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>자료마당</span></a></li>
+										<li><a href="javascript:void(0)"><span>고객센터</span></a></li>
+									</ul>
+								</div>
+								<img src="@@webRoot/static/img/icon/depth_arrow.png" alt="">
+								<div class="formSelect">
+									<button type="button" class="select" data-value="15"><span>선택하세요.</span></button>
+									<ul class="option">
+										<li><a href="javascript:void(0)"><span>금융부문 통합보안관계</span></a></li>
+										<li><a href="javascript:void(0)"><span>침해사고대응</span></a></li>
+										<li><a href="javascript:void(0)"><span>취약점 분석, 평가</span></a></li>
+										<li><a href="javascript:void(0)"><span>자율보안지원</span></a></li>
+										<li><a href="javascript:void(0)"><span>모의해킹 및 취약점 분석·평가</span></a></li>
+										<li><a href="javascript:void(0)"><span>핀테크 평가</span></a></li>
+										<li><a href="javascript:void(0)"><span>S/W 공급망 보안</span></a></li>
+										<li><a href="javascript:void(0)"><span>금융 AI 및 데이터 보안</span></a></li>
+										<li><a href="javascript:void(0)"><span>디지털 자산 보안</span></a></li>
+										<li><a href="javascript:void(0)"><span>금융데이터거래소</span></a></li>
+										<li><a href="javascript:void(0)"><span>마이데이터</span></a></li>
+										<li><a href="javascript:void(0)"><span>정책 및 기술연구</span></a></li>
+										<li><a href="javascript:void(0)"><span>금융보안 표준화</span></a></li>
+										<li><a href="javascript:void(0)"><span>금융보안 교육</span></a></li>
+										<li><a href="javascript:void(0)"><span>개인(신용)정보 보호</span></a></li>
+										<li><a href="javascript:void(0)"><span>금융권 버그바운티</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							@@include('@@webRoot/html/_inc/breadcrumb.html',{"depth": "주요업무", "current": "개인(신용)정보 보호"})
+						</div>
+					</div>
+				</section>
+
+				<section class="subContent">
+					<h3 class="subPageTit">개인(신용)정보 보호</h3>
+
+					<div class="bizCont15 first">
+						<ul class="boxList">
+							<li>
+								<div class="left">업무개요</div>
+								<div class="right">
+									<span>금융회사의 개인신용정보 활용·관리 실태점검(자체평가) 결과를 접수하고, 이를 점검하여 점수·등급 부여</span>
+								</div>
+							</li>
+							<li>
+								<div class="left">법적근거</div>
+								<div class="right">
+									<span>「신용정보의 이용 및 보호에 관한 법률」 제20조(신용정보 관리책임의 명확화 및 업무처리기록의 보존) 제6항, 제45조의5(개인신용정보 활용·관리 실태에 대한 상시평가)</span>
+								</div>
+							</li>
+							<li>
+								<div class="left">대상기관</div>
+								<div class="right">
+									<span>「신용정보의 이용 및 보호에 관한 법률 시행령」 제17조 제7항 각 호의 기관</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="bizCont15 subBgArea">
+						<div class="wrapper">
+							<img src="@@webRoot/static/img/sub/biz_15.png" alt="내용있음" class="pc">
+							<img src="@@webRoot/static/img/sub/biz_15_m.png" alt="내용있음" class="mo">
+							<div class="ir">
+								개인신용정보 활용관리 실태점검 절차를 단계별로 나타낸 흐름도.
+								평가준비
+								상시평가 대상기관: 정보보호 상시평가 준비(증빙자료 등)
+								금융보안원: 정보보호 상시평가 시행 안내(평가절차, 연간일정 등)
+								개인신용정보 활용관리 실태점검
+								서식 제출
+								상시평가 대상기관: 개인신용정보 실태점검 서식 제출(신용정보업 감독규정 별지 제8호의3서식), 서식 보완
+								금융보안원: 접수 확인 후 접수 완료
+								자체평가
+								상시평가 대상기관: 개인신용정보 실태점검(자체평가) 수행결과 제출
+								금융보안원: 점검 수행
+								이의 신청
+								금융보안원: 점검 결과 공개
+								상시평가 대상기관: 이의신청(추가 증빙자료 제출 등)
+								금융보안원: 이의 신청 확인 및 재평가
+								점수·등급 부여
+								상시평가 대상기관: 점수 및 등급 확인
+								금융보안원: 최종 점수 및 등급 부여 후 금융위원회 보고 및 금융감독원 통지
+							</div>
+						</div>
+					</div>
+					<div class="pageInfo">
+						<div class="wrapper">
+							<dl class="inquiry">
+								<dt><span>문의</span></dt>
+								<dd>금융데이터거래소</dd>
+							</dl>
+							<dl class="tel">
+								<dt><img src="@@webRoot/static/img/icon/pageInfo_tel.png" alt=""><span class="ir">문의</span></dt>
+								<dd>02-3495-9991</dd>
+							</dl>
+							<dl class="email">
+								<dt><img src="@@webRoot/static/img/icon/pageInfo_mail.png" alt=""><span class="ir">이메일</span></dt>
+								<dd>findatamall@fsec.or.kr</dd>
+							</dl>
+						</div>
+					</div>
+
+				</section>
+			</div>
+		</main>
+
+		<!-- 푸터 -->
+		@@include('@@webRoot/html/_inc/footer.html')
+		<!-- 푸터 -->
+	</body>
+</html>

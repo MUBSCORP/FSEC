@@ -2161,6 +2161,127 @@ section.subContent {
     }
   }
 
+  .bizCont15 {
+    .boxList {
+      @include flexArea($direction: column, $gap: 1.2rem, $align: flex-start);
+      > li {
+        @include flexArea($gap: 5rem);
+        width: 100%;
+        height: auto;
+        padding: 3rem;
+        background: $co-white;
+        border: 1px solid #ccc;
+        border-radius: 2.4rem;
+        box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.15);
+        &.alignTop {
+          align-items: flex-start;
+        }
+        @include isMobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+          height: auto;
+          padding: 2rem;
+        }
+        .left {
+          @include flexArea;
+          position: relative;
+          width: 28rem;
+          height: 100%;
+          font-size: 2.6rem;
+          font-weight: 600;
+          background: #f5efe8;
+          border-radius: 2rem;
+          padding: 3rem 1rem;
+          @include isMobile {
+            width: 100%;
+            font-size: 2rem;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            right: -4rem;
+            border: 2rem solid transparent;
+            border-left-color: #f5efe8;
+            @include isMobile {
+              right: auto;
+              left: 50%;
+              bottom: -3rem;
+              border: 2rem solid transparent;
+              border-top-color: #f5efe8;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        .right {
+          flex: 1;
+          > strong,
+          > span {
+            font-size: 2.4rem;
+            font-weight: 400;
+            @include isMobile {
+              font-size: 1.4rem;
+            }
+            > em {
+              font-weight: 600;
+              color: $co-orange;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bizCont16 {
+    .refText {
+      margin-bottom: 2.4rem;
+      font-size: 2rem;
+      font-weight: 600;
+      color: $co-orange;
+      @include isMobile {
+        font-size: 1.5rem;
+      }
+    }
+    dl {
+      @include flexArea($gap: 1.2rem, $align: flex-start, $justify: flex-start);
+      font-size: 2rem;
+      color: #4d3516;
+      font-weight: 500;
+      @include isMobile {
+        flex-direction: column;
+        gap: 0.6rem;
+        font-size: 1.5rem;
+      }
+      + dl {
+        margin-top: 1.2rem;
+        @include isMobile {
+          margin-top: 2.4rem;
+        }
+      }
+      dt {
+        padding: 0.5rem 1.6rem;
+        color: #fff;
+        background: #6d6e67;
+        border-radius: 10rem;
+        min-width: 10rem;
+        text-align: center;
+        @include isMobile {
+          width: 100%;
+          padding: 0.3rem 2.4rem;
+        }
+      }
+      dd {
+        padding-top: 0.5rem;
+        strong {
+          color: #004fb6;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
   .boxTit {
     font-size: 2.7rem;
     font-weight: 600;
