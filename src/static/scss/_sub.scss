@@ -789,6 +789,7 @@ section.subContent {
         position: absolute;
         right: -7rem;
         top: -25rem;
+        z-index: 1;
         &.type2 {
           top: -15rem;
           @include isMobile {
