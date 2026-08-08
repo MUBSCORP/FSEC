@@ -785,6 +785,26 @@ section.subContent {
           }
         }
       }
+      .rightImg {
+        position: absolute;
+        right: -7rem;
+        top: -25rem;
+        &.type2 {
+          top: -15rem;
+          @include isMobile {
+            top: 0;
+            padding-right: 5%;
+            padding-left: 0;
+          }
+        }
+        @include isMobile {
+          position: relative;
+          right: 0;
+          top: 0;
+          margin-top: 2rem;
+          padding-left: 5%;
+        }
+      }
     }
   }
 
